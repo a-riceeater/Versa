@@ -1,0 +1,11 @@
+@import url("/fonts/fonts.css");
+
+:root {
+    --poppins: 'Poppins', serif;
+    --raleway: 'Raleway', serif;
+    --noto: 'Noto Sans', serif;
+    --lato: 'Lato', serif;
+    --block: 'Gajraj One', serif;
+    --yF: 'Yanone Kaffeesatz', serif;
+    --dm: 'DM Sans', serif;
+}
