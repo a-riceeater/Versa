@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const databaseHandler = require("jdb");
+const favicon = require('serve-favicon')
 
 const app = express();
 
@@ -9,12 +10,18 @@ app.use("/cdn/", express.static(path.join(__dirname, "cdn")));
 
 app.use("/app/", require(path.join(__dirname, "server", "routers", "app.js")));
 
+app.use(favicon(path.join(__dirname, 'static', 'versa.png')));
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "html/index.html"));
 })
 
 app.get("/cdn", (req, res) => {
     res.redirect("/");
+})
+
+app.get("*", (req, res) => {
+    res.sendStatus(404);
 })
 
 app.listen(6969, () => {

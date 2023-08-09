@@ -1,0 +1,75 @@
+.top-section {
+    background-color: #F06449;
+    height: 62%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.bottom-section {
+    top: 62%;
+    width: 100%;
+    left: 0%;
+    position: fixed;
+    background-color: var(--c2);
+    height: calc(100% - 62%);
+}
+
+.topbar {
+    text-align: left;
+    height: 50px;
+    border-bottom: 1px solid black;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 18%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+}
+
+.topbar > a {
+    text-decoration: none;
+    color: var(--c2);
+    vertical-align: middle;
+    margin-left: 50px;
+    margin-top: 1px;
+    font-family: var(--poppins);
+    cursor: pointer;
+}
+
+#tb-logo {
+    font-family: var(--yF) !important;
+    font-size: 42px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-top: 0 !important;
+}
+
+#tb-logo > img {
+    height: 42px;
+    width: 42px;
+    vertical-align: middle;
+}
+
+#tp-acc {
+    margin-left: 22%;
+}
+
+#tb-ll {
+    height: 35px;
+    background-color: var(--c4);
+    width: 125px;
+    border: 1px solid var(--c4);
+    border-radius: 5px / 5px;
+    font-size: 16px;
+    font-family: var(--dm);
+    text-transform: uppercase;
+    color: var(--c2);
+    cursor: pointer;
+}
