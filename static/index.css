@@ -1,5 +1,5 @@
 .top-section {
-    background-color: #F06449;
+    background-color: var(--c1);
     height: 62%;
     width: 100%;
     position: fixed;
