@@ -4,7 +4,10 @@
     width: 100%;
     position: fixed;
     left: 0;
-    top: 0;
+    top: 50px;
+    padding-left: calc(18% + 50px);
+    box-sizing: border-box;
+    padding-top: 5%;
 }
 
 .bottom-section {
@@ -19,7 +22,6 @@
 .topbar {
     text-align: left;
     height: 50px;
-    border-bottom: 1px solid black;
     left: 0;
     top: 0;
     width: 100%;
@@ -31,6 +33,8 @@
     top: 0%;
     left: 0%;
     z-index: 2;
+    box-sizing: border-box;
+    background-color: var(--c1);
 }
 
 .topbar > a {
