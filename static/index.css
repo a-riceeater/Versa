@@ -102,3 +102,18 @@
 #ts-buttons {
     margin-top: 40px;
 }
+
+#ts-buttons > button {
+    border-radius: 15px / 15px;
+    width: 200px;
+    height: 60px;
+    margin-right: 30px;;
+}
+
+#ts-b-signup {
+
+}
+
+#ts-b-download {
+    
+}
