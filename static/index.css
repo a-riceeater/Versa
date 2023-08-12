@@ -92,3 +92,9 @@
     color: var(--c2);
     cursor: pointer;
 }
+
+.t-de {
+    margin-bottom: -10px;
+    font-family: var(--dm);
+    font-size: 16px;
+}
