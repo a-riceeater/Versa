@@ -98,3 +98,7 @@
     font-family: var(--dm);
     font-size: 16px;
 }
+
+#ts-buttons {
+    margin-top: 40px;
+}
