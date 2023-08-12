@@ -10,6 +10,21 @@
     padding-top: 5%;
 }
 
+.top-section > h1 {
+    font-family: var(--poppins);
+    margin-bottom: 15px;
+    font-size: 36px;
+}
+
+#mt1 {
+    color: var(--c4);
+}
+
+#mt2 {
+    margin-top: -20px;
+    color: var(--c5);
+}
+
 .bottom-section {
     top: 62%;
     width: 100%;
