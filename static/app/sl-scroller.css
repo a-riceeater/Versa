@@ -1,0 +1,8 @@
+.server-list-l {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 72px;
+    height: 100%;
+    background-color: var(--c1);
+}
