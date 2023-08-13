@@ -9,6 +9,7 @@ app.use(express.static(path.join(__dirname, "static")));
 app.use("/cdn/", express.static(path.join(__dirname, "cdn")));
 
 app.use("/app/", require(path.join(__dirname, "server", "routers", "app.js")));
+app.use("/auth/", require(path.join(__dirname, "server", "routers", "authentication.js")))
 
 app.use(favicon(path.join(__dirname, 'static', 'versa.png')));
 

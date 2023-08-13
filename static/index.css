@@ -103,7 +103,11 @@
     margin-top: 40px;
 }
 
-#ts-buttons > button {
+#ts-buttons > a {
+    text-decoration: none;
+}
+
+#ts-buttons > a > button {
     border-radius: 15px / 15px;
     width: 200px;
     height: 50px;

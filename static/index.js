@@ -24,3 +24,5 @@ function getOS() {
 document.getElementById("ts-b-download").innerHTML = `
 <img src="/download-icon.png" alt="DOWNLOAD FOR ">
 <span> ${getOS().toUpperCase()}</span>`;
+
+document.getElementById("a-d-h").setAttribute("href", "/download/" + getOS().toLowerCase().replaceAll(" ", "_"))
