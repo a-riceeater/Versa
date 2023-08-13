@@ -18,7 +18,20 @@ app.get("/self", middle.authenticateToken, (req, res) => {
 })
 
 app.get("/user-serv-scroll-l", middle.authenticateToken, (req, res) => {
-    res.send("Asd")
+    const data = `
+    <div class="wrapper-sl-i">
+        <img src="/versa.png">
+    </div>
+    <div class="section-sl-ser">
+        <!-- Loop through user servers on sever, add later -->
+
+        <div class="wrapper-js-sl">
+        +
+        </div>
+    </div>
+    `
+
+    res.send(data)
 })
 
 module.exports = app;
