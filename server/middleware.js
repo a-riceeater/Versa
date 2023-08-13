@@ -17,7 +17,15 @@ module.exports = {
             res.clearCookie("token");
             res.redirect("/auth/login");
         }
-
         return next();
+    },
+
+    authAlready: function (req, res, next) {
+        if (!req.headers.cookie) return next();
+        if (!req.headers.cookie.includes("token=")) return next();
+
+        const token = req.headers.cookie.split("token=")[1];
+        if (tokenHandler.verifyToken(token)) res.redirect("/app/self")
+        else next()
     }
 }
