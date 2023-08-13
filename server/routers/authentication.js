@@ -20,7 +20,7 @@ app.post("/create-account", middle.authAlready, (req, res) => {
         if (info.password.trim() == "") return res.send({ error: "all inputs required..." })
 
 
-        if (accountDb.getRowSync("accounts", "email", info.email)) {
+        if (accountDb.getRowSync("accounts", "email", info.email) != null) {
             res.send({
                 error: "email already in use"
             })
@@ -30,7 +30,7 @@ app.post("/create-account", middle.authAlready, (req, res) => {
 
             const token = tokenHandler.createToken(info.username, info.email);
             
-            res.cookie(token);
+            res.cookie("token", token);
             res.send({
                 error: false
             });
