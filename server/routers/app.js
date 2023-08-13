@@ -23,6 +23,7 @@ app.get("/user-serv-scroll-l", middle.authenticateToken, (req, res) => {
         <img src="/versa.png">
     </div>
     <div class="section-sl-ser">
+        <div class="border-wrap-ct-sl"></div>
         <!-- Loop through user servers on sever, add later -->
 
         <div class="wrapper-js-sl">
