@@ -1,0 +1,9 @@
+.container {
+    position: fixed;
+    transform: translate(0%, -50%);
+    top: 50%;
+    left: 5%;
+    width: 800px;
+    height: 400px;
+    background-color: var(--c1);
+}
