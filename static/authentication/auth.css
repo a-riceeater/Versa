@@ -1,9 +1,10 @@
 .container {
     position: fixed;
-    transform: translate(0%, -50%);
+    transform: translate(-50%, -50%);
     top: 50%;
-    left: 5%;
+    left: 50%;
     width: 800px;
     height: 400px;
     background-color: var(--c1);
+    border-radius: 15px / 15px;
 }
