@@ -1,0 +1,8 @@
+.main-container {
+    position: fixed;
+    top: 0%;
+    left: 72px;
+    width: calc(100% - 72px);
+    height: 100%;
+    background-color: var(--c4);
+}
