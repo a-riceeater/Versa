@@ -22,7 +22,7 @@ app.post("/create-account", (req, res) => {
             error: true
         })
     } else {
-        
+        accountDb.addRowSync("accounts", info);
     }
 })
 
