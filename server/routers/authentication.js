@@ -10,20 +10,22 @@ app.get("/start", (req, res) => {
 })
 
 app.post("/create-account", (req, res) => {
-    const info = req.body;
-    
-    if (info.email.trim() == "") return res.send({ error: true })
-    if (info.username.trim() == "") return res.send({ error: true })
-    if (info.password.trim() == "") return res.send({ error: true })
+    setTimeout(() => {
+        const info = req.body;
+
+        if (info.email.trim() == "") return res.send({ error: "all inputs required...." })
+        if (info.username.trim() == "") return res.send({ error: "all inputs required..." })
+        if (info.password.trim() == "") return res.send({ error: "all inputs required..." })
 
 
-    if (accountDb.getRowSync("accounts", "email", info.email)) {
-        res.send({
-            error: true
-        })
-    } else {
-        accountDb.addRowSync("accounts", info);
-    }
+        if (accountDb.getRowSync("accounts", "email", info.email)) {
+            res.send({
+                error: "email already in use"
+            })
+        } else {
+            accountDb.addRowSync("accounts", info);
+        }
+    }, 2000)
 })
 
 module.exports = app;
