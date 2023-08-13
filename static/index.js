@@ -21,4 +21,6 @@ function getOS() {
     return os;
 }
 
-document.getElementById("ts-b-download").innerText = `DOWNLOAD FOR ${getOS().toUpperCase()}`;
+document.getElementById("ts-b-download").innerHTML = `
+<img src="/download-icon.png" alt="DOWNLOAD FOR ">
+<span> ${getOS().toUpperCase()}</span>`;
