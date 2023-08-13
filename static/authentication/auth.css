@@ -7,8 +7,50 @@
     height: 400px;
     background-color: var(--c1);
     border-radius: 5px / 5px;
+    padding-left: 40px;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--c2);
+}
+
+.container > #title {
+    font-family: var(--dm);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.container > .label {
+    margin-bottom: 7px;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: var(--poppins);
+    color: white;
+}
+
+.text-inp {
+    width: 75%;
+    height: 35px;
+    border: none;
+    border-radius: 4px / 4px;
+    outline: 0;
+    padding-left: 8px;
+    font-family: var(--dm);
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: var(--c4);
+    color: var(--c3);
+}
+
+#confirm-button {
+   width: 75%;
+   margin-top: 10px;
+   height: 40px;
+   cursor: pointer;
+   font-size: 16px;
+   font-family: var(--dm);
+   border: none;
+   background-color: var(--c5);
+   border-radius: 4px / 4px;
 }
