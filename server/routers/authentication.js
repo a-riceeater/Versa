@@ -8,4 +8,8 @@ app.get("/start", (req, res) => {
     res.sendFile(path.join(__dirname, "../../", "html", "authentication", "start.html"));
 })
 
+app.post("/create-account", (req, res) => {
+    
+})
+
 module.exports = app;

@@ -6,6 +6,7 @@ const favicon = require('serve-favicon')
 const app = express();
 
 app.use(express.static(path.join(__dirname, "static")));
+app.use(express.json())
 app.use("/cdn/", express.static(path.join(__dirname, "cdn")));
 
 app.use("/app/", require(path.join(__dirname, "server", "routers", "app.js")));
