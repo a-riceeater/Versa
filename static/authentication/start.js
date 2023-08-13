@@ -38,6 +38,8 @@ function submit() {
                     e.innerText = old
                 }, 2500);
             })
+        } else {
+            window.location = "/app/self"
         }
     })
 }

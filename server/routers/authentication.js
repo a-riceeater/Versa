@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const databaseHandler = require("jdb");
+const tokenHandler = require("../tokens")
 
 const accountDb = databaseHandler.database(path.join(__dirname, "../", "../", "database", "accounts.json"))
 const app = express.Router();
@@ -23,7 +24,15 @@ app.post("/create-account", (req, res) => {
                 error: "email already in use"
             })
         } else {
+            info.username += `#${Math.floor(Math.random() * (10000 - 1000) + 1000)}`
             accountDb.addRowSync("accounts", info);
+
+            const token = tokenHandler.createToken(info.username, info.email);
+            
+            res.cookie(token);
+            res.send({
+                error: false
+            });
         }
     }, 2000)
 })
