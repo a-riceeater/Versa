@@ -3,8 +3,12 @@
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    width: 800px;
+    width: 60%;
     height: 400px;
     background-color: var(--c1);
-    border-radius: 15px / 15px;
+    border-radius: 5px / 5px;
+}
+
+body {
+    background-color: var(--c2);
 }
