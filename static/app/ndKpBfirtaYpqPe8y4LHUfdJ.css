@@ -29,12 +29,15 @@
     height: 70%;
 }
 
-.serv-create-modal > h1 {
+.serv-create-modal > #serv-mo-t {
     margin-bottom: 0;
-    font-weight: 800 !important;
+    font-weight: 900;
+    font-size: 26px;
+    margin-top: 24px;
 }
 
 .serv-create-modal > p {
-    margin-top: 5px;
+    margin-top: 10px;
     font-weight: lighter;
+    font-size: 15px;
 }
