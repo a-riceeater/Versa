@@ -1,3 +1,10 @@
+/*
+    Elijah Bantugan
+    MIT License
+    
+    vtools.js
+*/
+
 const vt = {
     log: function (a, ...l) {
         let b = "";

@@ -1,3 +1,10 @@
+/*
+    Elijah Bantugan
+    MIT License
+
+    xml-loader-ml.js
+*/
+
 let completed = 0;
 
 const sl_scroller = new XMLHttpRequest();
