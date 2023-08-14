@@ -28,3 +28,13 @@
     background-color: white;
     height: 70%;
 }
+
+.serv-create-modal > h1 {
+    margin-bottom: 0;
+    font-weight: 800 !important;
+}
+
+.serv-create-modal > p {
+    margin-top: 5px;
+    font-weight: lighter;
+}
