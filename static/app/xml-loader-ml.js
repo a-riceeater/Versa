@@ -2,7 +2,7 @@ let completed = 0;
 
 const sl_scroller = new XMLHttpRequest();
 
-sl_scroller.open("GET", "/app/user-serv-scroll-l");
+sl_scroller.open("GET", "/app/widget/k1tBte9Ob");
 sl_scroller.send();
 
 sl_scroller.addEventListener("load", () => {

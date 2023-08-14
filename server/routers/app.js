@@ -17,7 +17,8 @@ app.get("/self", middle.authenticateToken, (req, res) => {
     res.send(data);
 })
 
-app.get("/user-serv-scroll-l", middle.authenticateToken, (req, res) => {
+// user left scroller
+app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
     const data = `
     <div class="wrapper-sl-i">
         <img src="/versa.png">
