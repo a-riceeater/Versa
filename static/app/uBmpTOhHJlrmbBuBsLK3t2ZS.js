@@ -12,3 +12,13 @@ const vt = {
         console.log(`%c[${a}]`, "color: purple", b);
     }
 }
+
+class ErrorModal {
+    title = "An error occured."
+    body = "Error details will appear here."
+    callback = null
+
+    constructor () {
+        
+    }
+}
