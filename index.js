@@ -17,7 +17,8 @@ app.use(favicon(path.join(__dirname, 'static', 'versa.png')));
 
 var corsoptions = {
     origin: '*',
-    credentials: true };
+    credentials: true
+};
 
 app.use(cors(corsoptions));
 
