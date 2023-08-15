@@ -29,7 +29,7 @@
     height: 40%;
 }
 
-.serv-create-modal > #serv-mo-t {
+.serv-create-modal > .serv-mo-t {
     margin-bottom: 0;
     font-weight: 900;
     font-size: 26px;
