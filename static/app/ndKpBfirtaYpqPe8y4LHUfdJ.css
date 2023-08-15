@@ -41,3 +41,40 @@
     font-weight: lighter;
     font-size: 15px;
 }
+
+.serv-create-modal > .create-serv-btn {
+    margin-top: 40px;
+}
+
+.serv-create-modal > .serv-btn {
+    height: 45px;
+    border: .5px solid rgb(147, 147, 147);
+    border-radius: 5px / 5px;
+    cursor: pointer;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.serv-create-modal > .serv-btn:hover {
+    background-color: rgb(211, 210, 210);
+}
+
+.serv-create-modal > .serv-btn > .serv-btn-arrow > img {
+    height: 40px;
+    vertical-align: middle;
+}
+
+.serv-create-modal > .serv-btn > .serv-btn-content {
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+.serv-create-modal > .serv-btn > .serv-btn-arrow {
+    text-align: right;
+    float: right;
+}
