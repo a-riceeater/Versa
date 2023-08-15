@@ -6,6 +6,8 @@
 */
 
 const modal = document.querySelector(".serv-create-modal");
+let listeners = [];
+
 const originalHTML = `
 
 <p id="serv-mo-t">Create a space</p>
@@ -35,4 +37,27 @@ document.querySelector(".serv-create-modal > .create-serv-btn").addEventListener
     <button class="create-serv-confirm">Confirm</button>
     </div>
     `
+
+    setTimeout(() => {
+        let listener = document.querySelector(".serv-create-modal > .c-serv-footer > .create-serv-confirm").addEventListener("click", (e) => {
+            const name = document.querySelector(".serv-create-modal > #create-serv-nainp").value;
+
+            if (name.trim() == "") {
+                document.querySelector(".serv-create-modal > .serve-c-lab").innerText = "Name must be supplied..."
+                document.querySelector(".serv-create-modal > .serve-c-lab").style.color = "red"
+            } else {
+                fetch("/app-api/create-server", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        name: name
+                    })
+                })
+            }
+        })
+
+        listeners.push(listener);
+    })
 })
