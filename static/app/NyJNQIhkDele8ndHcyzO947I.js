@@ -32,6 +32,7 @@ document.querySelector(".serv-create-modal > .create-serv-btn").addEventListener
     <input type="text" id="create-serv-nainp">
 
     <div class="c-serv-footer">
+    <button class="create-serv-confirm">Confirm</button>
     </div>
     `
 })

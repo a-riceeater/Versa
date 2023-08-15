@@ -107,3 +107,18 @@
     height: 60px;
     background-color: rgb(228, 224, 224);
 }
+
+.serv-create-modal > .c-serv-footer > .create-serv-confirm {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    height: 65%;
+    width: 110px;
+    background-color: var(--c1);
+    border: 1px solid var(--c1);
+    border-radius: 5px / 5px;
+    cursor: pointer;
+    color: var(--c4);
+    font-weight: bold;
+}
