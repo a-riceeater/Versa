@@ -30,5 +30,8 @@ document.querySelector(".serv-create-modal > .create-serv-btn").addEventListener
     <p class="serv-mo-t">Name your space</p>
     <p class="serve-c-lab">Space name</p>
     <input type="text" id="create-serv-nainp">
+
+    <div class="c-serv-footer">
+    </div>
     `
 })
