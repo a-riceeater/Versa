@@ -26,7 +26,7 @@
     transition: .1s;
     width: 450px;
     background-color: white;
-    height: 70%;
+    height: 40%;
 }
 
 .serv-create-modal > #serv-mo-t {
@@ -36,14 +36,9 @@
     margin-top: 24px;
 }
 
-.serv-create-modal > #serv-mo-t {
-    margin-top: 10px;
-    font-weight: lighter;
-    font-size: 15px;
-}
-
 .serv-create-modal > .create-serv-btn {
     margin-top: 40px;
+    margin-bottom: 15px;
 }
 
 .serv-create-modal > .serv-btn {
