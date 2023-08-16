@@ -30,6 +30,7 @@ const originalHTML = `
 document.querySelector(".serv-create-modal > .create-serv-btn").addEventListener("click", (e) => {
     modal.innerHTML = `
     <p class="serv-mo-t">Name your space</p>
+    <p class="serv-mo-d">A name is essential to your space. Now your friends can know what its all about!</p>
     <p class="serve-c-lab">Space name</p>
     <input type="text" id="create-serv-nainp" placeholder="Your awesome space name">
 

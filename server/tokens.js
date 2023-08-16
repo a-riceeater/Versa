@@ -1,7 +1,7 @@
-const databaseHandler = require("jdb");
+const dbInstances = require("./dbInstances");
 const path = require("path");
 
-const tokens = databaseHandler.database(path.join(__dirname, "../", "database", "tokens.json"));
+const tokens = dbInstances.tokens;
 
 module.exports = {
     createRandomId: function () {

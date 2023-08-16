@@ -1,10 +1,12 @@
 const express = require("express");
 const path = require("path");
-const databaseHandler = require("jdb");
+const dbInstances = require("../dbInstances");
 const tokenHandler = require("../tokens")
 const middle = require("../middleware")
 
-const accountDb = databaseHandler.database(path.join(__dirname, "../", "../", "database", "accounts.json"))
+const accountDb = dbInstances.accountDb;
+const serverDb = dbInstances.serverDb;
+
 const app = express.Router();
 
 app.get("/start", middle.authAlready, (req, res) => {
@@ -26,7 +28,17 @@ app.post("/create-account", middle.authAlready, (req, res) => {
             })
         } else {
             info.username += `#${Math.floor(Math.random() * (10000 - 1000) + 1000)}`
+
+            const userId = tokenHandler.createRandomId();
+            info.userId = userId;
+            
             accountDb.addRowSync("accounts", info);
+            serverDb.addRowSync("userServers", {
+                user: info.username,
+                userId: userId,
+                owned: [],
+                in: []
+            })
 
             const token = tokenHandler.createToken(info.username, info.email);
             
