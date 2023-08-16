@@ -55,6 +55,18 @@ document.querySelector(".serv-create-modal > .create-serv-btn").addEventListener
                         name: name
                     })
                 })
+                    .then((d) => d.json())
+                    .then((d) => {
+                        if (d.error) {
+                            document.querySelector(".serv-create-modal > .serve-c-lab").innerText = d.error;
+                            document.querySelector(".serv-create-modal > .serve-c-lab").style.color = "red"
+                        }
+                    })
+                    .catch((e) => {
+                        console.error(e);
+                        document.querySelector(".serv-create-modal > .serve-c-lab").innerText = "an error occured... try again later"
+                        document.querySelector(".serv-create-modal > .serve-c-lab").style.color = "red"
+                    })
             }
         })
 
