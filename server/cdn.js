@@ -5,6 +5,7 @@ const middle = require("./middleware");
 const multer = require('multer');
 
 const app = express.Router();
+const upload = multer({ dest: 'uploads/' });
 
 app.post("/upload-file", middle.authenticateToken, (req, res) => {
     
