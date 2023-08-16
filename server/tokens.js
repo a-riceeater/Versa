@@ -20,13 +20,14 @@ module.exports = {
         return result;
     },
 
-    createToken: function (username, email) {
+    createToken: function (username, email, userId) {
         const token = this.createRandomId();
 
         tokens.addRowSync("tokens", {
             "token": token,
             "email": email,
-            "username": username
+            "username": username,
+            "userId": userId
         })
 
         return token;

@@ -1,9 +1,11 @@
 {
-    "servers": [],
-    "userServers": [
-        {
-            "user": "a#4209"
-            
-        }
-    ]
+	"servers": [],
+	"userServers": [
+		{
+			"user": "ewiwa#2661",
+			"userId": "1HFVrfL-129vq6b-FZwZUxT-PH6f79e-VF1BkvQ",
+			"owned": [],
+			"in": []
+		}
+	]
 }

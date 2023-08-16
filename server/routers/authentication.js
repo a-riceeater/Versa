@@ -40,7 +40,7 @@ app.post("/create-account", middle.authAlready, (req, res) => {
                 in: []
             })
 
-            const token = tokenHandler.createToken(info.username, info.email);
+            const token = tokenHandler.createToken(info.username, info.email, userId);
             
             res.cookie("token", token);
             res.send({

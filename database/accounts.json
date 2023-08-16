@@ -1,49 +1,10 @@
 {
 	"accounts": [
 		{
-			"email": "asd",
-			"username": "a#8469",
-			"password": "a"
-		},
-		{
-			"email": "asdddd",
-			"username": "a#8325",
-			"password": "a"
-		},
-		{
 			"email": "ewiwa",
-			"username": "a#5545",
-			"password": "a"
-		},
-		{
-			"email": "sdd",
-			"username": "a#4220",
-			"password": "a"
-		},
-		{
-			"email": "asdddddddasd",
-			"username": "a#8962",
-			"password": "a"
-		},
-		{
-			"email": "[[",
-			"username": "a#6295",
-			"password": "a"
-		},
-		{
-			"email": "asdsadasdsa",
-			"username": "a#7606",
-			"password": "a"
-		},
-		{
-			"email": "p",
-			"username": "a#4209",
-			"password": "a"
-		},
-		{
-			"email": "asdasddd",
-			"username": "a#5769",
-			"password": "a"
+			"username": "ewiwa#2661",
+			"password": "password",
+			"userId": "1HFVrfL-129vq6b-FZwZUxT-PH6f79e-VF1BkvQ"
 		}
 	]
 }
