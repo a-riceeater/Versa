@@ -19,7 +19,7 @@ app.use("/cdn-api/", require(path.join(__dirname, "server", "cdn.js")));
 
 app.use(favicon(path.join(__dirname, 'static', 'versa.png')));
 
-var corsoptions = {
+const corsoptions = {
     origin: '*',
     credentials: true
 };
