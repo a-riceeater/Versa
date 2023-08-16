@@ -42,6 +42,17 @@
 					"id": "omxiTze-M5GFdTu-FET3ncY-OIW94gZ-c9XWqYf"
 				}
 			]
+		},
+		{
+			"name": "asdasd",
+			"serverId": "cK698v5-Pqvnsh9-dESwEBb-oxYR52v-9xQjxDN",
+			"inviteId": "JR00tts",
+			"users": [
+				{
+					"name": "a#3786",
+					"id": "HCXzT14-PAHBb5Q-H3l2KeU-vfgWlz1-S174ijK"
+				}
+			]
 		}
 	],
 	"userServers": [
@@ -90,6 +101,24 @@
 					"name": "mnmkk",
 					"serverId": "H2frWtG-dtvOu4O-Ft6Eg1l-HgaZsBe-2MdQ3M0",
 					"inviteId": "81KHiDM"
+				}
+			]
+		},
+		{
+			"user": "a#3786",
+			"userId": "HCXzT14-PAHBb5Q-H3l2KeU-vfgWlz1-S174ijK",
+			"owned": [
+				{
+					"name": "asdasd",
+					"serverId": "cK698v5-Pqvnsh9-dESwEBb-oxYR52v-9xQjxDN",
+					"inviteId": "JR00tts"
+				}
+			],
+			"in": [
+				{
+					"name": "asdasd",
+					"serverId": "cK698v5-Pqvnsh9-dESwEBb-oxYR52v-9xQjxDN",
+					"inviteId": "JR00tts"
 				}
 			]
 		}
