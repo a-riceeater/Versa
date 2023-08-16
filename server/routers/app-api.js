@@ -17,13 +17,13 @@ class InviteId {
             result += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
         }
 
-        return {id: result}
+        return { id: result }
     }
 }
 
 app.post("/create-server", middle.authenticateToken, (req, res) => {
     const name = req.body.name;
-    
+
     if (name.trim().replaceAll(" ", "") == "") return res.send({
         error: "name must be supplied..."
     })
@@ -31,15 +31,45 @@ app.post("/create-server", middle.authenticateToken, (req, res) => {
     const serverId = tokenHandler.createRandomId();
     const inviteId = new InviteId().id;
 
-    const uRow = serverDb.getRowSync("userServers", "userId", res.userId);
+    const uRow = serverDb.getRowSync("userServers", "userId", res.id);
     const userServersOwned = uRow.owned;
-    
-    for (let i = 0; i < userServersOwned.length; i++) {
-        const s = userServersOwned[i];
 
-        if (s.name == name) return res.send({ error: "you already have a server with this name" })
-        if (i == userServersOwned.length - 1) {
-            userServersOwned.push
+    function write() {
+        uRow.owned.push({
+            name: name,
+            serverId: serverId,
+            inviteId: inviteId
+        })
+
+        uRow.in.push({
+            name: name,
+            serverId: serverId,
+            inviteId: inviteId
+        })
+
+        serverDb.addRowSync("servers", {
+            name: name,
+            serverId: serverId,
+            inviteId: inviteId,
+            users: [{
+                name: res.user,
+                id: res.id
+            }]
+        })
+
+        serverDb.updateRowSync("userServers", "userId", res.userId, uRow);
+
+        res.send({ created: true })
+    }
+
+    if (userServersOwned.length == 0) write();
+    else {
+        for (let i = 0; i < userServersOwned.length; i++) {
+            const s = userServersOwned[i];
+    
+    
+            if (s.name == name) return res.send({ error: "you already have a server with this name" })
+            if (i == userServersOwned.length - 1) write();
         }
     }
 })
