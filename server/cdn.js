@@ -10,3 +10,5 @@ const upload = multer({ dest: 'uploads/' });
 app.post("/upload-file", middle.authenticateToken, (req, res) => {
     
 })
+
+module.exports = app;
