@@ -13,6 +13,7 @@ module.exports = {
             res.user = status.username;
             res.email = status.email;
             res.token = token;
+            res.id = status.userId;
         } else {
             res.clearCookie("token");
             res.redirect("/auth/login");

@@ -31,7 +31,17 @@ app.post("/create-server", middle.authenticateToken, (req, res) => {
     const serverId = tokenHandler.createRandomId();
     const inviteId = new InviteId().id;
 
+    const uRow = serverDb.getRowSync("userServers", "userId", res.userId);
+    const userServersOwned = uRow.owned;
     
+    for (let i = 0; i < userServersOwned.length; i++) {
+        const s = userServersOwned[i];
+
+        if (s.name == name) return res.send({ error: "you already have a server with this name" })
+        if (i == userServersOwned.length - 1) {
+            userServersOwned.push
+        }
+    }
 })
 
 
