@@ -18,6 +18,7 @@ module.exports = {
             res.clearCookie("token");
             res.redirect("/auth/login");
         }
+
         return next();
     },
 

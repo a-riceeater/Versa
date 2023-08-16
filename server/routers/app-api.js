@@ -3,8 +3,33 @@ const path = require("path");
 const dbInstances = require("../dbInstances");
 const middle = require("../middleware");
 const tokenHandler = require("../tokens");
+const rateLimit = require('express-rate-limit')
 
 const app = express.Router();
+
+const smallRequests = rateLimit({
+	windowMs: 30 * 1000,
+	max: 15,
+	standardHeaders: true,
+	legacyHeaders: false, 
+    message: { error: "too many requests. slow down!" }
+})
+
+const medRequests = rateLimit({
+	windowMs: 60 * 1000,
+	max: 30,
+	standardHeaders: true,
+	legacyHeaders: false, 
+    message: { error: "too many requests. slow down!" }
+})
+
+const lotsRequest = rateLimit({
+    windowMs: 60 * 1000,
+    max: 45,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: { error: "too many requests. slow down!" }
+})
 
 const serverDb = dbInstances.serverDb;
 
@@ -21,7 +46,7 @@ class InviteId {
     }
 }
 
-app.post("/create-server", middle.authenticateToken, (req, res) => {
+app.post("/create-server", middle.authenticateToken, smallRequests, (req, res) => {
     const name = req.body.name;
 
     if (name.trim().replaceAll(" ", "") == "") return res.send({
