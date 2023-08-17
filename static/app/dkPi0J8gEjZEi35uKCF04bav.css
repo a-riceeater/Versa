@@ -63,3 +63,22 @@
     cursor: pointer;
     font-family: var(--poppins);
 }
+
+.lsl-serv-icon {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+    background-color: var(--c4);
+    color: white;
+    font-weight: 800;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    cursor: pointer;
+    font-family: var(--dm);
+}

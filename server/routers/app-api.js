@@ -49,9 +49,7 @@ class InviteId {
 app.post("/create-server", middle.authenticateToken, smallRequests, (req, res) => {
     const name = req.body.name;
 
-    if (name.trim().replaceAll(" ", "") == "") return res.send({
-        error: "name must be supplied..."
-    })
+    if (name.trim().replaceAll(" ", "") == "") return res.send({ error: "name must be supplied..." })
 
     const serverId = tokenHandler.createRandomId();
     const inviteId = new InviteId().id;

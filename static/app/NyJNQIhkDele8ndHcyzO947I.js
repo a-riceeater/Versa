@@ -74,3 +74,8 @@ document.querySelector(".serv-create-modal > .create-serv-btn").addEventListener
         listeners.push(listener);
     })
 })
+
+document.querySelector(".shade").addEventListener("click", (e) => {
+    document.querySelectorAll(".modal").forEach(el => el.style.display = "none")
+    e.target.style.display = "none"
+})

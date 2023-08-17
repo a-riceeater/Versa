@@ -2,7 +2,8 @@ const express = require("express");
 const path = require("path");
 const dbInstances = require("../dbInstances");
 const tokenHandler = require("../tokens")
-const middle = require("../middleware")
+const middle = require("../middleware");
+const fs = require("fs");
 
 const accountDb = dbInstances.accountDb;
 const serverDb = dbInstances.serverDb;
@@ -39,6 +40,8 @@ app.post("/create-account", middle.authAlready, (req, res) => {
                 owned: [],
                 in: []
             })
+
+            fs.mkdirSync(path.join(__dirname, "../", "../", "cdn", userId));
 
             const token = tokenHandler.createToken(info.username, info.email, userId);
             

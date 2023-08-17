@@ -121,6 +121,24 @@
 					"inviteId": "JR00tts"
 				}
 			]
+		},
+		{
+			"user": "a#4961",
+			"userId": "dYZ4q7N-7NNnoga-8NTvSh3-qdQri4G-uA55BVy",
+			"owned": [],
+			"in": []
+		},
+		{
+			"user": "a#2520",
+			"userId": "DJOSCMe-CCBIFzh-ehDgLeR-k6CiQwr-z5pzFJ1",
+			"owned": [],
+			"in": [
+				{
+					"name": "asdasd",
+					"serverId": "cK698v5-Pqvnsh9-dESwEBb-oxYR52v-9xQjxDN",
+					"inviteId": "JR00tts"
+				}
+			]
 		}
 	]
 }
