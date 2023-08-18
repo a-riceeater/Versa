@@ -93,4 +93,6 @@
     font-family: var(--dm);
     border-radius: 5px / 5px;
     cursor: default;
+    scale: 0;
+    transition: .25s;
 }
