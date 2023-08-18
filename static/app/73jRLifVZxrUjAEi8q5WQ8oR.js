@@ -17,9 +17,29 @@ sl_scroller.addEventListener("load", () => {
     vt.log("XS-Loader", "Completed load #" + completed)
 
     setTimeout(() => {
-        document.querySelectorAll(".lsl-serv-icon").forEach(el => {
-            el.addEventListener("click", (e) => { })
-            el.addEventListener("mouseover", (e) => {
+        document.querySelectorAll(".lsl-serv-icon").forEach((el, index) => {
+            const tooltip = document.createElement('div');
+            tooltip.classList.add("tooltip-sli-sv-h");
+            tooltip.textContent = el.getAttribute('title');
+
+            document.body.appendChild(tooltip);
+
+            el.addEventListener('mouseover', () => {
+                tooltip.style.transform = 'scale(1)';
+            });
+
+            el.addEventListener('mouseleave', () => {
+                tooltip.style.transform = 'scale(0)';
+            });
+
+            const buttonHeight = 55;
+            const topOffset = 100;
+            const tooltipTop = topOffset + index * buttonHeight + 15 * index;
+
+            tooltip.style.top = `${tooltipTop}px`;
+
+            el.addEventListener("click", (e) => {
+                // go to server
             })
         })
 

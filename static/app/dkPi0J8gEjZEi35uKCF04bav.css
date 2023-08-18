@@ -111,3 +111,32 @@
     border-style: solid;
     transform: translateY(-50%);
 }
+
+.tooltip-sli-sv-h {
+    position: fixed;
+    top: calc(15px + calc(20px / 2));
+    left: 75px;
+    z-index: 3;
+    background-color: var(--c5);
+    padding: 5px;
+    font-family: var(--dm);
+    border-radius: 5px / 5px;
+    cursor: default;
+    user-select: none;
+    transition: transform .1s;
+    transform-origin: left center;
+    transform: scale(0);
+    overflow: visible;
+    display: inline-block;
+}
+
+.tooltip-sli-sv-h::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--c5) transparent transparent;
+    border-style: solid;
+    transform: translateY(-50%);
+}
