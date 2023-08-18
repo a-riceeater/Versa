@@ -85,7 +85,12 @@
 
 .tooltip-sli-vp-h {
     position: fixed;
-    top: calc(15px + calc(35px / 2));
-    left: 65px;
+    top: calc(15px + calc(20px / 2));
+    left: 68px;
     z-index: 3;
+    background-color: var(--c5);
+    padding: 5px;
+    font-family: var(--dm);
+    border-radius: 5px / 5px;
+    cursor: default;
 }
