@@ -1,142 +1,35 @@
 {
 	"servers": [
 		{
-			"name": "ttt",
-			"serverId": "FeD0Bfg-lVmqClX-gpC7FKP-I4mArog-KrggDTG",
-			"inviteId": "lbT4kiu",
+			"name": "asd",
+			"serverId": "Fv7btYV-NvwPqLl-ycpQnq4-ziOVOsQ-3HOhQ1W",
+			"inviteId": "0LHCAfS",
 			"users": [
 				{
-					"name": "ewiwwa#4939"
+					"name": "a#2520",
+					"id": "DJOSCMe-CCBIFzh-ehDgLeR-k6CiQwr-z5pzFJ1"
 				}
-			]
-		},
-		{
-			"name": "tttt",
-			"serverId": "s44ADi6-wHeGfHh-AgAKSfm-6fOwQsF-Zqu3Abk",
-			"inviteId": "nbvtPip",
-			"users": [
-				{
-					"name": "ewiwwa#4939",
-					"id": "omxiTze-M5GFdTu-FET3ncY-OIW94gZ-c9XWqYf"
-				}
-			]
-		},
-		{
-			"name": "a",
-			"serverId": "kbjiFUl-NSQl2dL-dlua2XG-JadKH5V-Vq8CXo7",
-			"inviteId": "wDSv8Sl",
-			"users": [
-				{
-					"name": "ewiwwa#4939",
-					"id": "omxiTze-M5GFdTu-FET3ncY-OIW94gZ-c9XWqYf"
-				}
-			]
-		},
-		{
-			"name": "mnmkk",
-			"serverId": "H2frWtG-dtvOu4O-Ft6Eg1l-HgaZsBe-2MdQ3M0",
-			"inviteId": "81KHiDM",
-			"users": [
-				{
-					"name": "ewiwwa#4939",
-					"id": "omxiTze-M5GFdTu-FET3ncY-OIW94gZ-c9XWqYf"
-				}
-			]
-		},
-		{
-			"name": "asdasd",
-			"serverId": "cK698v5-Pqvnsh9-dESwEBb-oxYR52v-9xQjxDN",
-			"inviteId": "JR00tts",
-			"users": [
-				{
-					"name": "a#3786",
-					"id": "HCXzT14-PAHBb5Q-H3l2KeU-vfgWlz1-S174ijK"
-				}
-			]
+			],
+			"members": 2,
+			"owner": "DJOSCMe-CCBIFzh-ehDgLeR-k6CiQwr-z5pzFJ1"
 		}
 	],
 	"userServers": [
 		{
-			"user": "ewiwwa#4939",
-			"userId": "omxiTze-M5GFdTu-FET3ncY-OIW94gZ-c9XWqYf",
-			"owned": [
-				{
-					"name": "ttt",
-					"serverId": "FeD0Bfg-lVmqClX-gpC7FKP-I4mArog-KrggDTG",
-					"inviteId": "lbT4kiu"
-				},
-				{
-					"name": "tttt",
-					"serverId": "s44ADi6-wHeGfHh-AgAKSfm-6fOwQsF-Zqu3Abk",
-					"inviteId": "nbvtPip"
-				},
-				{
-					"name": "a",
-					"serverId": "kbjiFUl-NSQl2dL-dlua2XG-JadKH5V-Vq8CXo7",
-					"inviteId": "wDSv8Sl"
-				},
-				{
-					"name": "mnmkk",
-					"serverId": "H2frWtG-dtvOu4O-Ft6Eg1l-HgaZsBe-2MdQ3M0",
-					"inviteId": "81KHiDM"
-				}
-			],
-			"in": [
-				{
-					"name": "ttt",
-					"serverId": "FeD0Bfg-lVmqClX-gpC7FKP-I4mArog-KrggDTG",
-					"inviteId": "lbT4kiu"
-				},
-				{
-					"name": "tttt",
-					"serverId": "s44ADi6-wHeGfHh-AgAKSfm-6fOwQsF-Zqu3Abk",
-					"inviteId": "nbvtPip"
-				},
-				{
-					"name": "a",
-					"serverId": "kbjiFUl-NSQl2dL-dlua2XG-JadKH5V-Vq8CXo7",
-					"inviteId": "wDSv8Sl"
-				},
-				{
-					"name": "mnmkk",
-					"serverId": "H2frWtG-dtvOu4O-Ft6Eg1l-HgaZsBe-2MdQ3M0",
-					"inviteId": "81KHiDM"
-				}
-			]
-		},
-		{
-			"user": "a#3786",
-			"userId": "HCXzT14-PAHBb5Q-H3l2KeU-vfgWlz1-S174ijK",
-			"owned": [
-				{
-					"name": "asdasd",
-					"serverId": "cK698v5-Pqvnsh9-dESwEBb-oxYR52v-9xQjxDN",
-					"inviteId": "JR00tts"
-				}
-			],
-			"in": [
-				{
-					"name": "asdasd",
-					"serverId": "cK698v5-Pqvnsh9-dESwEBb-oxYR52v-9xQjxDN",
-					"inviteId": "JR00tts"
-				}
-			]
-		},
-		{
-			"user": "a#4961",
-			"userId": "dYZ4q7N-7NNnoga-8NTvSh3-qdQri4G-uA55BVy",
-			"owned": [],
-			"in": []
-		},
-		{
 			"user": "a#2520",
 			"userId": "DJOSCMe-CCBIFzh-ehDgLeR-k6CiQwr-z5pzFJ1",
-			"owned": [],
+			"owned": [
+				{
+					"name": "asd",
+					"serverId": "Fv7btYV-NvwPqLl-ycpQnq4-ziOVOsQ-3HOhQ1W",
+					"inviteId": "0LHCAfS"
+				}
+			],
 			"in": [
 				{
-					"name": "asdasd",
-					"serverId": "cK698v5-Pqvnsh9-dESwEBb-oxYR52v-9xQjxDN",
-					"inviteId": "JR00tts"
+					"name": "asd",
+					"serverId": "Fv7btYV-NvwPqLl-ycpQnq4-ziOVOsQ-3HOhQ1W",
+					"inviteId": "0LHCAfS"
 				}
 			]
 		}

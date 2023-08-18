@@ -87,7 +87,7 @@
     font-family: var(--dm);
 }
 
-.serv-create-modal > #create-serv-nainp {
+.serv-create-modal > #create-serv-nainp, .serv-create-modal > #join-serv-nainp {
     float: left;
     margin-left: 25px;
     width: calc(100% - 25px * 2);
@@ -177,6 +177,16 @@
     font-size: 15px;
 }
 
+.csv-f-back {
+    position: absolute;
+    left: 15px;
+    transform: translate(0%, -50%);
+    top: 50%;
+    color: black;
+    cursor: pointer;
+    margin-top: 0;
+}
+
 /* Main Loading Screen */
 
 .versa-dftm-loads {
@@ -190,7 +200,7 @@
     transition: .5s;
     cursor: default !important;
     opacity: 1;
-    display: block;
+    display: none;
 }
 
 .versa-dftm-loads > div {

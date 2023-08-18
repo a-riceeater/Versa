@@ -36,4 +36,7 @@ const awaitingAllElementsLoad = setInterval(() => {
     if (completed != 1) return // replace with required amount of elements, when correct, add else and hide loading screen
 
     document.querySelector(".versa-dftm-loads").style.opacity = "0"
+    setTimeout(() => {
+        document.querySelector(".versa-dftm-loads").style.display = "none"
+    }, 200)
 }, 1200)

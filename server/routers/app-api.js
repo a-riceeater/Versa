@@ -77,10 +77,12 @@ app.post("/create-server", middle.authenticateToken, smallRequests, (req, res) =
             users: [{
                 name: res.user,
                 id: res.id
-            }]
+            }],
+            members: 1,
+            owner: res.id
         })
 
-        serverDb.updateRowSync("userServers", "userId", res.userId, uRow);
+        serverDb.updateRowSync("userServers", "userId", res.id, uRow);
 
         res.send({ created: true })
     }
@@ -97,5 +99,37 @@ app.post("/create-server", middle.authenticateToken, smallRequests, (req, res) =
     }
 })
 
+app.post("/join-server", middle.authenticateToken, (req, res) => {
+    const inviteId = req.body.invite;
+
+    if (!inviteId || inviteId.trim().replaceAll(" ", "") == "") return res.send({ error: "invite id required" })
+    const uRow = serverDb.getRowSync("userServers", "userId", res.id);
+    const userServers = uRow.in;
+
+    const server = serverDb.getRowSync("servers", "inviteId", inviteId);
+
+    function write() {
+        uRow.in.push({
+            name: server.name,
+            serverId: server.serverId,
+            inviteId: server.inviteId
+        });
+        serverDb.updateRowSync("userServers", "userId", res.id, uRow);
+
+        server.members++;
+        serverDb.updateRowSync("servers", "serverId", server.serverId, server);
+
+        res.send({ joined: true })
+    }
+
+    if (userServers.length == 0) write();
+    else {
+        for (let i = 0; i < userServers.length; i++) {
+            const s = userServers[i];
+            if (s.serverId == server.serverId) return res.send({ already: true })
+            if (i == userServers.length - 1) return write();
+        }
+    }
+})
 
 module.exports = app;

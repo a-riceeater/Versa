@@ -9,7 +9,7 @@ const app = express.Router();
 const clientVersion = JSON.parse(fs.readFileSync(path.join(__dirname, "../", "../", "current_version.json"))).version;
 
 app.get("/", middle.authenticateToken, (req, res) => {
-    res.redirect("/self")
+    res.redirect("/app/self")
 })
 
 app.get("/self", middle.authenticateToken, (req, res) => {
