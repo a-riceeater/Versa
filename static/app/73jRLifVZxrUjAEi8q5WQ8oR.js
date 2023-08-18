@@ -28,11 +28,6 @@ sl_scroller.addEventListener("load", () => {
             document.querySelector(".serv-create-modal").style.display = "block"
         })
 
-        document.querySelector(".scroller.server-list-l > .wrapper-sl-i").addEventListener("mouseover", () => document.querySelector(".tooltip-sli-vp-h").style.transform = "scale(1)")
-
-        document.querySelector(".scroller.server-list-l > .wrapper-sl-i").addEventListener("mouseleave", () => document.querySelector(".tooltip-sli-vp-h").style.transform = "scale(0)")
-
-
         completed++;
     })
 })

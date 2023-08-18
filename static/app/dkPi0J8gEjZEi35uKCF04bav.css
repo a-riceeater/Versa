@@ -97,17 +97,21 @@
     transition: transform .1s;
     transform-origin: left center;
     transform: scale(0);
-    overflow: visible; /* Important for the arrow to be visible */
-    display: inline-block; /* Ensures the arrow respects inline layout */
+    overflow: visible;
+    display: inline-block;
 }
 
 .tooltip-sli-vp-h::before {
     content: '';
     position: absolute;
-    top: 50%; /* Position the arrow vertically in the middle */
-    left: -10px; /* Adjust this value to control the arrow's position */
-    border-width: 10px 10px 10px 0; /* Arrow shape */
+    top: 50%;
+    left: -10px;
+    border-width: 10px 10px 10px 0;
     border-color: transparent var(--c5) transparent transparent;
     border-style: solid;
-    transform: translateY(-50%); /* Center the arrow vertically */
+    transform: translateY(-50%);
+}
+
+.scroller.server-list-l:hover .tooltip-sli-vp-h {
+    transform: scale(1);
 }
