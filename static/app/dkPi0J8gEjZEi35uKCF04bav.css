@@ -41,7 +41,7 @@
     margin-bottom: 15px;
 }
 
-.wrapper-sl-i > img {
+.wrapper-sl-i>img {
     width: 80%;
 }
 
@@ -86,7 +86,7 @@
 .tooltip-sli-vp-h {
     position: fixed;
     top: calc(15px + calc(20px / 2));
-    left: 68px;
+    left: 75px;
     z-index: 3;
     background-color: var(--c5);
     padding: 5px;
@@ -94,6 +94,20 @@
     border-radius: 5px / 5px;
     cursor: default;
     user-select: none;
-    transition: .25s;
-    scale: 0;
+    transition: transform .1s;
+    transform-origin: left center;
+    transform: scale(0);
+    overflow: visible; /* Important for the arrow to be visible */
+    display: inline-block; /* Ensures the arrow respects inline layout */
+}
+
+.tooltip-sli-vp-h::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Position the arrow vertically in the middle */
+    left: -10px; /* Adjust this value to control the arrow's position */
+    border-width: 10px 10px 10px 0; /* Arrow shape */
+    border-color: transparent var(--c5) transparent transparent;
+    border-style: solid;
+    transform: translateY(-50%); /* Center the arrow vertically */
 }
