@@ -111,7 +111,3 @@
     border-style: solid;
     transform: translateY(-50%);
 }
-
-.scroller.server-list-l:hover .tooltip-sli-vp-h {
-    transform: scale(1);
-}
