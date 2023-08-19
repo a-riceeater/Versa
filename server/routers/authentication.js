@@ -14,6 +14,10 @@ app.get("/start", middle.authAlready, (req, res) => {
     res.sendFile(path.join(__dirname, "../../", "html", "authentication", "start.html"));
 })
 
+app.get("/login", middle.authAlready, (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "../", "html", "authentication", "login.html"))
+})
+
 app.post("/create-account", middle.authAlready, (req, res) => {
     setTimeout(() => {
         const info = req.body;

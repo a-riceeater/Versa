@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+.c-l {
+    height: 320px !important;
+}
+
 body {
     background-color: var(--c2);
 }
