@@ -34,6 +34,14 @@ app.get("/cdn", (req, res) => {
     res.redirect("/");
 })
 
+app.get("/legal/terms", (req, res) => {
+    res.sendFile(path.join(__dirname, "html", "legal", "terms.html"))
+})
+
+app.get("/legal/privacy", (req, res) => {
+    res.sendFile(path.join(__dirname, "html", "legal", "privacy.html"))
+})
+
 app.get("*", (req, res) => {
     res.sendStatus(404);
 })

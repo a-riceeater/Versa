@@ -109,3 +109,21 @@ body {
         transform: scale(1.0);
     }
 }
+
+.terms-section {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+}
+
+.terms-section > a {
+    text-decoration: none;
+    color: var(--c4);
+    margin-left: 8px;
+    font-family: var(--dm);
+    font-size: 12px;
+}
+
+.terms-section > a:hover {
+    text-decoration: underline;
+}
