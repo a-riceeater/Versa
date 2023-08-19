@@ -1,3 +1,10 @@
 {
-	"accounts": []
+	"accounts": [
+		{
+			"email": "asd",
+			"username": "a#7866",
+			"password": "a",
+			"userId": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
+		}
+	]
 }

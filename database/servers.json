@@ -1,4 +1,11 @@
 {
 	"servers": [],
-	"userServers": []
+	"userServers": [
+		{
+			"user": "a#7866",
+			"userId": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR",
+			"owned": [],
+			"in": []
+		}
+	]
 }

@@ -13,41 +13,59 @@ function submit() {
     })
 
     if (failed) return
-    fetch("/auth/create-account", {
+
+    fetch("/auth/login", {
         method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
             email: document.getElementById("email_inp").value,
-            username: document.getElementById("username_inp").value,
             password: document.getElementById("password_inp").value
         })
     })
-    .then((d) => d.json())
-    .then((d) => {
-        document.getElementById("confirm-button").innerHTML = "Confirm"
-        if (d.error) {
+        .then((d) => d.json())
+        .then((d) => {
+            if (d.success) window.location = "/app/self"
+            else {
+                document.getElementById("confirm-button").innerHTML = "Confirm"
+
+                document.querySelectorAll(".label").forEach(e => {
+                    e.innerText = "email/password is invalid"
+                    e.style.color = "red"
+                })
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            document.getElementById("confirm-button").innerHTML = "Confirm"
+
             document.querySelectorAll(".label").forEach(e => {
                 let old = e.innerText;
-                e.innerText = d.error
+                e.innerText = "an error occured. try again later"
                 e.style.color = "red"
-        
+
                 setTimeout(() => {
-                    if (old == d.error) return;
-        
+                    if (old == "AN ERROR OCCURED. TRY AGAIN LATER") return;
+
                     e.innerText = old
                     e.style.color = "white"
                 }, 2500);
             })
-        } else {
-            window.location = "/app/self"
-        }
-    })
+        })
 }
+
+document.querySelector("#confirm-button").addEventListener("click", submit);
+
+document.querySelectorAll(".text-inp").forEach(e => {
+    e.addEventListener("keyup", (e) => {
+        if (e.key === "Enter") submit();
+    })
+})
 
 function error() {
     document.getElementById("confirm-button").innerHTML = "Confirm"
+
     document.querySelectorAll(".label").forEach(e => {
         let old = e.innerText;
         e.innerText = "all inputs are required..."
@@ -61,11 +79,3 @@ function error() {
         }, 2500);
     })
 }
-
-document.querySelector("#confirm-button").addEventListener("click", submit);
-
-document.querySelectorAll(".text-inp").forEach(e => {
-    e.addEventListener("keyup", (e) => {
-        if (e.key === "Enter") submit();
-    })
-})
