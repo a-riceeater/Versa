@@ -20,7 +20,7 @@ sl_scroller.addEventListener("load", () => {
         document.querySelectorAll(".lsl-serv-icon").forEach((el, index) => {
             const tooltip = document.createElement('div');
             tooltip.classList.add("tooltip-sli-sv-h");
-            tooltip.textContent = el.getAttribute('title');
+            tooltip.textContent = el.getAttribute('data-name');
 
             document.body.appendChild(tooltip);
 
@@ -52,15 +52,52 @@ sl_scroller.addEventListener("load", () => {
 
         document.querySelector(".scroller.server-list-l > .wrapper-sl-i").addEventListener("mouseleave", () => document.querySelector(".tooltip-sli-vp-h").style.transform = "scale(0)")
 
+        document.querySelector(".scroller.server-list-l > .section-sl-ser > .wrapper-js-sl").addEventListener("mouseover", () => document.querySelector(".tooltip-sli-csp-h").style.transform = "scale(1)")
+
+        document.querySelector(".scroller.server-list-l > .section-sl-ser > .wrapper-js-sl").addEventListener("mouseleave", () => document.querySelector(".tooltip-sli-csp-h").style.transform = "scale(0)")
+
+
         completed++;
     })
 })
 
+const friendsMSQ = new XMLHttpRequest();
+friendsMSQ.open("GET", "/app/widget/KjitLwgKq6AjPyLi28BSy7SXQ");
+friendsMSQ.send();
+
+friendsMSQ.addEventListener("load", () => {
+    document.querySelector(".scroller.main-container").innerHTML = friendsMSQ.responseText;
+
+    setTimeout(() => {
+        document.querySelectorAll(".main-container > .scbar-fri-m-o > .scb-frmo-btn").forEach(e => {
+
+            e.addEventListener("click", (evt) => {
+                document.querySelectorAll(".main-container > .scbar-fri-m-o > .scb-frmo-btn.selected").forEach(el => el.classList.remove("selected"));
+
+                   
+                    evt.target.classList.add("selected");
+
+            })
+        })
+
+        completed++;
+    })
+})
+
+const friendLBar = new XMLHttpRequest();
+friendLBar.open("GET", "/app/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO");
+friendLBar.send();
+
+friendLBar.addEventListener("load", (e) => {
+    document.querySelector('.fr-chan-list-l').innerHTML = friendLBar.responseText;
+    completed++;
+})
+
 const awaitingAllElementsLoad = setInterval(() => {
-    if (completed != 1) return // replace with required amount of elements, when correct, add else and hide loading screen
+    if (completed != 3) return // replace with required amount of elements when finished
 
     document.querySelector(".versa-dftm-loads").style.opacity = "0"
     setTimeout(() => {
         document.querySelector(".versa-dftm-loads").style.display = "none"
     }, 200)
-}, 1200)
+}, 1200);

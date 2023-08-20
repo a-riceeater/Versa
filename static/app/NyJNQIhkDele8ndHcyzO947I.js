@@ -130,6 +130,14 @@ function createListeners() {
                             if (d.error) {
                                 document.querySelector(".serv-create-modal > .serve-c-lab").innerText = d.error;
                                 document.querySelector(".serv-create-modal > .serve-c-lab").style.color = "red"
+                            } else {
+                                document.querySelectorAll(".modal").forEach(el => el.style.display = "none")
+                                document.querySelector(".shade").style.display = "none"
+                                modal.innerHTML = originalHTML;
+                                createListeners();
+
+                                sl_scroller.open("GET", "/app/widget/k1tBte9Ob");
+                                sl_scroller.send();
                             }
                         })
                         .catch((e) => {

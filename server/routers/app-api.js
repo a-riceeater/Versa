@@ -126,6 +126,7 @@ app.post("/join-server", middle.authenticateToken, (req, res) => {
     else {
         for (let i = 0; i < userServers.length; i++) {
             const s = userServers[i];
+            if (!s) continue
             if (s.serverId == server.serverId) return res.send({ already: true })
             if (i == userServers.length - 1) return write();
         }

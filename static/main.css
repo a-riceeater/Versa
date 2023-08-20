@@ -14,4 +14,10 @@
     --c3: #DADAD9;
     --c4: #36382E;
     --c5: #5BC3EB;
+    --c6: #282a21;
+}
+
+button.disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
 }

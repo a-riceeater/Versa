@@ -33,7 +33,13 @@ module.exports = {
         return token;
     },
 
-    verifyToken: (token) => tokens.getRowSync("tokens", "token", token)
+    verifyToken: (token) => tokens.getRowSync("tokens", "token", token),
+
+    deleteToken: (token) => {
+        try {
+            tokens.deleteRow("tokens", "token", token);
+        } catch (e) { }
+    }
 }
 
 console.log(module.exports.createRandomId());

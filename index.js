@@ -42,6 +42,8 @@ app.get("/legal/privacy", (req, res) => {
     res.sendFile(path.join(__dirname, "html", "legal", "privacy.html"))
 })
 
+app.get("/invite/:inviteId", (req, res) => {})
+
 app.get("*", (req, res) => {
     res.sendStatus(404);
 })

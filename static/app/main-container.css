@@ -1,8 +1,109 @@
 .main-container {
     position: fixed;
     top: 0%;
-    left: 72px;
-    width: calc(100% - 72px);
+    left: calc(72px + 250px);
+    width: calc(100% - 72px - 250px);
     height: 100%;
     background-color: var(--c4);
+}
+
+.main-container > .scbar-fri-m-o {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--c3);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.main-container > .scbar-fri-m-o > .scb-frmo-btn {
+    margin-right: 50px;
+    height: 65%;
+    cursor: pointer;
+    font-family: var(--dm);
+    width: 100px;
+    border-radius: 3.5px / 3.5px;
+}
+
+.main-container > .scbar-fri-m-o > .scb-frmo-btn.friends {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--c2);
+}
+
+.main-container > .scbar-fri-m-o > .scb-frmo-btn.pending {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--c2);
+}
+
+.main-container > .scbar-fri-m-o > .scb-frmo-btn.add {
+    background-color: var(--c5);
+    border: 1px solid var(--c5);
+}
+
+.main-container > .scbar-fri-m-o > .scb-frmo-btn.add.selected {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    color: var(--c1);
+}
+
+.main-container > .scbar-fri-m-o > .scb-frmo-btn.selected {
+    background-color: var(--c6);
+    color: var(--c1);
+}
+
+.main-container > .scbar-fri-sect {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: calc(100% - 50px);
+    width: 100%;
+}
+
+.main-container > .scbar-fri-sect.add > div {
+    position: absolute;
+    left: calc(72px + 250px + 20px);
+    top: 20%;
+    transform: translate(-50%, -50%);
+    font-family: var(--dm);
+}
+
+.main-container > .scbar-fri-sect > div > h1 {
+    color: var(--c1);
+    margin-bottom: -5px;
+}
+
+.main-container > .scbar-fri-sect > div > p {
+    color: var(--c2);
+}
+
+.main-container > .scbar-fri-sect > div > input {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    outline: 0;
+    background-color: var(--c6);
+    border: 1px solid var(--c6);
+    border-radius: 5px / 5px;
+    color: var(--c5);
+    font-family: var(--dm);
+}
+
+.main-container > .scbar-fri-sect > div > button {
+    float: right;
+    margin-top: 10px;
+    height: 35px;
+    background-color: var(--c1);
+    border: 1px solid var(--c1);
+    cursor: pointer;
+    color: var(--c2);
+    width: 100px;
+    font-family: var(--dm);
+    border-radius: 2.5px / 2.5px;
 }
