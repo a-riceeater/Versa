@@ -59,6 +59,18 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     <button class="scb-frmo-btn add">Add Friend</button>
     </div>
 
+    <div class="scbar-fri-sect online">
+    </div>
+
+    <div class="scbar-fri-sect all">
+    </div>
+
+    <div class="scbar-fri-sect pending">
+    </div>
+
+    <div class="scbar-fri-sect blocked">
+    </div>
+
     <div class="scbar-fri-sect add">
         <div>
             <h1>Add a friend</h1>
