@@ -62,6 +62,10 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
         pending += friendRow.pendingFrom[i].username;
     }
 
+    for (let i = 0; i < friendRow.pendingTo.length; i++) {
+        pending += friendRow.pendingTo[i].username;
+    }
+
     const data = `
     <div class="scbar-fri-m-o">
     <button class="scb-frmo-btn online selected">Online</button>
