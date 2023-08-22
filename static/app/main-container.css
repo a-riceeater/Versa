@@ -165,5 +165,18 @@
 
 .main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr {
     float: right;
-    background-color: ;
+    background-color: var(--c6);
+    color: white;
+    font-weight: normal;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 1px solid var(--c6);
+    height: 40px;
+    width: 40px;
+    transition: .1s;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr:hover {
+    color: red;
 }
