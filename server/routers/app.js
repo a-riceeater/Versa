@@ -67,7 +67,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
         <div class="scb-frmo-frbtn">
         <span class="title">${friendRow.pendingTo[i].username}</span>
         <span class="desc">Outgoing Friend Request</span>
-        <button>X</button>
+        <button class="cancel-fr">X</button>
         </div>
         `
     }
@@ -105,7 +105,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 
             <br>
             <input type="text" id="scbar-fri-add-ival" placeholder="someone#1234" spellcheck="false" autocomplete="false">
-            <button>Add friend</button>
+            <button class="send-fr">Add friend</button>
         </div>
     </div>
     `

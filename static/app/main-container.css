@@ -95,7 +95,7 @@
     font-family: var(--dm);
 }
 
-.main-container > .scbar-fri-sect > div > button {
+.main-container > .scbar-fri-sect > div > button.send-fr {
     float: right;
     margin-top: 10px;
     height: 35px;
@@ -163,6 +163,7 @@
     font-size: 13px;
 }
 
-.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button {
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr {
     float: right;
+    background-color: ;
 }
