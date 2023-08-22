@@ -156,15 +156,18 @@ app.post("/send-friend", middle.authenticateToken, (req, res) => {
     function write() {
         const selfRow = friendDb.getRowSync("friends", "userId", res.id);
 
-        selfRow.friends.push({
+        selfRow.pendingTo.push({
             username: toUser.username,
             userId: toUser.userId
         })
 
-        tuf.push({
+        toUserFriends.pendingFrom.push({
             username: res.user,
             userId: res.id
         })
+
+        friendDb.updateRowSync("friends", "userId", res.id, selfRow);
+        friendDb.updateRowSync("friends", "userId", toUser.userId, toUserFriends);
 
         res.send({ added: true });
     }

@@ -4,15 +4,25 @@
 			"user": "a#1288",
 			"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
 			"friends": [],
-            "pendingTo": [],
-            "pendingFrom": []
+			"pendingTo": [
+				{
+					"username": "a#6419",
+					"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr"
+				}
+			],
+			"pendingFrom": []
 		},
 		{
 			"user": "a#6419",
 			"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr",
 			"friends": [],
-            "pendingTo": [],
-            "pendingFrom": []
+			"pendingTo": [],
+			"pendingFrom": [
+				{
+					"username": "a#1288",
+					"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
+				}
+			]
 		}
 	]
 }
