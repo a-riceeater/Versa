@@ -126,3 +126,11 @@
 .main-container > .scbar-fri-sect.selected {
     display: block;
 }
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn {
+    width: 75%;
+    border-top: 1px solid var(--c1);
+    padding-top: 8px;
+    box-sizing: border-box;
+    font-family: var(--dm);
+}
