@@ -63,7 +63,12 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     }
 
     for (let i = 0; i < friendRow.pendingTo.length; i++) {
-        pending += friendRow.pendingTo[i].username;
+        pending += `
+        <div class="scb-frmo-frbtn">
+        <span class="title">${friendRow.pendingTo[i].username}</span>
+        <span class="desc">Outgoing Friend Request</span>
+        </div>
+        `
     }
 
     const data = `
