@@ -50,8 +50,18 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
     res.send(data);
 })
 
+const friendDb = dbInstances.friendDb;
+
 // friends main scroller
 app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res) => {
+    const friendRow = friendDb.getRowSync("friends", "userId", res.id);
+
+    let pending = "";
+
+    for (let i = 0; i < friendRow.pendingFrom.length; i++) {
+        pending += friendRow.pendingFrom[i].username;
+    }
+
     const data = `
     <div class="scbar-fri-m-o">
     <button class="scb-frmo-btn online selected">Online</button>
@@ -71,6 +81,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 
     <div class="scbar-fri-sect pending">
         <p class="scfs-title">PENDING - { pending }</p>
+        ${pending}
     </div>
 
     <div class="scbar-fri-sect blocked">
