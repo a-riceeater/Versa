@@ -1,11 +1,16 @@
+require("dotenv").config();
 const express = require("express");
+const http = require('http')
 const path = require("path");
 const databaseHandler = require("jdb");
 const favicon = require('serve-favicon');
 const cors = require("cors");
-const middle = require("./server/middleware")
+const middle = require("./server/middleware");
 
 const app = express();
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = require("socket.io")(server, { 'force new connection': true });
 
 app.use(express.static(path.join(__dirname, "static")));
 app.use(express.json())
@@ -48,6 +53,9 @@ app.get("*", (req, res) => {
     res.sendStatus(404);
 })
 
-app.listen(6969, () => {
+io.on("connection", (socket) => {
+});
+
+server.listen(6969, () => {
     console.log("Listening at http://localhost:6969")
 })
