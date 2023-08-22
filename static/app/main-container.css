@@ -131,6 +131,33 @@
     width: 75%;
     border-top: 1px solid var(--c1);
     padding-top: 8px;
+    padding-left: 5px;
+    padding-bottom: 8px;
     box-sizing: border-box;
     font-family: var(--dm);
+    cursor: pointer;
+    transition: .1s;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn:hover {
+    background-color: var(--c1);
+    border: 1px solid var(--c1);
+    border-radius: 3.5px / 3.5px;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .title {
+    font-weight: 800;
+    font-size: 18.5px;
+    color: var(--c5);
+    vertical-align: middle;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .desc {
+    font-weight: lighter;
+    margin-left: 10px;
+    vertical-align: middle;
+    color: lightgray;
+    font-size: 13px;
 }
