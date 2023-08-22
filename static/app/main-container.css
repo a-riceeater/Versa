@@ -140,6 +140,7 @@
     overflow: hidden;
     border-radius: 0;
     border: none;
+    height: 57px;
 }
 
 .main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn:hover {
