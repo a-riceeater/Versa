@@ -67,6 +67,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
         <div class="scb-frmo-frbtn">
         <span class="title">${friendRow.pendingTo[i].username}</span>
         <span class="desc">Outgoing Friend Request</span>
+        <button>X</button>
         </div>
         `
     }
