@@ -51,6 +51,19 @@
 			],
 			"members": 1,
 			"owner": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
+		},
+		{
+			"name": "ethan sucks",
+			"serverId": "Yitojg0-IyrjDuX-mK7yd4j-N4wMD8m-inDNkG5",
+			"inviteId": "bwjTNxT",
+			"users": [
+				{
+					"name": "ewiwa-chrome#4389",
+					"id": "R2Geixj-y2maAik-zjVVwmw-zLWJhnl-QjtWbsz"
+				}
+			],
+			"members": 1,
+			"owner": "R2Geixj-y2maAik-zjVVwmw-zLWJhnl-QjtWbsz"
 		}
 	],
 	"userServers": [
@@ -99,6 +112,24 @@
 					"name": "ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
 					"serverId": "3BoxDhs-R3O7tG7-plLqxAm-WpFpZ43-D2xitRu",
 					"inviteId": "W2PSXc2"
+				}
+			]
+		},
+		{
+			"user": "ewiwa-chrome#4389",
+			"userId": "R2Geixj-y2maAik-zjVVwmw-zLWJhnl-QjtWbsz",
+			"owned": [
+				{
+					"name": "ethan sucks",
+					"serverId": "Yitojg0-IyrjDuX-mK7yd4j-N4wMD8m-inDNkG5",
+					"inviteId": "bwjTNxT"
+				}
+			],
+			"in": [
+				{
+					"name": "ethan sucks",
+					"serverId": "Yitojg0-IyrjDuX-mK7yd4j-N4wMD8m-inDNkG5",
+					"inviteId": "bwjTNxT"
 				}
 			]
 		}
