@@ -53,9 +53,12 @@ app.get("*", (req, res) => {
     res.sendStatus(404);
 })
 
+const socketIds = {};
+
 io.on("connection", (socket) => {
 });
 
 server.listen(6969, () => {
     console.log("Listening at http://localhost:6969")
 })
+

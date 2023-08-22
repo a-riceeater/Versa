@@ -1,106 +1,17 @@
 {
-	"servers": [
-		{
-			"name": "nn",
-			"serverId": "YjAtEn4-FnOQ3pI-d3oD1BE-5GoWXlF-4iU0Ndi",
-			"inviteId": "ddDiyc8",
-			"users": [
-				{
-					"name": "a#7866",
-					"id": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
-				}
-			],
-			"members": 1,
-			"owner": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
-		},
-		{
-			"name": "tysm broski",
-			"serverId": "GhzYnqp-2a64Ko1-zxMj3P5-6Nl2asF-P8piEtm",
-			"inviteId": "zIxFRWs",
-			"users": [
-				{
-					"name": "a#7866",
-					"id": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
-				}
-			],
-			"members": 1,
-			"owner": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
-		},
-		{
-			"name": "aaaaaaaaaaaaaaa'",
-			"serverId": "ECW52oC-wDwNUSN-vBiPPsU-PvGiHab-Anxwh2R",
-			"inviteId": "bISEaEt",
-			"users": [
-				{
-					"name": "a#7866",
-					"id": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
-				}
-			],
-			"members": 1,
-			"owner": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
-		},
-		{
-			"name": "ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
-			"serverId": "3BoxDhs-R3O7tG7-plLqxAm-WpFpZ43-D2xitRu",
-			"inviteId": "W2PSXc2",
-			"users": [
-				{
-					"name": "a#7866",
-					"id": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
-				}
-			],
-			"members": 1,
-			"owner": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR"
-		}
-	],
+	"servers": [],
 	"userServers": [
 		{
-			"user": "a#7866",
-			"userId": "dO1MwIb-8lqn3uS-yChgYVM-DNmrK0e-3ZEn4TR",
-			"owned": [
-				{
-					"name": "nn",
-					"serverId": "YjAtEn4-FnOQ3pI-d3oD1BE-5GoWXlF-4iU0Ndi",
-					"inviteId": "ddDiyc8"
-				},
-				{
-					"name": "tysm broski",
-					"serverId": "GhzYnqp-2a64Ko1-zxMj3P5-6Nl2asF-P8piEtm",
-					"inviteId": "zIxFRWs"
-				},
-				{
-					"name": "aaaaaaaaaaaaaaa'",
-					"serverId": "ECW52oC-wDwNUSN-vBiPPsU-PvGiHab-Anxwh2R",
-					"inviteId": "bISEaEt"
-				},
-				{
-					"name": "ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
-					"serverId": "3BoxDhs-R3O7tG7-plLqxAm-WpFpZ43-D2xitRu",
-					"inviteId": "W2PSXc2"
-				}
-			],
-			"in": [
-				{
-					"name": "nn",
-					"serverId": "YjAtEn4-FnOQ3pI-d3oD1BE-5GoWXlF-4iU0Ndi",
-					"inviteId": "ddDiyc8"
-				},
-				{
-					"name": "tysm broski",
-					"serverId": "GhzYnqp-2a64Ko1-zxMj3P5-6Nl2asF-P8piEtm",
-					"inviteId": "zIxFRWs"
-				},
-				{
-					"name": "aaaaaaaaaaaaaaa'",
-					"serverId": "ECW52oC-wDwNUSN-vBiPPsU-PvGiHab-Anxwh2R",
-					"inviteId": "bISEaEt"
-				},
-				{
-					"name": "ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
-					"serverId": "3BoxDhs-R3O7tG7-plLqxAm-WpFpZ43-D2xitRu",
-					"inviteId": "W2PSXc2"
-				}
-			]
+			"user": "a#1288",
+			"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
+			"owned": [],
+			"in": []
+		},
+		{
+			"user": "a#6419",
+			"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr",
+			"owned": [],
+			"in": []
 		}
 	]
 }
