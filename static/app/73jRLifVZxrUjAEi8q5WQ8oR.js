@@ -74,9 +74,10 @@ friendsMSQ.addEventListener("load", () => {
             e.addEventListener("click", (evt) => {
                 document.querySelectorAll(".main-container > .scbar-fri-m-o > .scb-frmo-btn.selected").forEach(el => el.classList.remove("selected"));
 
-                   
-                    evt.target.classList.add("selected");
+                evt.target.classList.add("selected");
 
+                document.querySelectorAll(".scbar-fri-sect.selected").forEach(e => e.classList.remove("selected"))
+                document.querySelector(`.main-container > .scbar-fri-sect.${evt.target.getAttribute("class").split(" ")[1]}`).classList.add("selected")
             })
         })
 

@@ -54,21 +54,27 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
 app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res) => {
     const data = `
     <div class="scbar-fri-m-o">
-    <button class="scb-frmo-btn friends selected">Friends</button>
+    <button class="scb-frmo-btn online selected">Online</button>
+    <button class="scb-frmo-btn all">All</button>
     <button class="scb-frmo-btn pending">Pending</button>
+    <button class="scb-frmo-btn blocked">Blocked</button>
     <button class="scb-frmo-btn add">Add Friend</button>
     </div>
 
-    <div class="scbar-fri-sect online">
+    <div class="scbar-fri-sect online selected">
+        <p class="scfs-title">ONLINE - { online }</p>
     </div>
 
     <div class="scbar-fri-sect all">
+        <p class="scfs-title">ALL - { all }</p>
     </div>
 
     <div class="scbar-fri-sect pending">
+        <p class="scfs-title">PENDING - { pending }</p>
     </div>
 
     <div class="scbar-fri-sect blocked">
+        <p class="scfs-title">BLOCKED - { blocked }</p>
     </div>
 
     <div class="scbar-fri-sect add">

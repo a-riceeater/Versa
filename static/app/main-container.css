@@ -29,7 +29,7 @@
     border-radius: 3.5px / 3.5px;
 }
 
-.main-container > .scbar-fri-m-o > .scb-frmo-btn.friends {
+.main-container > .scbar-fri-m-o > .scb-frmo-btn.online, .scb-frmo-btn.all, .scb-frmo-btn.blocked {
     background-color: transparent;
     border: 1px solid transparent;
     color: var(--c2);
@@ -67,7 +67,7 @@
 
 .main-container > .scbar-fri-sect.add > div {
     position: absolute;
-    left: calc(72px + 250px + 20px);
+    left: calc(20px + 250px + 40px);
     top: 20%;
     transform: translate(-50%, -50%);
     font-family: var(--dm);
@@ -106,4 +106,22 @@
     width: 100px;
     font-family: var(--dm);
     border-radius: 2.5px / 2.5px;
+}
+
+.main-container > .scbar-fri-sect {
+    display: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+.main-container > .scbar-fri-sect > .scfs-title {
+    color: var(--c5);
+    font-family: var(--dm);
+    font-weight: 600;
+    font-size: 14.5px;
+}
+
+.main-container > .scbar-fri-sect.selected {
+    display: block;
 }
