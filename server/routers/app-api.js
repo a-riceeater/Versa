@@ -141,6 +141,8 @@ app.post("/send-friend", middle.authenticateToken, (req, res) => {
     const to = req.body.to;
 
     const toUser = accountDb.getRowSync("accounts", "username", to);
+    if (!toUser) return res.send({ error: "This user does not exist!" })
+
     const toUserFriends = friendDb.getRowSync("friends", "userId", toUser.userId);
 
     const tuf = toUserFriends.friends;
@@ -164,7 +166,7 @@ app.post("/send-friend", middle.authenticateToken, (req, res) => {
             userId: res.id
         })
 
-        res.send({ added: true })
+        res.send({ added: true });
     }
 })
 

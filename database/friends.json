@@ -3,12 +3,16 @@
 		{
 			"user": "a#1288",
 			"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
-			"friends": []
+			"friends": [],
+            "pendingTo": [],
+            "pendingFrom": []
 		},
 		{
 			"user": "a#6419",
 			"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr",
-			"friends": []
+			"friends": [],
+            "pendingTo": [],
+            "pendingFrom": []
 		}
 	]
 }

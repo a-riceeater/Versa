@@ -72,7 +72,9 @@ app.post("/create-account", middle.authAlready, (req, res) => {
             friendDb.addRowSync("friends", {
                 user: info.username,
                 userId: userId,
-                friends: []
+                friends: [],
+                pendingTo: [],
+                pendingFrom: []
             });
 
             fs.mkdirSync(path.join(__dirname, "../", "../", "cdn", userId));

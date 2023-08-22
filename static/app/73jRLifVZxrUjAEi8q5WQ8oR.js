@@ -81,6 +81,26 @@ friendsMSQ.addEventListener("load", () => {
             })
         })
 
+        document.querySelector(".main-container > .scbar-fri-sect.add > div > button").addEventListener("click", (e) => {
+            e.target.classList.add("disabled");
+            const input = document.querySelector(".main-container > .scbar-fri-sect.add > div > input");
+            if (input.value.trim() == "") return
+
+            fetch("/app-api/send-friend", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    to: input.value
+                })
+            })
+            .then((d) => d.json())
+            .then((d) => {
+                e.target.classList.remove("disabled");
+            })
+        })
+
         completed++;
     })
 })
