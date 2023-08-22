@@ -32,6 +32,7 @@ const lotsRequest = rateLimit({
 })
 
 const serverDb = dbInstances.serverDb;
+const accountDb = dbInstances.accountDb;
 
 const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
 class InviteId {
@@ -130,6 +131,45 @@ app.post("/join-server", middle.authenticateToken, (req, res) => {
             if (s.serverId == server.serverId) return res.send({ already: true })
             if (i == userServers.length - 1) return write();
         }
+    }
+})
+
+const friendDb = dbInstances.friendDb;
+const messageDb = dbInstances.messageDb;
+
+app.post("/send-friend", middle.authenticateToken, (req, res) => {
+    const to = req.body.to;
+
+    const toUser = accountDb.getRowSync("accounts", "username", to);
+    if (!toUser) return res.send({ error: "This user does not exist!" })
+
+    const toUserFriends = friendDb.getRowSync("friends", "userId", toUser.userId);
+
+    const tuf = toUserFriends.friends;
+
+    if (tuf.length == 0) write();
+    for (let i = 0; i < tuf.length; i++) {
+        if (tuf.userId == toUser.userId) return res.send({ error: "You are already friends with this user!" })
+        if (i == tuf.length - 1) return write();
+    }
+
+    function write() {
+        const selfRow = friendDb.getRowSync("friends", "userId", res.id);
+
+        selfRow.pendingTo.push({
+            username: toUser.username,
+            userId: toUser.userId
+        })
+
+        toUserFriends.pendingFrom.push({
+            username: res.user,
+            userId: res.id
+        })
+
+        friendDb.updateRowSync("friends", "userId", res.id, selfRow);
+        friendDb.updateRowSync("friends", "userId", toUser.userId, toUserFriends);
+
+        res.send({ added: true });
     }
 })
 

@@ -29,7 +29,7 @@
     border-radius: 3.5px / 3.5px;
 }
 
-.main-container > .scbar-fri-m-o > .scb-frmo-btn.friends {
+.main-container > .scbar-fri-m-o > .scb-frmo-btn.online, .scb-frmo-btn.all, .scb-frmo-btn.blocked {
     background-color: transparent;
     border: 1px solid transparent;
     color: var(--c2);
@@ -67,7 +67,7 @@
 
 .main-container > .scbar-fri-sect.add > div {
     position: absolute;
-    left: calc(72px + 250px + 20px);
+    left: calc(20px + 250px + 40px);
     top: 20%;
     transform: translate(-50%, -50%);
     font-family: var(--dm);
@@ -95,7 +95,7 @@
     font-family: var(--dm);
 }
 
-.main-container > .scbar-fri-sect > div > button {
+.main-container > .scbar-fri-sect > div > button.send-fr {
     float: right;
     margin-top: 10px;
     height: 35px;
@@ -106,4 +106,78 @@
     width: 100px;
     font-family: var(--dm);
     border-radius: 2.5px / 2.5px;
+    transition: .25s;
+}
+
+.main-container > .scbar-fri-sect {
+    display: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+.main-container > .scbar-fri-sect > .scfs-title {
+    color: var(--c5);
+    font-family: var(--dm);
+    font-weight: 600;
+    font-size: 14.5px;
+}
+
+.main-container > .scbar-fri-sect.selected {
+    display: block;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn {
+    width: 75%;
+    border-top: 1px solid var(--c1) !important;
+    padding-top: 8px;
+    padding-left: 5px;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+    font-family: var(--dm);
+    cursor: pointer;
+    transition: .1s;
+    overflow: hidden;
+    border-radius: 0;
+    border: none;
+    height: 57px;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn:hover {
+    background-color: var(--c1);
+    border: 1px solid var(--c1);
+    border-radius: 3.5px / 3.5px;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .title {
+    font-weight: 800;
+    font-size: 18.5px;
+    color: var(--c5);
+    vertical-align: middle;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .desc {
+    font-weight: lighter;
+    margin-left: 10px;
+    vertical-align: middle;
+    color: lightgray;
+    font-size: 13px;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr {
+    float: right;
+    background-color: var(--c6);
+    color: white;
+    font-weight: normal;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 1px solid var(--c6);
+    height: 40px;
+    width: 40px;
+    transition: .1s;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr:hover {
+    color: red;
 }

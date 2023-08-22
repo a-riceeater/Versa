@@ -7,6 +7,7 @@ const fs = require("fs");
 
 const accountDb = dbInstances.accountDb;
 const serverDb = dbInstances.serverDb;
+const friendDb = dbInstances.friendDb;
 
 const app = express.Router();
 
@@ -67,6 +68,14 @@ app.post("/create-account", middle.authAlready, (req, res) => {
                 owned: [],
                 in: []
             })
+
+            friendDb.addRowSync("friends", {
+                user: info.username,
+                userId: userId,
+                friends: [],
+                pendingTo: [],
+                pendingFrom: []
+            });
 
             fs.mkdirSync(path.join(__dirname, "../", "../", "cdn", userId));
 

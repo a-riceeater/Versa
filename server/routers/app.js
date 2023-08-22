@@ -50,25 +50,52 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
     res.send(data);
 })
 
+const friendDb = dbInstances.friendDb;
+
 // friends main scroller
 app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res) => {
+    const friendRow = friendDb.getRowSync("friends", "userId", res.id);
+
+    let pending = "";
+
+    for (let i = 0; i < friendRow.pendingFrom.length; i++) {
+        pending += friendRow.pendingFrom[i].username;
+    }
+
+    for (let i = 0; i < friendRow.pendingTo.length; i++) {
+        pending += `
+        <div class="scb-frmo-frbtn">
+        <span class="title">${friendRow.pendingTo[i].username}</span>
+        <span class="desc">Outgoing Friend Request</span>
+        <button class="cancel-fr">X</button>
+        </div>
+        `
+    }
+
     const data = `
     <div class="scbar-fri-m-o">
-    <button class="scb-frmo-btn friends selected">Friends</button>
+    <button class="scb-frmo-btn online selected">Online</button>
+    <button class="scb-frmo-btn all">All</button>
     <button class="scb-frmo-btn pending">Pending</button>
+    <button class="scb-frmo-btn blocked">Blocked</button>
     <button class="scb-frmo-btn add">Add Friend</button>
     </div>
 
-    <div class="scbar-fri-sect online">
+    <div class="scbar-fri-sect online selected">
+        <p class="scfs-title">ONLINE - { online }</p>
     </div>
 
     <div class="scbar-fri-sect all">
+        <p class="scfs-title">ALL - { all }</p>
     </div>
 
     <div class="scbar-fri-sect pending">
+        <p class="scfs-title">PENDING - { pending }</p>
+        ${pending}
     </div>
 
     <div class="scbar-fri-sect blocked">
+        <p class="scfs-title">BLOCKED - { blocked }</p>
     </div>
 
     <div class="scbar-fri-sect add">
@@ -78,7 +105,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 
             <br>
             <input type="text" id="scbar-fri-add-ival" placeholder="someone#1234" spellcheck="false" autocomplete="false">
-            <button>Add friend</button>
+            <button class="send-fr">Add friend</button>
         </div>
     </div>
     `
