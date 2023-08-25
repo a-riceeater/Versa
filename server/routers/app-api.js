@@ -173,4 +173,11 @@ app.post("/send-friend", middle.authenticateToken, (req, res) => {
     }
 })
 
+app.get("/user-ureaddm-pending-amt", middle.authenticateToken, (req, res) => {
+    const pendingAmount = friendDb.getRowSync("friends", "userId", res.id).pendingFrom.length;
+    const total = pendingAmount; // add from unread dms, etc
+
+    res.send(total.toString());
+})
+
 module.exports = app;

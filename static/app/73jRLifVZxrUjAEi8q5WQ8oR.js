@@ -109,13 +109,28 @@ const friendLBar = new XMLHttpRequest();
 friendLBar.open("GET", "/app/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO");
 friendLBar.send();
 
-friendLBar.addEventListener("load", (e) => {
+friendLBar.addEventListener("load", () => {
     document.querySelector('.fr-chan-list-l').innerHTML = friendLBar.responseText;
     completed++;
 })
 
+const dmUreadPendingAmt = new XMLHttpRequest();
+dmUreadPendingAmt.open("GET", "/app-api/user-ureaddm-pending-amt");
+dmUreadPendingAmt.send();
+
+dmUreadPendingAmt.addEventListener("load", () => {
+    const amount = parseInt(dmUreadPendingAmt.responseText);
+    const notiElement = document.querySelector(".scroller.server-list-l > .wrapper-sl-i > .wsli-noti-icon");
+
+    if (amount <= 0) notiElement.style.display = "none"
+    else {
+        notiElement.style.display = "flex"
+        notiElement.innerText = amount
+    }
+})
+
 const awaitingAllElementsLoad = setInterval(() => {
-    if (completed != 3) return // replace with required amount of elements when finished
+    if (completed != 4) return // replace with required amount of elements when finished
 
     document.querySelector(".versa-dftm-loads").style.opacity = "0"
     setTimeout(() => {
