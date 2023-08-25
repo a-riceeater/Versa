@@ -70,9 +70,7 @@
     margin-top: 0 !important;
 }
 
-#tb-logo > img {
-    height: 42px;
-    width: 42px;
+#tb-logo > svg {
     vertical-align: middle;
 }
 
