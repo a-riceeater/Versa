@@ -70,7 +70,9 @@
     margin-top: 0 !important;
 }
 
-#tb-logo > svg {
+#tb-logo > img {
+    height: 42px;
+    width: 42px;
     vertical-align: middle;
 }
 
@@ -121,11 +123,10 @@
     background-color: var(--c5);
 }
 
-#ts-b-download > img {
-    height: 50%;
-    margin-right: 15px;
+#ts-b-download > svg {
+    height: 1em;
+    margin-right: 2.5px;
     vertical-align: middle;
-    margin-left: -10px;
 }
 
 #ts-b-download > span {
