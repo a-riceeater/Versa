@@ -55,8 +55,7 @@ sl_scroller.addEventListener("load", () => {
         document.querySelector(".scroller.server-list-l > .section-sl-ser > .wrapper-js-sl").addEventListener("mouseover", () => document.querySelector(".tooltip-sli-csp-h").style.transform = "scale(1)")
 
         document.querySelector(".scroller.server-list-l > .section-sl-ser > .wrapper-js-sl").addEventListener("mouseleave", () => document.querySelector(".tooltip-sli-csp-h").style.transform = "scale(0)")
-
-
+        
         completed++;
     })
 })
@@ -112,6 +111,11 @@ friendsMSQ.addEventListener("load", () => {
                         em.title = "Friend request failed"
                         em.body = d.error;
                         em.spawn();
+                    } else {
+                        const re = new ErrorModal();
+                        re.title = "Friend request sent"
+                        re.body = "Your friend request was sucessfully sent to " + input.value
+                        re.spawn();
                     }
                 })
             completed++;
