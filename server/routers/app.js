@@ -90,7 +90,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     </div>
 
     <div class="scbar-fri-sect pending">
-        <p class="scfs-title">PENDING - { pending }</p>
+        <p class="scfs-title">PENDING - ${(friendRow.pendingFrom.length + friendRow.pendingTo.length).toString()}</p>
         ${pending}
     </div>
 
