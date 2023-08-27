@@ -106,8 +106,12 @@ friendsMSQ.addEventListener("load", () => {
                     document.querySelector(".main-container > .scbar-fri-sect.add > div > button").classList.remove("disabled");
                     if (d.error) {
                         const q = document.querySelector(".main-container > .scbar-fri-sect.add.selected > div > .error");
-                        q.innerText = d.error;
-                        setTimeout(() => q.innerText = "", 1500)
+                        //q.innerText = d.error;
+                        //setTimeout(() => q.innerText = "", 1500)
+                        const em = new ErrorModal();
+                        em.title = "User not found"
+                        em.body = "This user could not be found."
+                        em.spawn();
                     }
                 })
             completed++;
