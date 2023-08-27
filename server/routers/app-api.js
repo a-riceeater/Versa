@@ -246,7 +246,16 @@ app.post("/accept-incoming-fr", middle.authenticateToken, (req, res) => {
     }
 })
 
-app.get("/update-active/:active", middle.authenticateToken, (req, res) => {}
-)
+const statusDb = dbInstances.statusDb;
+const validStatusActive = ["online", "offline"]
+
+app.get("/update-active/:active", middle.authenticateToken, (req, res) => {
+    const row = statusDb.getRowSync("statuses", "user", res.user);
+
+    if (!validStatusActive.includes(req.params.active)) row.active = "online"
+    else row.active = req.params.active;
+    
+    statusDb.updateRowSync("statuses", "user", res.user, row);
+})
 
 module.exports = app;
