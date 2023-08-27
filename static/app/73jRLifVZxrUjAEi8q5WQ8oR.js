@@ -109,8 +109,8 @@ friendsMSQ.addEventListener("load", () => {
                         //q.innerText = d.error;
                         //setTimeout(() => q.innerText = "", 1500)
                         const em = new ErrorModal();
-                        em.title = "User not found"
-                        em.body = "This user could not be found."
+                        em.title = "Friend request failed"
+                        em.body = d.error;
                         em.spawn();
                     }
                 })
