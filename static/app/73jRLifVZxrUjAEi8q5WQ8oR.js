@@ -126,6 +126,10 @@ friendsMSQ.addEventListener("load", () => {
                         from: ev.target.getAttribute("data-from")
                     })
                 })
+                .then((d) => d.json())
+                .then((d) => {
+                    if (d.completed) el.parentNode.remove();
+                })
             })
         })
     })

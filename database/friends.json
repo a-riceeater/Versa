@@ -6,10 +6,8 @@
 			"friends": [],
 			"pendingTo": [
 				null,
-				{
-					"username": "a#7886",
-					"userId": "b7Km6Hn-Cj12GWN-tC4Wb1G-yY6j4Nk-OsRKgHs"
-				}
+				null,
+				null
 			],
 			"pendingFrom": [
 				{
@@ -24,6 +22,10 @@
 			"friends": [],
 			"pendingTo": [],
 			"pendingFrom": [
+				{
+					"username": "a#1288",
+					"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
+				},
 				{
 					"username": "a#1288",
 					"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
