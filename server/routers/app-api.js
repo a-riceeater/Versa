@@ -182,4 +182,20 @@ app.get("/user-ureaddm-pending-amt", middle.authenticateToken, (req, res) => {
     res.send(total.toString());
 })
 
+app.post("/cancel-outgoing-fr", middle.authenticateToken, (req, res) => {
+    const from = req.body.from;
+    const userFriend = friendDb.getRowSync("friends", "userId", res.id);
+    const pendingFrom = userFriend.pendingTo;
+
+    for (let i = 0; i < pendingFrom.length; i++) {
+        if (pendingFrom[i].username == from) {
+            delete userFriend.pendingTo[i];
+            friendDb.updateRowSync("friends", "userId", res.id, userFriend);
+
+            res.send({ completed: true });
+            return
+        }
+    }
+})
+
 module.exports = app;

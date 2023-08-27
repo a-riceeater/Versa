@@ -59,6 +59,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     let pending = "";
 
     for (let i = 0; i < friendRow.pendingFrom.length; i++) {
+        if (!friendRow.pendingFrom[i]) continue
         pending += `
         <div class="scb-frmo-frbtn">
         <span class="title">${friendRow.pendingFrom[i].username}</span>
@@ -70,11 +71,12 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     }
 
     for (let i = 0; i < friendRow.pendingTo.length; i++) {
+        if (!friendRow.pendingTo[i]) continue
         pending += `
         <div class="scb-frmo-frbtn">
         <span class="title">${friendRow.pendingTo[i].username}</span>
         <span class="desc">Outgoing Friend Request</span>
-        <button class="cancel-fr">X</button>
+        <button class="cancel-fr" data-from="${friendRow.pendingTo[i].username}">X</button>
         </div>
         `
     }

@@ -112,6 +112,22 @@ friendsMSQ.addEventListener("load", () => {
                 })
             completed++;
         }
+
+        // Friend Pending buttons
+
+        document.querySelectorAll(".main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .cancel-fr").forEach(el => {
+            el.addEventListener("click", (ev) => {
+                fetch("/app-api/cancel-outgoing-fr", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        from: ev.target.getAttribute("data-from")
+                    })
+                })
+            })
+        })
     })
 })
 
