@@ -246,4 +246,7 @@ app.post("/accept-incoming-fr", middle.authenticateToken, (req, res) => {
     }
 })
 
+app.get("/update-active/:active", middle.authenticateToken, (req, res) => {}
+)
+
 module.exports = app;
