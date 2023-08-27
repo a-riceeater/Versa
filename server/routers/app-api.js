@@ -190,7 +190,7 @@ app.post("/cancel-outgoing-fr", middle.authenticateToken, (req, res) => {
     for (let i = 0; i < pendingFrom.length; i++) {
         if (!pendingFrom[i]) continue
         if (pendingFrom[i].username == from) {
-            delete userFriend.pendingTo[i];
+            userFriend.pendingTo.splice(i, 1);
             friendDb.updateRowSync("friends", "userId", res.id, userFriend);
 
             res.send({ completed: true });
