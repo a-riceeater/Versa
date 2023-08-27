@@ -26,3 +26,7 @@
 .fr-chan-list-l > .friend-to-ms-fl:hover {
     background-color: var(--c4);
 }
+
+.fr-chan-list-l > .btn.selected {
+    background-color: var(--c4) !important;
+}
