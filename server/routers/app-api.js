@@ -183,18 +183,54 @@ app.get("/user-ureaddm-pending-amt", middle.authenticateToken, (req, res) => {
 })
 
 app.post("/cancel-outgoing-fr", middle.authenticateToken, (req, res) => {
-    const from = req.body.from;
+    const to = req.body.to;
     const userFriend = friendDb.getRowSync("friends", "userId", res.id);
-    const pendingFrom = userFriend.pendingTo;
+    const pendingTo = userFriend.pendingTo;
 
-    for (let i = 0; i < pendingFrom.length; i++) {
-        if (!pendingFrom[i]) continue
-        if (pendingFrom[i].username == from) {
+    for (let i = 0; i < pendingTo.length; i++) {
+        if (!pendingTo[i]) continue
+        if (pendingTo[i].username == to) {
             userFriend.pendingTo.splice(i, 1);
             friendDb.updateRowSync("friends", "userId", res.id, userFriend);
 
             res.send({ completed: true });
             return
+        }
+    }
+})
+
+app.post("/accept-incoming-fr", middle.authenticateToken, (req, res) => {
+    const from = req.body.from;
+    const rowSelf = friendDb.getRowSync("friends", "userId", res.id);
+    const rowThem = friendDb.getRowSync("friends", "user", from);
+
+    for (let i = 0; i < rowSelf.pendingFrom.length; i++) {
+        if (!rowSelf.pendingFrom[i]) continue
+        if (rowSelf.pendingFrom[i].username == from) {
+            rowSelf.pendingFrom.splice(i, 1);
+
+            const chatId = tokenHandler.createRandomId(); 
+            rowSelf.friends.push({
+                user: from,
+                chatId: chatId
+            })
+
+            for (let ii = 0; ii < rowThem.pendingTo.length; ii++) {
+                if (!rowThem.pendingTo[ii]) continue
+                if (rowThem.pendingTo[ii].username == res.user) {
+                    rowThem.pendingTo.splice(ii, 1);
+
+                    rowThem.friends.push({
+                        user: res.user,
+                        chatId: chatId
+                    })
+
+                    friendDb.updateRowSync("friends", "userId", res.id, rowSelf);
+                    friendDb.updateRowSync("friends", "userId", rowThem.userId, rowThem);
+
+                    res.send({ success: true })
+                }
+            }
         }
     }
 })

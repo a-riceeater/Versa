@@ -131,12 +131,26 @@ friendsMSQ.addEventListener("load", () => {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        from: ev.target.getAttribute("data-from")
+                        to: ev.target.getAttribute("data-to")
                     })
                 })
                 .then((d) => d.json())
                 .then((d) => {
                     if (d.completed) el.parentNode.remove();
+                })
+            })
+        })
+
+        document.querySelectorAll(".main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .accept-fr").forEach(el => {
+            el.addEventListener("click", (ev) => {
+                fetch("/app-api/accept-incoming-fr", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        from: ev.target.getAttribute("data-from")
+                    })
                 })
             })
         })
