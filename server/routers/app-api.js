@@ -254,8 +254,12 @@ app.get("/update-active/:active", middle.authenticateToken, (req, res) => {
 
     if (!validStatusActive.includes(req.params.active)) row.active = "online"
     else row.active = req.params.active;
-    
+
     statusDb.updateRowSync("statuses", "user", res.user, row);
+})
+
+app.get("/activity/get-user-status/:user", middle.authenticateToken, (req, res) => {
+    res.json(statusDb.getRowSync("statuses", "user", req.params.user));
 })
 
 module.exports = app;
