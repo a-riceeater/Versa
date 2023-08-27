@@ -181,3 +181,9 @@
 .main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr:hover {
     color: red;
 }
+
+.main-container > .scbar-fri-sect.add.selected > div > .error {
+    color: red;
+    margin-bottom: 5px;
+    display: inline-block;
+}

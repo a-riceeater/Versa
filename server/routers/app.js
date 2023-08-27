@@ -104,6 +104,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
             <p>Insert your friends username and tag in the box below. It's case sensitive!</p>
 
             <br>
+            <span class="error"></span>
             <input type="text" id="scbar-fri-add-ival" placeholder="someone#1234" spellcheck="false" autocomplete="false">
             <button class="send-fr">Add friend</button>
         </div>

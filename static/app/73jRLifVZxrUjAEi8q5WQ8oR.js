@@ -81,8 +81,14 @@ friendsMSQ.addEventListener("load", () => {
             })
         })
 
-        document.querySelector(".main-container > .scbar-fri-sect.add > div > button").addEventListener("click", (e) => {
-            e.target.classList.add("disabled");
+        document.querySelector(".main-container > .scbar-fri-sect.add > div > input").addEventListener("keyup", (e) => {
+            if (e.key == "Enter") submit();
+        })
+
+        document.querySelector(".main-container > .scbar-fri-sect.add > div > button").addEventListener("click", submit);
+
+        function submit() {
+            document.querySelector(".main-container > .scbar-fri-sect.add > div > button").classList.add("disabled");
             const input = document.querySelector(".main-container > .scbar-fri-sect.add > div > input");
             if (input.value.trim() == "") return
 
@@ -95,13 +101,17 @@ friendsMSQ.addEventListener("load", () => {
                     to: input.value
                 })
             })
-            .then((d) => d.json())
-            .then((d) => {
-                e.target.classList.remove("disabled");
-            })
-        })
-
-        completed++;
+                .then((d) => d.json())
+                .then((d) => {
+                    document.querySelector(".main-container > .scbar-fri-sect.add > div > button").classList.remove("disabled");
+                    if (d.error) {
+                        const q = document.querySelector(".main-container > .scbar-fri-sect.add.selected > div > .error");
+                        q.innerText = d.error;
+                        setTimeout(() => q.innerText = "", 1500)
+                    }
+                })
+            completed++;
+        }
     })
 })
 
