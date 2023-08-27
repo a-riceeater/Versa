@@ -164,7 +164,7 @@
     font-size: 13px;
 }
 
-.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr {
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr, button.accept-fr {
     float: right;
     background-color: var(--c6);
     color: white;
@@ -176,10 +176,22 @@
     height: 40px;
     width: 40px;
     transition: .1s;
+    text-align: center;
 }
 
 .main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr:hover {
     color: red;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.accept-fr:hover {
+    fill: white !important;
+}
+
+.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.accept-fr {
+    fill: green !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-container > .scbar-fri-sect.add.selected > div > .error {
