@@ -162,6 +162,7 @@
     vertical-align: middle;
     color: lightgray;
     font-size: 13px;
+    line-height: 40px;
 }
 
 .main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr, button.accept-fr {
