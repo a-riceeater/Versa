@@ -131,7 +131,7 @@ friendsMSQ.addEventListener("load", () => {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        to: ev.target.getAttribute("data-to")
+                        to: el.getAttribute("data-to")
                     })
                 })
                 .then((d) => d.json())
@@ -149,7 +149,7 @@ friendsMSQ.addEventListener("load", () => {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        from: ev.target.getAttribute("data-from")
+                        from: el.getAttribute("data-from")
                     })
                 })
             })

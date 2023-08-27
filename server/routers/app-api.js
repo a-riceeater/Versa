@@ -8,18 +8,18 @@ const rateLimit = require('express-rate-limit')
 const app = express.Router();
 
 const smallRequests = rateLimit({
-	windowMs: 30 * 1000,
-	max: 15,
-	standardHeaders: true,
-	legacyHeaders: false, 
+    windowMs: 30 * 1000,
+    max: 15,
+    standardHeaders: true,
+    legacyHeaders: false,
     message: { error: "too many requests. slow down!" }
 })
 
 const medRequests = rateLimit({
-	windowMs: 60 * 1000,
-	max: 30,
-	standardHeaders: true,
-	legacyHeaders: false, 
+    windowMs: 60 * 1000,
+    max: 30,
+    standardHeaders: true,
+    legacyHeaders: false,
     message: { error: "too many requests. slow down!" }
 })
 
@@ -92,8 +92,8 @@ app.post("/create-server", middle.authenticateToken, smallRequests, (req, res) =
     else {
         for (let i = 0; i < userServersOwned.length; i++) {
             const s = userServersOwned[i];
-    
-    
+
+
             if (s.name == name) return res.send({ error: "you already have a server with this name" })
             if (i == userServersOwned.length - 1) write();
         }
@@ -187,15 +187,26 @@ app.post("/cancel-outgoing-fr", middle.authenticateToken, (req, res) => {
     const userFriend = friendDb.getRowSync("friends", "userId", res.id);
     const pendingTo = userFriend.pendingTo;
 
+    const rowThem = friendDb.getRowSync("friends", "user", to);
+
     for (let i = 0; i < pendingTo.length; i++) {
         if (!pendingTo[i]) continue
         if (pendingTo[i].username == to) {
             userFriend.pendingTo.splice(i, 1);
-            friendDb.updateRowSync("friends", "userId", res.id, userFriend);
 
-            res.send({ completed: true });
-            return
-        }
+            for (let ii = 0; ii < rowThem.pendingFrom.length; ii++) {
+                if (!rowThem.pendingFrom[ii]) continue
+                if (rowThem.pendingFrom[ii].username == res.user) {
+                    rowThem.pendingFrom.splice(ii, 1);
+
+                    friendDb.updateRowSync("friends", "userId", res.id, userFriend);
+                    friendDb.updateRowSync("friends", "userId", rowThem.userId, rowThem);
+
+                    res.send({ completed: true });
+                    return
+                } else if (ii == rowThem.pendingFrom.length - 1) return res.send({ completed: false });
+            }
+        } else if (i == pendingTo.length - 1) return res.send({ completed: false });
     }
 })
 
@@ -209,7 +220,7 @@ app.post("/accept-incoming-fr", middle.authenticateToken, (req, res) => {
         if (rowSelf.pendingFrom[i].username == from) {
             rowSelf.pendingFrom.splice(i, 1);
 
-            const chatId = tokenHandler.createRandomId(); 
+            const chatId = tokenHandler.createRandomId();
             rowSelf.friends.push({
                 user: from,
                 chatId: chatId
@@ -229,9 +240,9 @@ app.post("/accept-incoming-fr", middle.authenticateToken, (req, res) => {
                     friendDb.updateRowSync("friends", "userId", rowThem.userId, rowThem);
 
                     res.send({ success: true })
-                }
+                } else if (ii == rowThem.pendingTo.length - 1) return res.send({ success: false });
             }
-        }
+        } else if (i == rowSelf.pendingFrom.length - 1) return res.send({ success: false });
     }
 })
 
