@@ -3,28 +3,29 @@
 		{
 			"user": "a#1288",
 			"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
-			"friends": [],
+			"friends": [
+				{
+					"user": "a#6419",
+					"chatId": "0R4NHhw-x0YWjeC-pDXyRvX-nnZkpEc-RPZYUEW"
+				}
+			],
 			"pendingTo": [
 				{
 					"username": "a#6419",
 					"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr"
-				},
-				{
-					"username": "a#7886",
-					"userId": "b7Km6Hn-Cj12GWN-tC4Wb1G-yY6j4Nk-OsRKgHs"
 				}
 			],
-			"pendingFrom": [
-				{
-					"username": "a#7886",
-					"userId": "b7Km6Hn-Cj12GWN-tC4Wb1G-yY6j4Nk-OsRKgHs"
-				}
-			]
+			"pendingFrom": []
 		},
 		{
 			"user": "a#6419",
 			"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr",
-			"friends": [],
+			"friends": [
+				{
+					"user": "a#1288",
+					"chatId": "0R4NHhw-x0YWjeC-pDXyRvX-nnZkpEc-RPZYUEW"
+				}
+			],
 			"pendingTo": [],
 			"pendingFrom": [
 				{
@@ -37,18 +38,8 @@
 			"user": "a#7886",
 			"userId": "b7Km6Hn-Cj12GWN-tC4Wb1G-yY6j4Nk-OsRKgHs",
 			"friends": [],
-			"pendingTo": [
-				{
-					"username": "a#1288",
-					"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
-				}
-			],
-			"pendingFrom": [
-				{
-					"username": "a#1288",
-					"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
-				}
-			]
+			"pendingTo": [],
+			"pendingFrom": []
 		}
 	]
 }

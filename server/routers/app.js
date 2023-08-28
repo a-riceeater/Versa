@@ -59,15 +59,24 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     let pending = "";
 
     for (let i = 0; i < friendRow.pendingFrom.length; i++) {
-        pending += friendRow.pendingFrom[i].username;
+        if (!friendRow.pendingFrom[i]) continue
+        pending += `
+        <div class="scb-frmo-frbtn">
+        <span class="title">${friendRow.pendingFrom[i].username}</span>
+        <span class="desc">Incoming Friend Request</span>
+        <button class="accept-fr" data-from="${friendRow.pendingFrom[i].username}">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+        </button>
+        </div>`
     }
 
     for (let i = 0; i < friendRow.pendingTo.length; i++) {
+        if (!friendRow.pendingTo[i]) continue
         pending += `
         <div class="scb-frmo-frbtn">
         <span class="title">${friendRow.pendingTo[i].username}</span>
         <span class="desc">Outgoing Friend Request</span>
-        <button class="cancel-fr">X</button>
+        <button class="cancel-fr" data-to="${friendRow.pendingTo[i].username}">X</button>
         </div>
         `
     }
@@ -90,7 +99,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     </div>
 
     <div class="scbar-fri-sect pending">
-        <p class="scfs-title">PENDING - { pending }</p>
+        <p class="scfs-title">PENDING - ${(friendRow.pendingFrom.length + friendRow.pendingTo.length).toString()}</p>
         ${pending}
     </div>
 
@@ -104,7 +113,8 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
             <p>Insert your friends username and tag in the box below. It's case sensitive!</p>
 
             <br>
-            <input type="text" id="scbar-fri-add-ival" placeholder="someone#1234" spellcheck="false" autocomplete="false">
+            <span class="error"></span>
+            <input type="text" id="scbar-fri-add-ival" placeholder="someone#1234" spellcheck="false" autocomplete="off">
             <button class="send-fr">Add friend</button>
         </div>
     </div>
@@ -117,7 +127,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 
 app.get("/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO", middle.authenticateToken, (req, res) => {
     const data = `
-    <div class="friend-to-ms-fl btn">
+    <div class="friend-to-ms-fl btn selected">
     <svg xmlns="http://www.w3.org/2000/svg" fill="var(--c5)" style="margin-right: 10px" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
     Friends
     </div>

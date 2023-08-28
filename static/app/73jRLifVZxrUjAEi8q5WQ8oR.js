@@ -55,8 +55,7 @@ sl_scroller.addEventListener("load", () => {
         document.querySelector(".scroller.server-list-l > .section-sl-ser > .wrapper-js-sl").addEventListener("mouseover", () => document.querySelector(".tooltip-sli-csp-h").style.transform = "scale(1)")
 
         document.querySelector(".scroller.server-list-l > .section-sl-ser > .wrapper-js-sl").addEventListener("mouseleave", () => document.querySelector(".tooltip-sli-csp-h").style.transform = "scale(0)")
-
-
+        
         completed++;
     })
 })
@@ -81,8 +80,14 @@ friendsMSQ.addEventListener("load", () => {
             })
         })
 
-        document.querySelector(".main-container > .scbar-fri-sect.add > div > button").addEventListener("click", (e) => {
-            e.target.classList.add("disabled");
+        document.querySelector(".main-container > .scbar-fri-sect.add > div > input").addEventListener("keyup", (e) => {
+            if (e.key == "Enter") submit();
+        })
+
+        document.querySelector(".main-container > .scbar-fri-sect.add > div > button").addEventListener("click", submit);
+
+        function submit() {
+            document.querySelector(".main-container > .scbar-fri-sect.add > div > button").classList.add("disabled");
             const input = document.querySelector(".main-container > .scbar-fri-sect.add > div > input");
             if (input.value.trim() == "") return
 
@@ -95,13 +100,60 @@ friendsMSQ.addEventListener("load", () => {
                     to: input.value
                 })
             })
-            .then((d) => d.json())
-            .then((d) => {
-                e.target.classList.remove("disabled");
+                .then((d) => d.json())
+                .then((d) => {
+                    document.querySelector(".main-container > .scbar-fri-sect.add > div > button").classList.remove("disabled");
+                    if (d.error) {
+                        const q = document.querySelector(".main-container > .scbar-fri-sect.add.selected > div > .error");
+                        //q.innerText = d.error;
+                        //setTimeout(() => q.innerText = "", 1500)
+                        const em = new ErrorModal();
+                        em.title = "Friend request failed"
+                        em.body = d.error;
+                        em.spawn();
+                    } else {
+                        const re = new ErrorModal();
+                        re.title = "Friend request sent"
+                        re.body = "Your friend request was sucessfully sent to " + input.value
+                        re.spawn();
+                    }
+                })
+            completed++;
+        }
+
+        // Friend Pending buttons
+
+        document.querySelectorAll(".main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .cancel-fr").forEach(el => {
+            el.addEventListener("click", (ev) => {
+                fetch("/app-api/cancel-outgoing-fr", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        to: el.getAttribute("data-to")
+                    })
+                })
+                .then((d) => d.json())
+                .then((d) => {
+                    if (d.completed) el.parentNode.remove();
+                })
             })
         })
 
-        completed++;
+        document.querySelectorAll(".main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .accept-fr").forEach(el => {
+            el.addEventListener("click", (ev) => {
+                fetch("/app-api/accept-incoming-fr", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        from: el.getAttribute("data-from")
+                    })
+                })
+            })
+        })
     })
 })
 
