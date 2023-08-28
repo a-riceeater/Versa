@@ -259,7 +259,8 @@ app.get("/update-active/:active", middle.authenticateToken, (req, res) => {
 })
 
 app.get("/activity/get-user-status/:user", middle.authenticateToken, (req, res) => {
-    res.json(statusDb.getRowSync("statuses", "user", req.params.user));
+    console.log(req.params.user)
+    res.send(statusDb.getRowSync("statuses", "user", req.params.user));
 })
 
 module.exports = app;
