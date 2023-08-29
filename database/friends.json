@@ -9,12 +9,7 @@
 					"chatId": "0R4NHhw-x0YWjeC-pDXyRvX-nnZkpEc-RPZYUEW"
 				}
 			],
-			"pendingTo": [
-				{
-					"username": "a#6419",
-					"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr"
-				}
-			],
+			"pendingTo": [],
 			"pendingFrom": []
 		},
 		{
@@ -27,12 +22,7 @@
 				}
 			],
 			"pendingTo": [],
-			"pendingFrom": [
-				{
-					"username": "a#1288",
-					"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
-				}
-			]
+			"pendingFrom": []
 		},
 		{
 			"user": "a#7886",

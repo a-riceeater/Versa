@@ -1,0 +1,29 @@
+@import url("./fonts.css");
+
+body {
+    -webkit-app-region: drag;
+    background-color: #cf6b13;
+    user-select: none;
+    cursor: default !important;
+    -webkit-user-drag: none;
+}
+
+div {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-family: "DM Sans", sans-serif;
+    color: #36382E;
+    text-align: center;
+}
+
+body>div>img {
+    margin-bottom: -25px;
+    animation: bounce 1.5s linear infinite;
+}
+
+body>div>h1 {
+    text-align: center;
+    animation: bounce 1.5s linear infinite;
+}
