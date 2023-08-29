@@ -1,0 +1,7 @@
+{
+    "main": "window.js",
+    "scripts": {
+        "dev": "electron ."
+    },
+    "name": "versa"
+}

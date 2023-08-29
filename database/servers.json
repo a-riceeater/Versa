@@ -1,11 +1,37 @@
 {
-	"servers": [],
+	"servers": [
+		{
+			"name": "henwo",
+			"serverId": "1xOkWh8-1eo7kre-0CIO6N4-ud4gCx3-tY4k1DW",
+			"inviteId": "GXwbD5s",
+			"users": [
+				{
+					"name": "a#1288",
+					"id": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
+				}
+			],
+			"members": 1,
+			"owner": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
+		}
+	],
 	"userServers": [
 		{
 			"user": "a#1288",
 			"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
-			"owned": [],
-			"in": []
+			"owned": [
+				{
+					"name": "henwo",
+					"serverId": "1xOkWh8-1eo7kre-0CIO6N4-ud4gCx3-tY4k1DW",
+					"inviteId": "GXwbD5s"
+				}
+			],
+			"in": [
+				{
+					"name": "henwo",
+					"serverId": "1xOkWh8-1eo7kre-0CIO6N4-ud4gCx3-tY4k1DW",
+					"inviteId": "GXwbD5s"
+				}
+			]
 		},
 		{
 			"user": "a#6419",
