@@ -44,6 +44,15 @@ class ContextMenu {
                 ${button.title}
             </div>
             `
+
+        })
+
+        setTimeout(() => {
+          this.element.childNodes.forEach(c => {
+            c.addEventListener("click", (ev) => {
+                alert("Ev")
+            })
+          })      
         })
 
         const x = event.pageX - event.target.offsetLeft;
