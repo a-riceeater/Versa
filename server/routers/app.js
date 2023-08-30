@@ -57,7 +57,9 @@ const statusDb = dbInstances.statusDb;
 app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res) => {
     const friendRow = friendDb.getRowSync("friends", "userId", res.id);
 
-    let pending, onlineF, allF = "";
+    let pending = "";
+    let onlineF = "";
+    let allF = "";
 
     for (let i = 0; i < friendRow.pendingFrom.length; i++) {
         if (!friendRow.pendingFrom[i]) continue
@@ -115,17 +117,17 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 
     <div class="scbar-fri-sect online selected">
         <p class="scfs-title">ONLINE - { online }</p>
-        ${onlineF}
+        ${onlineF.toString().trim()}
     </div>
 
     <div class="scbar-fri-sect all">
         <p class="scfs-title">ALL - { all }</p>
-        ${allF}
+        ${allF.toString().trim()}
     </div>
 
     <div class="scbar-fri-sect pending">
         <p class="scfs-title">PENDING - ${(friendRow.pendingFrom.length + friendRow.pendingTo.length).toString()}</p>
-        ${pending}
+        ${pending.toString().trim()}
     </div>
 
     <div class="scbar-fri-sect blocked">
