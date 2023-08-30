@@ -1,7 +1,8 @@
 {
     "main": "window.js",
     "scripts": {
-        "dev": "electron ."
+        "dev": "electron .",
+        "dw": "npx electron ."
     },
     "name": "versa"
 }
