@@ -139,7 +139,6 @@ const messageDb = dbInstances.messageDb;
 
 app.post("/send-friend", middle.authenticateToken, (req, res) => {
     const to = req.body.to;
-    console.log(`${res.user} sending friend request to ${to}`)
 
     const toUser = accountDb.getRowSync("accounts", "username", to);
     if (!toUser) return res.send({ error: "This user does not exist!" })
