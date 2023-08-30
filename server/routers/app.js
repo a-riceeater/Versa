@@ -91,7 +91,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 
         if (status.active.toLowerCase() === "online") {
             onlineF += `
-            <div class="scb-frmo-frbtn">
+            <div class="scb-frmo-frbtn" data-context-id="friend-button">
             <span class="title">${friend.user}</span>
             <span class="desc">${status.text || ""}</span>
             </div>
@@ -99,7 +99,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
         }
 
         allF += `
-        <div class="scb-frmo-frbtn">
+        <div class="scb-frmo-frbtn" data-context-id="friend-button">
         <span class="title">${friend.user}</span>
         <span class="desc">${status.text || ""}</span>
         </div>

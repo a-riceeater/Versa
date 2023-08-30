@@ -1,7 +1,7 @@
 .context-m {
     position: fixed;
     z-index: 3;
-    background-color: var(--c4);
+    background-color: var(--c2);
     font-family: var(--dm);
     width: 200px;
     height: 250px;
