@@ -51,12 +51,13 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
 })
 
 const friendDb = dbInstances.friendDb;
+const statusDb = dbInstances.statusDb;
 
 // friends main scroller
 app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res) => {
     const friendRow = friendDb.getRowSync("friends", "userId", res.id);
 
-    let pending = "";
+    let pending, onlineF, allF = "";
 
     for (let i = 0; i < friendRow.pendingFrom.length; i++) {
         if (!friendRow.pendingFrom[i]) continue
@@ -81,6 +82,28 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
         `
     }
 
+    for (let i = 0; i < friendRow.friends.length; i++) {
+        if (!friendRow.friends[i]) continue
+        const friend = friendRow.friends[i];
+        const status = statusDb.getRowSync("statuses", "user", friend.user);
+
+        if (status.active.toLowerCase() === "online") {
+            onlineF += `
+            <div class="scb-frmo-frbtn">
+            <span class="title">${friend.user}</span>
+            <span class="desc">${status.text || ""}</span>
+            </div>
+            `
+        }
+
+        allF += `
+        <div class="scb-frmo-frbtn">
+        <span class="title">${friend.user}</span>
+        <span class="desc">${status.text || ""}</span>
+        </div>
+        `
+    }
+
     const data = `
     <div class="scbar-fri-m-o">
     <button class="scb-frmo-btn online selected">Online</button>
@@ -92,10 +115,12 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 
     <div class="scbar-fri-sect online selected">
         <p class="scfs-title">ONLINE - { online }</p>
+        ${onlineF}
     </div>
 
     <div class="scbar-fri-sect all">
         <p class="scfs-title">ALL - { all }</p>
+        ${allF}
     </div>
 
     <div class="scbar-fri-sect pending">

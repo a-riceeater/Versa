@@ -42,4 +42,4 @@ module.exports = {
     }
 }
 
-console.log(module.exports.createRandomId());
+console.log("\u001b[31mSESSION ID: \u001b[0m" + module.exports.createRandomId());

@@ -7,7 +7,9 @@ app.whenReady().then(() => {
         width: 350,
         height: 500,
         webPreferences: {
-            devTools: true
+            devTools: true,
+            nodeIntegration: true,
+            contextIsolation: false
         },
         frame: false,
         darkTheme: true

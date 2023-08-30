@@ -127,7 +127,7 @@
     display: block;
 }
 
-.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn {
+.main-container > .scbar-fri-sect > .scb-frmo-frbtn {
     width: 75%;
     border-top: 1px solid var(--c1) !important;
     padding-top: 8px;
@@ -143,20 +143,20 @@
     height: 57px;
 }
 
-.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn:hover {
+.main-container > .scbar-fri-sect > .scb-frmo-frbtn:hover {
     background-color: var(--c1);
     border: 1px solid var(--c1);
     border-radius: 3.5px / 3.5px;
 }
 
-.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .title {
+.main-container > .scbar-fri-sect > .scb-frmo-frbtn > .title {
     font-weight: 800;
     font-size: 18.5px;
     color: var(--c5);
     vertical-align: middle;
 }
 
-.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > .desc {
+.main-container > .scbar-fri-sect > .scb-frmo-frbtn > .desc {
     font-weight: lighter;
     margin-left: 10px;
     vertical-align: middle;
@@ -165,7 +165,7 @@
     line-height: 40px;
 }
 
-.main-container > .scbar-fri-sect.pending > .scb-frmo-frbtn > button.cancel-fr, button.accept-fr {
+.main-container > .scbar-fri-sect > .scb-frmo-frbtn > button.cancel-fr, button.accept-fr {
     float: right;
     background-color: var(--c6);
     color: white;
