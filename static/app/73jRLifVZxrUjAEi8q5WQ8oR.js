@@ -86,10 +86,13 @@ friendsMSQ.addEventListener("load", () => {
 
         document.querySelector(".main-container > .scbar-fri-sect.add > div > button").addEventListener("click", submit);
 
-        function submit() {
+        function submit(e) {
             document.querySelector(".main-container > .scbar-fri-sect.add > div > button").classList.add("disabled");
             const input = document.querySelector(".main-container > .scbar-fri-sect.add > div > input");
             if (input.value.trim() == "") return
+
+            input.blur();
+            if (e) e.target.blur();
 
             fetch("/app-api/send-friend", {
                 method: "POST",
