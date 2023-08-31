@@ -117,12 +117,12 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     </div>
 
     <div class="scbar-fri-sect online selected">
-        <p class="scfs-title">ONLINE - { online }</p>
+        <p class="scfs-title">ONLINE -  ${onlineF.toString().match(new RegExp("<div", "g")).length || [].length}</p>
         ${onlineF.toString().trim()}
     </div>
 
     <div class="scbar-fri-sect all">
-        <p class="scfs-title">ALL - { all }</p>
+        <p class="scfs-title">ALL - ${allF.toString().match(new RegExp("<div", "g")).length || [].length}</p>
         ${allF.toString().trim()}
     </div>
 
