@@ -8,7 +8,7 @@
     top: 100px;
     left: 100px;
     border-radius: 2.5px / 2.5px;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .cm-btn-o {
@@ -21,6 +21,5 @@
     font-weight: 600;
     border-bottom: 1px solid var(--c4);
     cursor: pointer;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    overflow: hidden;
 }
