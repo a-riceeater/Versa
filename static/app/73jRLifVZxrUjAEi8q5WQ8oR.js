@@ -113,12 +113,12 @@ friendsMSQ.addEventListener("load", () => {
                         const em = new ErrorModal();
                         em.title = "Friend request failed"
                         em.body = d.error;
-                        em.spawn();
+                        em.spawn(() => input.focus());
                     } else {
                         const re = new ErrorModal();
                         re.title = "Friend request sent"
                         re.body = "Your friend request was sucessfully sent to " + input.value
-                        re.spawn();
+                        re.spawn(() => input.focus());
                     }
                 })
             completed++;
