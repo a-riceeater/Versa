@@ -7,6 +7,7 @@ const dbInstances = require("../dbInstances")
 const app = express.Router();
 
 const clientVersion = JSON.parse(fs.readFileSync(path.join(__dirname, "../", "../", "current_version.json"))).version;
+const friendDb = dbInstances.friendDb;
 
 app.get("/", middle.authenticateToken, (req, res) => {
     res.redirect("/app/self")
@@ -34,10 +35,15 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
         `
     }
 
+    const r = friendDb.getRowSync("friends", "userId", res.id);
+    const pendingAmount = r.pendingFrom.length;
+
+    const total = pendingAmount;
+
     const data = `
     <div class="wrapper-sl-i">
         <img src="/versa.png">
-        <span class="wsli-noti-icon">1</span>
+        <span class="wsli-noti-icon" style="display: ${total == 0 ? "none" : "block"}">${total}</span>
     </div>
 
     <div class="section-sl-ser">
@@ -50,7 +56,6 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
     res.send(data);
 })
 
-const friendDb = dbInstances.friendDb;
 const statusDb = dbInstances.statusDb;
 
 // friends main scroller

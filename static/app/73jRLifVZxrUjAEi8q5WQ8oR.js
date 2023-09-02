@@ -168,7 +168,7 @@ friendLBar.addEventListener("load", () => {
     document.querySelector('.fr-chan-list-l').innerHTML = friendLBar.responseText;
     completed++;
 
-    const dmUreadPendingAmt = new XMLHttpRequest();
+    /*const dmUreadPendingAmt = new XMLHttpRequest();
     dmUreadPendingAmt.open("GET", "/app-api/user-ureaddm-pending-amt");
     dmUreadPendingAmt.send();
 
@@ -181,7 +181,7 @@ friendLBar.addEventListener("load", () => {
             notiElement.style.display = "flex"
             notiElement.innerText = amount
         }
-    })
+    })*/
 })
 
 const awaitingAllElementsLoad = setInterval(() => {

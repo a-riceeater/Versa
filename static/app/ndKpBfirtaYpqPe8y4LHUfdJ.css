@@ -200,7 +200,7 @@
     transition: .5s;
     cursor: default !important;
     opacity: 1;
-    display: block;
+    display: none;
 }
 
 .versa-dftm-loads > div {
