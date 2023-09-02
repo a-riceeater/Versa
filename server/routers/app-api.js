@@ -263,4 +263,8 @@ app.get("/activity/get-user-status/:user", middle.authenticateToken, (req, res) 
     res.send(statusDb.getRowSync("statuses", "user", req.params.user));
 })
 
+app.get("/versa", middle.authenticateToken, (req, res) => {
+    res.sendStatus(200);
+})
+
 module.exports = app;
