@@ -1,8 +1,11 @@
-const { app, BrowserWindow, ipcMain, dialog } = require('electron')
-const path = require('path')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const path = require('path');
+
+let updateWindow;
+let appWindow;
 
 app.whenReady().then(() => {
-    const updateWindow = new BrowserWindow({
+    updateWindow = new BrowserWindow({
         width: 350,
         height: 500,
         webPreferences: {
@@ -18,7 +21,11 @@ app.whenReady().then(() => {
 }) // replace with dev url
 
 ipcMain.handle('open-window', async () => {
-     
+    updateWindow.close();  
+    
+    appWindow = new BrowserWindow({
+        
+    })
 })
 
 ipcMain.handle('update-app', async () => {
