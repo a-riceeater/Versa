@@ -37,6 +37,7 @@ ipcMain.handle('open-app', async () => {
     })
 
     appWindow.loadURL(`${productionURL}/app/self`);
+    appWindow.maximize();
 })
 
 ipcMain.handle('update-app', async () => {
