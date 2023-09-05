@@ -12,6 +12,8 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = require("socket.io")(server, { 'force new connection': true });
 
+const version = JSON.parse(require("fs").readFileSync(path.join(__dirname, "current_version.json"), "utf8")).version;
+
 app.use(express.static(path.join(__dirname, "static")));
 app.use(express.json())
 app.use("/cdn/", express.static(path.join(__dirname, "cdn")));
@@ -48,6 +50,10 @@ app.get("/legal/privacy", (req, res) => {
 })
 
 app.get("/invite/:inviteId", (req, res) => {})
+
+app.get("/api/verify-version/:version", (req, res) => {
+    res.send(req.params.version == version);
+})
 
 app.get("*", (req, res) => {
     res.sendStatus(404);

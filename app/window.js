@@ -1,7 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('path')
 
-// win.loadFile('update.html')
 app.whenReady().then(() => {
     const updateWindow = new BrowserWindow({
         width: 350,
@@ -17,3 +16,11 @@ app.whenReady().then(() => {
 
     updateWindow.loadFile(path.join(__dirname, "updates.html"));
 }) // replace with dev url
+
+ipcMain.handle('open-window', async () => {
+     
+})
+
+ipcMain.handle('update-app', async () => {
+    
+})

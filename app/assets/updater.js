@@ -1,7 +1,8 @@
 const version = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "preferences.json"))).version;
 let interval = 5;
 let v;
-const productionURL = "http://localhost:6969"
+const productionURL = "http://localhost:6969";
+const { ipcRenderer } = require("electron");
 
 const update = async () => {
     try {
