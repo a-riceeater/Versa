@@ -173,6 +173,41 @@ app.post("/send-friend", middle.authenticateToken, (req, res) => {
     }
 })
 
+app.post("/remove-friend", middle.authenticateToken, (req, res) => {
+    const friend = req.body.friend;
+
+    const toUser = accountDb.getRowSync("accounts", "username", friend);
+    if (!toUser) return res.send({ error: "This user does not exist!" })
+
+    const friendRow = friendDb.getRowSync("friends", "userId", toUser.userId);
+    const selfRow = friendDb.getRowSync("friends", "userId", res.id);
+    const sfFriends = selfRow.friends;
+    const tuf = friendRow.friends;
+
+    if (sfFriends.length == 0) res.send({ error: "You are not friends with this user!" });
+
+    for (let i = 0; i < sfFriends.length; i++) {
+        if (sfFriends[i].user == toUser.username) return write()
+        if (i == tuf.length - 1) return res.send({ error: "You are not friends with this user!" });
+    }
+
+    function write() {
+
+        for (let i = 0; i < sfFriends.length; i++) {
+            if (sfFriends[i].user == friend) selfRow.friends.splice(i, 1);
+        }
+
+        for (let i = 0; i < tuf; i++) {
+            if (tuf[i].user == res.user) toUser.friends.splice(i, 1);
+        }
+
+        friendDb.updateRowSync("friends", "userId", res.id, selfRow);
+        friendDb.updateRowSync("friends", "userId", toUser.userId, friendRow);
+
+        res.send({ removed: true });
+    }
+})
+
 app.get("/user-ureaddm-pending-amt", middle.authenticateToken, (req, res) => {
     const r = friendDb.getRowSync("friends", "userId", res.id);
     const pendingAmount = r.pendingFrom.length;

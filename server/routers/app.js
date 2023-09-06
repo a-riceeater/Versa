@@ -96,7 +96,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 
         if (status.active.toLowerCase() === "online") {
             onlineF += `
-            <div class="scb-frmo-frbtn" data-context-id="friend-button">
+            <div class="scb-frmo-frbtn" data-context-id="friend-button" data-friend="${friend.user}">
             <span class="title">${friend.user}</span>
             <span class="desc">${status.text || ""}</span>
             </div>
@@ -104,7 +104,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
         }
 
         allF += `
-        <div class="scb-frmo-frbtn" data-context-id="friend-button">
+        <div class="scb-frmo-frbtn" data-context-id="friend-button" data-friend="${friend.user}">
         <span class="title">${friend.user}</span>
         <span class="desc">${status.text || ""}</span>
         </div>
@@ -122,12 +122,12 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     </div>
 
     <div class="scbar-fri-sect online selected">
-        <p class="scfs-title">ONLINE -  ${onlineF.toString().match(new RegExp("<div", "g")).length || [].length}</p>
+        <p class="scfs-title">ONLINE -  ${onlineF.toString().includes("<div") ? onlineF.toString().match(new RegExp("<div", "g")).length || [].length : "0"}</p>
         ${onlineF.toString().trim()}
     </div>
 
     <div class="scbar-fri-sect all">
-        <p class="scfs-title">ALL - ${allF.toString().match(new RegExp("<div", "g")).length || [].length}</p>
+        <p class="scfs-title">ALL - ${allF.toString().includes("<div") ? allF.toString().match(new RegExp("<div", "g")).length || [].length : "0"}</p>
         ${allF.toString().trim()}
     </div>
 

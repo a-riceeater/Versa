@@ -1,14 +1,14 @@
 {
-    "statuses": [
-        {
-            "user": "a#1288",
-            "text": "wsg",
-            "active": "online"
-        },
-        {
-            "user": "a#6419",
-            "text": "wsg",
-            "active": "online"
-        }
-    ]
+	"statuses": [
+		{
+			"user": "a#1288",
+			"text": "wsg",
+			"active": "online"
+		},
+		{
+			"user": "a#6419",
+			"text": "wsg",
+			"active": "online"
+		}
+	]
 }

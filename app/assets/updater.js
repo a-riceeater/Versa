@@ -19,7 +19,7 @@
                     console.log("%c[App]", "color: purple", "Starting app...")
                     ipcRenderer.invoke("open-app")
                 }, 1500)
-                
+
             }
         } catch (err) {
             setTimeout(update, interval * 1000);
