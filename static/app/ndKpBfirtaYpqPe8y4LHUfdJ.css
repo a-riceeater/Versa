@@ -215,6 +215,11 @@
 
 .versa-dftm-loads > div > p {
     margin-top: 0;
+    animation: 1.5s linear infinite bounce;
+}
+
+.versa-dftm-loads > div > img {
+    animation: 1.5s linear infinite bounce;
 }
 
 .versa-dftm-loads > .versa-dftm-vr {

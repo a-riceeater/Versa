@@ -7,6 +7,7 @@ const dbInstances = require("../dbInstances")
 const app = express.Router();
 
 const clientVersion = JSON.parse(fs.readFileSync(path.join(__dirname, "../", "../", "current_version.json"))).version;
+const friendDb = dbInstances.friendDb;
 
 app.get("/", middle.authenticateToken, (req, res) => {
     res.redirect("/app/self")
@@ -34,10 +35,15 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
         `
     }
 
+    const r = friendDb.getRowSync("friends", "userId", res.id);
+    const pendingAmount = r.pendingFrom.length;
+
+    const total = pendingAmount;
+
     const data = `
     <div class="wrapper-sl-i">
         <img src="/versa.png">
-        <span class="wsli-noti-icon">1</span>
+        <span class="wsli-noti-icon" style="display: ${total == 0 ? "none" : "block"}">${total}</span>
     </div>
 
     <div class="section-sl-ser">
@@ -50,7 +56,6 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
     res.send(data);
 })
 
-const friendDb = dbInstances.friendDb;
 const statusDb = dbInstances.statusDb;
 
 // friends main scroller
@@ -91,7 +96,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 
         if (status.active.toLowerCase() === "online") {
             onlineF += `
-            <div class="scb-frmo-frbtn" data-context-id="friend-button">
+            <div class="scb-frmo-frbtn" data-context-id="friend-button" data-friend="${friend.user}">
             <span class="title">${friend.user}</span>
             <span class="desc">${status.text || ""}</span>
             </div>
@@ -99,12 +104,13 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
         }
 
         allF += `
-        <div class="scb-frmo-frbtn" data-context-id="friend-button">
+        <div class="scb-frmo-frbtn" data-context-id="friend-button" data-friend="${friend.user}">
         <span class="title">${friend.user}</span>
         <span class="desc">${status.text || ""}</span>
         </div>
         `
     }
+
 
     const data = `
     <div class="scbar-fri-m-o">
@@ -116,12 +122,12 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
     </div>
 
     <div class="scbar-fri-sect online selected">
-        <p class="scfs-title">ONLINE - { online }</p>
+        <p class="scfs-title">ONLINE -  ${onlineF.toString().includes("<div") ? onlineF.toString().match(new RegExp("<div", "g")).length || [].length : "0"}</p>
         ${onlineF.toString().trim()}
     </div>
 
     <div class="scbar-fri-sect all">
-        <p class="scfs-title">ALL - { all }</p>
+        <p class="scfs-title">ALL - ${allF.toString().includes("<div") ? allF.toString().match(new RegExp("<div", "g")).length || [].length : "0"}</p>
         ${allF.toString().trim()}
     </div>
 

@@ -34,7 +34,7 @@ class ErrorModal {
 
     __modal = document.createElement("div")
 
-    spawn = function () {
+    spawn = function (cb) {
         this.__modal.classList.add("dft-err-mod")
         this.__modal.classList.add("modal")
         this.__modal.id = vt.createRandomId();
@@ -57,6 +57,7 @@ class ErrorModal {
             document.querySelector("#" + this.__modal.id + " > .dft-err-footer > .err-mod-close").addEventListener("click", () => {
                 this.__modal.remove();
                 document.querySelector(".shade").style.display = "none";
+                if (cb) cb();
             })
         })
     }

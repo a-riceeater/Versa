@@ -55,7 +55,7 @@ sl_scroller.addEventListener("load", () => {
         document.querySelector(".scroller.server-list-l > .section-sl-ser > .wrapper-js-sl").addEventListener("mouseover", () => document.querySelector(".tooltip-sli-csp-h").style.transform = "scale(1)")
 
         document.querySelector(".scroller.server-list-l > .section-sl-ser > .wrapper-js-sl").addEventListener("mouseleave", () => document.querySelector(".tooltip-sli-csp-h").style.transform = "scale(0)")
-        
+
         completed++;
     })
 })
@@ -113,12 +113,12 @@ friendsMSQ.addEventListener("load", () => {
                         const em = new ErrorModal();
                         em.title = "Friend request failed"
                         em.body = d.error;
-                        em.spawn();
+                        em.spawn(() => input.focus());
                     } else {
                         const re = new ErrorModal();
                         re.title = "Friend request sent"
                         re.body = "Your friend request was sucessfully sent to " + input.value
-                        re.spawn();
+                        re.spawn(() => input.focus());
                     }
                 })
             completed++;
@@ -137,10 +137,10 @@ friendsMSQ.addEventListener("load", () => {
                         to: el.getAttribute("data-to")
                     })
                 })
-                .then((d) => d.json())
-                .then((d) => {
-                    if (d.completed) el.parentNode.remove();
-                })
+                    .then((d) => d.json())
+                    .then((d) => {
+                        if (d.completed) el.parentNode.remove();
+                    })
             })
         })
 
@@ -167,21 +167,21 @@ friendLBar.send();
 friendLBar.addEventListener("load", () => {
     document.querySelector('.fr-chan-list-l').innerHTML = friendLBar.responseText;
     completed++;
-})
 
-const dmUreadPendingAmt = new XMLHttpRequest();
-dmUreadPendingAmt.open("GET", "/app-api/user-ureaddm-pending-amt");
-dmUreadPendingAmt.send();
+    /*const dmUreadPendingAmt = new XMLHttpRequest();
+    dmUreadPendingAmt.open("GET", "/app-api/user-ureaddm-pending-amt");
+    dmUreadPendingAmt.send();
 
-dmUreadPendingAmt.addEventListener("load", () => {
-    const amount = parseInt(dmUreadPendingAmt.responseText);
-    const notiElement = document.querySelector(".scroller.server-list-l > .wrapper-sl-i > .wsli-noti-icon");
+    dmUreadPendingAmt.addEventListener("load", () => {
+        const amount = parseInt(dmUreadPendingAmt.responseText);
+        const notiElement = document.querySelector(".scroller.server-list-l > .wrapper-sl-i > .wsli-noti-icon");
 
-    if (amount <= 0) notiElement.style.display = "none"
-    else {
-        notiElement.style.display = "flex"
-        notiElement.innerText = amount
-    }
+        if (amount <= 0) notiElement.style.display = "none"
+        else {
+            notiElement.style.display = "flex"
+            notiElement.innerText = amount
+        }
+    })*/
 })
 
 const awaitingAllElementsLoad = setInterval(() => {

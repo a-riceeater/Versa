@@ -1,17 +1,15 @@
 const express = require("express");
 const path = require("path");
-const dbInstances = require("./dbInstances"); // possibly not needed, since it writes directly, but it may require token validation?
 const middle = require("./middleware");
 const multer = require('multer');
 const fs = require("fs");
-const tokenHandler = require("./tokens");
 
 const app = express.Router();
 const upload = multer({ dest: 'uploads/' });
 
 app.post("/upload-file", middle.authenticateToken, upload.single("file"), (req, res) => {
     const uploadedFile = req.file;
-    const targetDirectory = path.join(__dirname, '../cdn', res.id, tokenHandler.createRandomId());
+    const targetDirectory = path.join(__dirname, '../cdn', res.id, uploadedFile.originalname);
 
     if (uploadedFile.size > 10 * 1024 * 1024) {
         fs.unlink(uploadedFile.path, (err) => {
@@ -21,10 +19,9 @@ app.post("/upload-file", middle.authenticateToken, upload.single("file"), (req, 
         return res.status(400).json({ uploaded: false, error: 'File size exceeds 10MB' });
     }
 
-    fs.rename(uploadedFile.path, targetDirectory + "." + uploadedFile.originalname.split(".").pop(), (err) => {
+    fs.rename(uploadedFile.path, targetDirectory, (err) => {
         if (err) {
             console.error(err);
-
             res.send({ uploaded: false, error: "Failed to save file, try again later."})
         } else {
             res.send({ uploaded: true })

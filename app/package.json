@@ -2,7 +2,13 @@
     "main": "window.js",
     "scripts": {
         "dev": "electron .",
-        "dw": "npx electron ."
+        "dw": "npx electron .",
+        "build-win": "npx electron-builder --win portable",
+        "build-mac": "npx electron-builder --macos",
+        "build-linux": "npx electron-builder --linux portable"
     },
-    "name": "versa"
+    "name": "Versa",
+    "version": "1.0.2",
+    "author": "a-riceeater",
+    "description": "The application for the chatting app, Versa"
 }

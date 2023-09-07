@@ -8,11 +8,38 @@ document.addEventListener("contextmenu", (e) => {
             const cm = new ContextMenu([
                 {
                     title: "Message",
-                    type: "default"
+                    type: "default",
+                    callback: () => { }
                 },
                 {
                     title: "Remove Friend",
-                    type: "delete"
+                    type: "delete",
+                    callback: (ev) => {
+                        fetch("/app-api/remove-friend", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                friend: e.target.getAttribute("data-friend")
+                            })
+                        })
+                            .then((d) => d.json())
+                            .then((d) => {
+                                if (d.removed) {
+                                    friendsMSQ.open("GET", "/app/widget/KjitLwgKq6AjPyLi28BSy7SXQ");
+                                    friendsMSQ.send();
+                                }
+                            })
+                            .catch((err) => {
+                                const em = new ErrorModal();
+                                em.title = "An error occured"
+                                em.body = "Please try again later..."
+                                em.spawn();
+
+                                console.error(err);
+                            })
+                    }
                 }
             ], e);
     }
@@ -39,27 +66,21 @@ class ContextMenu {
         document.body.appendChild(this.element);
 
         buttons.forEach(button => {
-            this.element.innerHTML += `
-            <div class="cm-btn-o ${button.type}">
-                ${button.title}
-            </div>
-            `
+            const option = document.createElement("div");
+            option.classList.add("cm-btn-o");
+            option.classList.add(button.type);
+            option.innerHTML = button.title;
 
+            if (button.callback) option.addEventListener("click", button.callback);
+
+            this.element.appendChild(option);
         })
 
-        setTimeout(() => {
-          this.element.childNodes.forEach(c => {
-            c.addEventListener("click", (ev) => {
-                alert("Ev")
-            })
-          })      
-        })
 
-        const x = event.pageX - event.target.offsetLeft;
-        const y = event.pageY - event.target.offsetTop;
+        // const x = event.pageX - event.target.offsetLeft;
+        // const y = event.pageY - event.target.offsetTop; if offset is wanted
 
         this.element.style.top = event.pageY + "px";
         this.element.style.left = event.pageX + "px";
-
     }
 }
