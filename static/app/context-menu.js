@@ -58,18 +58,24 @@ document.addEventListener("contextmenu", (e) => {
                                 server: e.target.getAttribute("data-id")
                             })
                         })
-                        .then((d) => d.json())
-                        .then((d) => {
-                            if (d.error) {
-                                const em = new ErrorModal();
-                                em.title = "An error occured."
-                                em.body = d.error;
-                                em.spawn();
-                            }
-                        })
-                        .catch((err) => {
-                            alert(err);
-                        })
+                            .then((d) => d.json())
+                            .then((d) => {
+                                alert(d.left)
+                                if (d.error || !d.left) {
+                                    const em = new ErrorModal();
+                                    em.title = "An error occured."
+                                    em.body = d.error || "Please try again...";
+                                    em.spawn();
+                                }
+
+                                if (d.left) {
+                                    sl_scroller.open("GET", "/app/widget/k1tBte9Ob");
+                                    sl_scroller.send();
+                                }
+                            })
+                            .catch((err) => {
+                                alert(err);
+                            })
                     }
                 }
             ], e);

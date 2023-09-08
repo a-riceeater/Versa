@@ -309,7 +309,6 @@ app.post("/leave-server", middle.authenticateToken, (req, res) => {
 
     if (!serverRow) return res.send({ error: "This server does not exist!" });
 
-
     serverRow.members--;
     for (let i = 0; i < serverRow.users.length; i++) {
         if (serverRow.users[i].id == res.id) {
