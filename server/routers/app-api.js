@@ -312,7 +312,9 @@ app.post("/leave-server", middle.authenticateToken, (req, res) => {
 
     serverRow.members--;
     for (let i = 0; i < serverRow.users.length; i++) {
-        if (serverRow.users[i].id == res.id) return serverRow.users.splice(i, 1);
+        if (serverRow.users[i].id == res.id) {
+            serverRow.users.splice(i, 1); break
+        }
     }
 
     serverDb.updateRowSync("servers", "serverId", serverId, serverRow);
@@ -321,7 +323,7 @@ app.post("/leave-server", middle.authenticateToken, (req, res) => {
         if (selfRow.in[i].serverId == serverId) {
             selfRow.in.splice(i, 1);
             break
-        } 
+        }
     }
 
     serverDb.updateRowSync("userServers", "userId", res.id, selfRow);
