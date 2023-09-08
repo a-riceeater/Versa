@@ -302,10 +302,31 @@ app.get("/versa", middle.authenticateToken, (req, res) => {
     res.sendStatus(200);
 })
 
-app.get("/leave-server", middle.authenticateToken, (req, res) => {
+app.post("/leave-server", middle.authenticateToken, (req, res) => {
     const serverId = req.body.server;
-    console.log(`${res.user} is leaving server with id ${serverId}`);
-    res.sendStatus(200);
+    const serverRow = serverDb.getRowSync("servers", "serverId", serverId);
+    const selfRow = serverDb.getRowSync("userServers", "userId", res.id);
+
+    if (!serverRow) return res.send({ error: "This server does not exist!" });
+
+
+    serverRow.members--;
+    for (let i = 0; i < serverRow.users.length; i++) {
+        if (serverRow.users[i].id == res.id) return serverRow.users.splice(i, 1);
+    }
+
+    serverDb.updateRowSync("servers", "serverId", serverId, serverRow);
+
+    for (let i = 0; i < selfRow.in.length; i++) {
+        if (selfRow.in[i].serverId == serverId) {
+            selfRow.in.splice(i, 1);
+            break
+        } 
+    }
+
+    serverDb.updateRowSync("userServers", "userId", res.id, selfRow);
+
+    res.send({ left: true })
 })
 
 module.exports = app;

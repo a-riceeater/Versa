@@ -58,6 +58,18 @@ document.addEventListener("contextmenu", (e) => {
                                 server: e.target.getAttribute("data-id")
                             })
                         })
+                        .then((d) => d.json())
+                        .then((d) => {
+                            if (d.error) {
+                                const em = new ErrorModal();
+                                em.title = "An error occured."
+                                em.body = d.error;
+                                em.spawn();
+                            }
+                        })
+                        .catch((err) => {
+                            alert(err);
+                        })
                     }
                 }
             ], e);
