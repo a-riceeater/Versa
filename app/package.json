@@ -5,7 +5,7 @@
         "dw": "npx electron .",
         "build-win": "npx electron-builder --win portable",
         "build-mac": "npx electron-builder --macos",
-        "build-linux": "npx electron-builder --linux portable"
+        "build-linux": "npx electron-builder --linux"
     },
     "name": "Versa",
     "version": "1.0.2",
