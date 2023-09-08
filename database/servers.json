@@ -5,7 +5,7 @@
 			"serverId": "JXnKrob-7xn99FK-naUTJqV-m0igIpL-3xDunlk",
 			"inviteId": "jEEAmLF",
 			"users": [],
-			"members": 0,
+			"members": 1,
 			"owner": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
 		}
 	],
@@ -20,7 +20,13 @@
 					"inviteId": "jEEAmLF"
 				}
 			],
-			"in": []
+			"in": [
+				{
+					"name": "hi",
+					"serverId": "JXnKrob-7xn99FK-naUTJqV-m0igIpL-3xDunlk",
+					"inviteId": "jEEAmLF"
+				}
+			]
 		},
 		{
 			"user": "a#6419",

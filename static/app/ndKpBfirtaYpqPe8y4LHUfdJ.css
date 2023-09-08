@@ -62,9 +62,10 @@
     background-color: rgb(211, 210, 210);
 }
 
-.serv-create-modal > .serv-btn > .serv-btn-arrow > img {
-    height: 40px;
+.serv-create-modal > .serv-btn > .serv-btn-arrow > svg {
+    height: 25px;
     vertical-align: middle;
+    margin-right: 10px;
 }
 
 .serv-create-modal > .serv-btn > .serv-btn-content {
