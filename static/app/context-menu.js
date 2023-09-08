@@ -60,7 +60,7 @@ document.addEventListener("contextmenu", (e) => {
                         })
                             .then((d) => d.json())
                             .then((d) => {
-                                alert(d.left)
+                                //alert(d.left)
                                 if (d.error || !d.left) {
                                     const em = new ErrorModal();
                                     em.title = "An error occured."
@@ -69,6 +69,7 @@ document.addEventListener("contextmenu", (e) => {
                                 }
 
                                 if (d.left) {
+                                    document.querySelectorAll(".tooltip-sli-sv-h").forEach(el => el.remove())
                                     sl_scroller.open("GET", "/app/widget/k1tBte9Ob");
                                     sl_scroller.send();
                                 }
