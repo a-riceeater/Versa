@@ -313,7 +313,8 @@ app.post("/leave-server", middle.authenticateToken, (req, res) => {
     serverRow.members--;
     for (let i = 0; i < serverRow.users.length; i++) {
         if (serverRow.users[i].id == res.id) {
-            serverRow.users.splice(i, 1); break
+            serverRow.users.splice(i, 1);
+            break
         }
     }
 
