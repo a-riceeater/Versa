@@ -31,7 +31,7 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
     for (let i = 0; i < userServers.length; i++) {
         const server = userServers[i];
         ssvs += `
-        <div class="lsl-serv-icon" data-name="${server.name}" data-id="${server.serverId}" data-invite="${server.inviteId}" id="sbt-l-${server.serverId}">${server.name.slice(0, 3)} </div>
+        <div class="lsl-serv-icon" data-name="${server.name}" data-id="${server.serverId}" data-invite="${server.inviteId}" data-context-id="serverl-button" id="sbt-l-${server.serverId}">${server.name.slice(0, 3)} </div>
         `
     }
 

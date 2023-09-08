@@ -5,7 +5,7 @@ document.addEventListener("contextmenu", (e) => {
     switch (e.target.getAttribute("data-context-id")) {
 
         case "friend-button":
-            const cm = new ContextMenu([
+            new ContextMenu([
                 {
                     title: "Message",
                     type: "default",
@@ -39,6 +39,25 @@ document.addEventListener("contextmenu", (e) => {
 
                                 console.error(err);
                             })
+                    }
+                }
+            ], e);
+            break;
+        case "serverl-button":
+            new ContextMenu([
+                {
+                    title: "Leave Server",
+                    type: "delete",
+                    callback: () => {
+                        fetch("/app-api/leave-server", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                server: e.target.getAttribute("data-id")
+                            })
+                        })
                     }
                 }
             ], e);

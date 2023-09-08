@@ -23,3 +23,7 @@
     cursor: pointer;
     overflow: hidden;
 }
+
+.cm-btn-o.delete {
+    color: red !important;
+}

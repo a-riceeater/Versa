@@ -302,4 +302,10 @@ app.get("/versa", middle.authenticateToken, (req, res) => {
     res.sendStatus(200);
 })
 
+app.get("/leave-server", middle.authenticateToken, (req, res) => {
+    const serverId = req.body.server;
+    console.log(`${res.user} is leaving server with id ${serverId}`);
+    res.sendStatus(200);
+})
+
 module.exports = app;
