@@ -291,6 +291,8 @@ app.get("/update-active/:active", middle.authenticateToken, (req, res) => {
     else row.active = req.params.active;
 
     statusDb.updateRowSync("statuses", "user", res.user, row);
+
+    res.sendStatus(200);
 })
 
 app.get("/activity/get-user-status/:user", middle.authenticateToken, (req, res) => {
