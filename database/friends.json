@@ -3,14 +3,24 @@
 		{
 			"user": "a#1288",
 			"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
-			"friends": [],
+			"friends": [
+				{
+					"user": "a#6419",
+					"chatId": "oEgbeww-ugdyD0A-vrvPPwb-N4hWhcW-vbAZbG0"
+				}
+			],
 			"pendingTo": [],
 			"pendingFrom": []
 		},
 		{
 			"user": "a#6419",
 			"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr",
-			"friends": [],
+			"friends": [
+				{
+					"user": "a#1288",
+					"chatId": "oEgbeww-ugdyD0A-vrvPPwb-N4hWhcW-vbAZbG0"
+				}
+			],
 			"pendingTo": [],
 			"pendingFrom": []
 		}

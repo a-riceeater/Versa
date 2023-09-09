@@ -159,11 +159,26 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
 })
 
 app.get("/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO", middle.authenticateToken, (req, res) => {
+    let friends = "";
+    const uf = friendDb.getRowSync("friends", "userId", res.id).friends;
+
+    for (let i = 0; i < uf.length; i++) {
+        const friend = uf[i];
+
+        friends += `
+        <div class="frcl-btn" data-cid="${friend.chatId}">
+        ${friend.user}
+        </div> 
+        `
+    }
+
     const data = `
     <div class="friend-to-ms-fl btn selected">
     <svg xmlns="http://www.w3.org/2000/svg" fill="var(--c5)" style="margin-right: 10px" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
     Friends
     </div>
+
+    ${friends}
     `
 
     res.send(data);
