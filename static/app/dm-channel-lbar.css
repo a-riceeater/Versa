@@ -30,3 +30,16 @@
 .fr-chan-list-l > .btn.selected {
     background-color: var(--c4) !important;
 }
+
+.frcl-b-container {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+}
+
+.frcl-b-container::-webkit-scrollbar {
+    display: none;
+}

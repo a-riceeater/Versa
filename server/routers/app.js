@@ -178,7 +178,9 @@ app.get("/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO", middle.authenticateToken, (req, re
     Friends
     </div>
 
-    ${friends}
+    <div class="frcl-b-container">
+        ${friends}
+    </div>
     `
 
     res.send(data);
