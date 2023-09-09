@@ -142,6 +142,7 @@ app.post("/send-friend", middle.authenticateToken, (req, res) => {
 
     const toUser = accountDb.getRowSync("accounts", "username", to);
     if (!toUser) return res.send({ error: "This user does not exist!" })
+    if (toUser.userId == res.id) return res.send({ error: "You cannot send a friend request to yourself!" })
 
     const toUserFriends = friendDb.getRowSync("friends", "userId", toUser.userId);
 

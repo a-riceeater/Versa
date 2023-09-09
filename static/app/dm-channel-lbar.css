@@ -73,6 +73,10 @@
     background-color: var(--c4);
 }
 
+.frcl-b-container > .frlc-b-t {
+    margin-left: 10px;
+}
+
 .frcl-b-container > .frcl-btn > .frcl-bt-un {
     vertical-align: middle;
     font-weight: 600;

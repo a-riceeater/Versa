@@ -8,7 +8,7 @@ app.get("/windows", (req, res) => {
     res.download(path.join(__dirname, "../", "../", "app", "dist", "Versa-" + version + ".exe"));
 })
 
-app.get("/macos", (req, res) => {
+app.get("/mac_os", (req, res) => {
     res.download(path.join(__dirname, "../", "../", "app", "dist", "Versa-" + version + ".dmg"));
 })
 
