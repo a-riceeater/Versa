@@ -38,8 +38,48 @@
     width: 100%;
     height: calc(100% - 50px);
     overflow-y: scroll;
+    box-sizing: border-box;
+    padding-left: 5px;
 }
 
 .frcl-b-container::-webkit-scrollbar {
     display: none;
+}
+
+.frcl-b-container > .frlc-b-t {
+    color: white;
+    font-weight: normal;
+    font-family: var(--dm);
+    cursor: default;
+    user-select: none;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.frcl-b-container > .frcl-btn {
+    width: calc(100% - 5px);
+    height: 45px;
+    cursor: pointer;
+    border-radius: 5px / 5px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-family: var(--dm);
+    color: lightgray;
+    line-height: 15px;
+    padding-top: 5.5px;
+}
+
+.frcl-b-container > .frcl-btn:hover {
+    background-color: var(--c4);
+}
+
+.frcl-b-container > .frcl-btn > .frcl-bt-un {
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.frcl-b-container > .frcl-btn > .frcl-bt-statust {
+    font-family: lighter !important;
+    vertical-align: middle;
+    font-family: var(--dm) !important;
 }

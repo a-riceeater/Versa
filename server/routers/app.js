@@ -164,10 +164,13 @@ app.get("/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO", middle.authenticateToken, (req, re
 
     for (let i = 0; i < uf.length; i++) {
         const friend = uf[i];
+        const userStatus = statusDb.getRowSync("statuses", "user", friend.user);
 
         friends += `
         <div class="frcl-btn" data-cid="${friend.chatId}">
-        ${friend.user}
+        <span class="frcl-bt-un">${friend.user}</span>
+        <br>
+        <span class="frcl-bt-statust">${userStatus.text}</span>
         </div> 
         `
     }
@@ -179,6 +182,7 @@ app.get("/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO", middle.authenticateToken, (req, re
     </div>
 
     <div class="frcl-b-container">
+        <p class="frlc-b-t">Direct Messages</p>
         ${friends}
     </div>
     `
