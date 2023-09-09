@@ -10,5 +10,8 @@
     "name": "Versa",
     "version": "1.0.2",
     "author": "a-riceeater",
-    "description": "The application for the chatting app, Versa"
+    "description": "The application for the chatting app, Versa",
+    "devDependencies": {
+        "electron": "^26.2.0"
+    }
 }
