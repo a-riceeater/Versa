@@ -42,6 +42,8 @@ app.post("/login", middle.authAlready, (req, res) => {
     }, 2000)
 })
 
+const statusDb = dbInstances.statusDb;
+
 app.post("/create-account", middle.authAlready, (req, res) => {
     setTimeout(() => {
         const info = req.body;
@@ -75,6 +77,12 @@ app.post("/create-account", middle.authAlready, (req, res) => {
                 friends: [],
                 pendingTo: [],
                 pendingFrom: []
+            });
+
+            statusDb.addRowSync("statuses", {
+                user: info.username,
+                text: "",
+                active: "offline"
             });
 
             fs.mkdirSync(path.join(__dirname, "../", "../", "cdn", userId));

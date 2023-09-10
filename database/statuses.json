@@ -8,7 +8,12 @@
 		{
 			"user": "a#6419",
 			"text": "",
-			"active": "offline"
+			"active": "online"
+		},
+		{
+			"user": "test#7891",
+			"text": "",
+			"active": "online"
 		}
 	]
 }

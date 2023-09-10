@@ -26,4 +26,5 @@ button.disabled {
     border-radius: 100%;
     width: 50px;
     height: 40px;
+    user-select: none;
 }
