@@ -212,6 +212,8 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
         <img src="/cdn/pfps/default.png" alt="@">
         <span class="tbch-uname">${otherUser}</span>
     </div>
+    <div class="scroller cm-mainbox">
+    </div>
     `;
 
     res.send(data);
