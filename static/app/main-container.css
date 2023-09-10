@@ -233,9 +233,28 @@
 }
 
 .main-container > .tbar-ch > .tbch-stext {
-    margin-left: 10px;
     font-family: var(--dm);
     color: var(--c5);
     vertical-align: middle;
     font-size: 15px;
+    margin-left: 5px;
+}
+
+.main-container > .tbar-ch > .tbch-sact {
+    vertical-align: middle;
+    font-family: var(--dm);
+    color: var(--c1);
+    position: absolute;
+    transform: translate(0%, -50%);
+    right: 15px;
+    top: 50%;
+    font-weight: 600;
+    background-color: var(--c5);
+    border-radius: 20px / 20px;
+    width: 80px;
+    text-align: center;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
