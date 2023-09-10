@@ -228,6 +228,8 @@
     color: var(--c1);
     vertical-align: middle;
     font-size: 24px;
+    user-select: none;
+    cursor: default;
 }
 
 .main-container > .tbar-ch > .tbch-stext {
