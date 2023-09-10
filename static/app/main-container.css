@@ -217,7 +217,23 @@
 .main-container > .tbar-ch > .tbch-uname {
     color: var(--c2);
     font-weight: bold;
-    font-family: var(--poppins);
+    font-family: var(--dm);
     cursor: default;
     user-select: none;
+    vertical-align: middle;
+}
+
+.main-container > .tbar-ch > .tbch-sep {
+    margin-left: 5px;
+    color: var(--c1);
+    vertical-align: middle;
+    font-size: 24px;
+}
+
+.main-container > .tbar-ch > .tbch-stext {
+    margin-left: 10px;
+    font-family: var(--dm);
+    color: var(--c5);
+    vertical-align: middle;
+    font-size: 15px;
 }

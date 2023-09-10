@@ -208,10 +208,12 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
         }
     }
 
+    const status = statusDb.getRowSync("statuses", "user", res.user);
+
     const data = `
     <div class="tbar-ch">
         <img src="/cdn/pfps/default.png" alt="@" class="profile-picture">
-        <span class="tbch-uname">${otherUser}</span>
+        <span class="tbch-uname">${otherUser}</span> ${status.text.trim() != "" ? `<span class="tbch-sep">|</span> <span class="tbch-stext">${status.text}</span>` : ""}
     </div>
     <div class="scroller cm-mainbox">
         ${chatHistory.messages}
