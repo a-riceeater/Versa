@@ -168,7 +168,7 @@ app.get("/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO", middle.authenticateToken, (req, re
         const userStatus = statusDb.getRowSync("statuses", "user", friend.user);
 
         friends += `
-        <div class="frcl-btn" data-cid="${friend.chatId}">
+        <div class="frcl-btn" data-cid="${friend.chatId}" data-context-id="friend-button">
         <img src="/cdn/pfps/default.png" class="profile-picture">
         <span class="frcl-bt-un" ${userStatus.text == "" ? `style="margin-top: 0 !important"` : ""}">
         ${friend.user}
