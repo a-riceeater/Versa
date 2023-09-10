@@ -43,7 +43,7 @@ app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
     const data = `
     <div class="wrapper-sl-i">
         <img src="/versa.png">
-        <span class="wsli-noti-icon" style="display: ${total == 0 ? "none" : "block"}">${total}</span>
+        <span class="wsli-noti-icon" style="display: ${total == 0 ? "none" : "flex"}">${total}</span>
     </div>
 
     <div class="section-sl-ser">
