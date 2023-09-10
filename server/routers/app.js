@@ -196,13 +196,22 @@ app.get("/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO", middle.authenticateToken, (req, re
 const messageDb = dbInstances.messageDb;
 
 app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
-    const cd = messageDb.getRowSync("messages", "chatId", req.params.chatId);
-    if (!cd) return res.send("This chat does not exist.");
+    const chatHistory = messageDb.getRowSync("messages", "chatId", req.params.chatId);
+    const selfFriends = friendDb.getRowSync("friends", "userId", res.id).friends;
+    if (!cd || !selfFriends) return res.send("This chat does not exist.");
+
+    let otherUser;
+    for (let i = 0; i < selfFriends.length; i++) {
+        if (selfFriends[i].chatId == req.params.chatId) {
+            otherUser = selfFriends[i].user
+        }
+    }
 
     const data = `
     <div class="tbar-ch">
         <img src="/cdn/pfps/default.png" alt="@">
-        <span class="tbch-uname"></span>
+        <span class="tbch-uname">${otherUser}</span>
+    </div>
     `;
 
     res.send(data);
