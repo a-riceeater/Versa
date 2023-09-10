@@ -198,8 +198,8 @@ app.post("/remove-friend", middle.authenticateToken, (req, res) => {
             if (sfFriends[i].user == friend) selfRow.friends.splice(i, 1);
         }
 
-        for (let i = 0; i < tuf; i++) {
-            if (tuf[i].user == res.user) toUser.friends.splice(i, 1);
+        for (let i = 0; i < tuf.length; i++) {
+            if (tuf[i].user == res.user) friendRow.friends.splice(i, 1);
         }
 
         friendDb.updateRowSync("friends", "userId", res.id, selfRow);
@@ -274,6 +274,10 @@ app.post("/accept-incoming-fr", middle.authenticateToken, (req, res) => {
 
                     friendDb.updateRowSync("friends", "userId", res.id, rowSelf);
                     friendDb.updateRowSync("friends", "userId", rowThem.userId, rowThem);
+                    messageDb.addRowSync("messages", {
+                        chatId: chatId,
+                        messages: []
+                    });
 
                     res.send({ success: true })
                 } else if (ii == rowThem.pendingTo.length - 1) return res.send({ success: false });
