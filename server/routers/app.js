@@ -210,7 +210,7 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
 
     const data = `
     <div class="tbar-ch">
-        <img src="/cdn/pfps/default.png" alt="@">
+        <img src="/cdn/pfps/default.png" alt="@" class="profile-picture">
         <span class="tbch-uname">${otherUser}</span>
     </div>
     <div class="scroller cm-mainbox">

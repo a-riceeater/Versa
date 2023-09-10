@@ -200,3 +200,14 @@
     margin-bottom: 5px;
     display: inline-block;
 }
+
+/* Chat Box */
+
+.main-container > .tbar-ch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid var(--c1);
+}
