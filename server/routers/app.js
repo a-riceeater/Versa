@@ -213,6 +213,7 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
         <span class="tbch-uname">${otherUser}</span>
     </div>
     <div class="scroller cm-mainbox">
+        ${chatHistory.messages}
     </div>
     `;
 
