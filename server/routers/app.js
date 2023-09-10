@@ -97,6 +97,7 @@ app.get("/widget/KjitLwgKq6AjPyLi28BSy7SXQ", middle.authenticateToken, (req, res
         if (status.active.toLowerCase() === "online") {
             onlineF += `
             <div class="scb-frmo-frbtn" data-context-id="friend-button" data-friend="${friend.user}">
+            <img src="/cdn/pfps/default.png" class="profile-picture">
             <span class="title">${friend.user}</span>
             <span class="desc">${status.text || ""}</span>
             </div>

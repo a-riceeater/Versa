@@ -182,6 +182,20 @@ friendLBar.addEventListener("load", () => {
             notiElement.innerText = amount
         }
     })*/
+
+    setTimeout(() => {
+        document.querySelectorAll(".fr-chan-list-l > .frcl-b-container > .frcl-btn").forEach(btn => {
+            btn.addEventListener("click", (ev) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "/app/chat/dm/" + btn.getAttribute("data-cid"));
+                xhr.send();
+
+                xhr.addEventListener("load", () => {
+                    document.querySelector(".scroller.main-container").innerHTML = xhr.responseText;
+                });
+            });
+        })
+    });
 })
 
 const awaitingAllElementsLoad = setInterval(() => {
