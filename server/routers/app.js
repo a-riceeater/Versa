@@ -217,6 +217,9 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
         <span class="tbch-sact">${status.active.toString().toUpperCase()}</span>
     </div>
     <div class="scroller cm-mainbox">
+        <img src="/cdn/pfps/default.png" alt="${otherUser}" class="profile-picture" id="pfp-cmut">
+        <h1 class="cmb-utitle">${otherUser}</h1>
+        <p class="cmb-startdesc">This is the start of your message history.</p>
         ${chatHistory.messages}
     </div>
     `;

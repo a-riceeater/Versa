@@ -212,6 +212,8 @@
     border-bottom: 1px solid var(--c1);
     display: flex;
     align-items: center;
+    box-sizing: border-box;
+    padding-left: 20px;
 }
 
 .main-container > .tbar-ch > .tbch-uname {
@@ -221,6 +223,7 @@
     cursor: default;
     user-select: none;
     vertical-align: middle;
+    margin-left: 10px;
 }
 
 .main-container > .tbar-ch > .tbch-sep {
@@ -257,4 +260,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.main-container > .scroller.cm-mainbox {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    top: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+.main-container > .cm-mainbox > #pfp-cmut {
+    height: 80px;
+    width: 80px;
+}
+
+.main-container > .cm-mainbox > .cmb-utitle {
+    font-family: var(--dm);
+    color: var(--c5);
+    margin-bottom: 0;
+}
+
+.main-container > .cm-mainbox > .cmb-startdesc {
+    font-family: var(--dm);
+    color: var(--c2);
+    margin-top: 5px;
 }

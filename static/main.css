@@ -24,8 +24,8 @@ button.disabled {
 
 .profile-picture {
     border-radius: 100%;
-    width: 50px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     user-select: none;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
