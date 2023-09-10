@@ -168,7 +168,10 @@ app.get("/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO", middle.authenticateToken, (req, re
 
         friends += `
         <div class="frcl-btn" data-cid="${friend.chatId}">
-        <span class="frcl-bt-un">${friend.user}</span>
+        <img src="/cdn/pfps/default.png" class="profile-picture">
+        <span class="frcl-bt-un">
+        ${friend.user}
+        </span>
         <br>
         <span class="frcl-bt-statust">${userStatus.text}</span>
         </div> 
