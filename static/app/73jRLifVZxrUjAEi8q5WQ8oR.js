@@ -192,6 +192,38 @@ friendLBar.addEventListener("load", () => {
 
                 xhr.addEventListener("load", () => {
                     document.querySelector(".scroller.main-container").innerHTML = xhr.responseText;
+
+                    setTimeout(() => {
+                        document.querySelector(".main-container > .cm-mainbox > .cmfrb-dft.remove-fr").addEventListener("click", () => {
+                            fetch("/app-api/remove-friend", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({
+                                    friend: document.querySelector(".main-container > .cm-mainbox > .cmb-utitle").innerText.trim()
+                                })
+                            })
+                                .then((d) => d.json())
+                                .then((d) => {
+                                    if (d.removed) {
+                                        friendsMSQ.open("GET", "/app/widget/KjitLwgKq6AjPyLi28BSy7SXQ");
+                                        friendsMSQ.send();
+
+                                        friendLBar.open("GET", "/app/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO");
+                                        friendLBar.send();
+                                    }
+                                })
+                                .catch((err) => {
+                                    const em = new ErrorModal();
+                                    em.title = "An error occured"
+                                    em.body = "Please try again later..."
+                                    em.spawn();
+
+                                    console.error(err);
+                                })
+                        });
+                    })
                 });
             });
         })

@@ -29,6 +29,9 @@ document.addEventListener("contextmenu", (e) => {
                                 if (d.removed) {
                                     friendsMSQ.open("GET", "/app/widget/KjitLwgKq6AjPyLi28BSy7SXQ");
                                     friendsMSQ.send();
+
+                                    friendLBar.open("GET", "/app/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO");
+                                    friendLBar.send();
                                 }
                             })
                             .catch((err) => {
