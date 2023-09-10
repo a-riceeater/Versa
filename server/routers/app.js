@@ -198,7 +198,7 @@ const messageDb = dbInstances.messageDb;
 app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
     const chatHistory = messageDb.getRowSync("messages", "chatId", req.params.chatId);
     const selfFriends = friendDb.getRowSync("friends", "userId", res.id).friends;
-    if (!cd || !selfFriends) return res.send("This chat does not exist.");
+    if (!chatHistory || !selfFriends) return res.send("This chat does not exist.");
 
     let otherUser;
     for (let i = 0; i < selfFriends.length; i++) {
