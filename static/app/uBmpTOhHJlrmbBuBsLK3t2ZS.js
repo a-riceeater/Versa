@@ -24,6 +24,11 @@ const vt = {
         }
 
         return result;
+    },
+    navigate: (title, url) => {
+        window.history.pushState("", `Versa | ${title}`, url);
+        document.title = `Versa | ${title}`
+        vt.log("Navigator", `State pushed; URL: ${url}, title: ${title}`)
     }
 }
 

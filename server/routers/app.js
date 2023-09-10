@@ -224,7 +224,14 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
         <button class="cmfrb-dft block-fr">Block</button>
 
         <div class="cm-divider"></div>
-        ${chatHistory.messages}
+        <div class="cm-msg-history"></div>
+
+        <div class="cm-ed-reply"></div>
+        <div class="cm-editor">
+            <div class="cm-e-textbox" contenteditable spellcheck="false" autocomplete="off">
+            </div>
+            <p class="cm-e-placeholder">Message @${otherUser.replace("#" + otherUser.split("#").pop(), "")}</p>
+        </div>
     </div>
     `;
 
