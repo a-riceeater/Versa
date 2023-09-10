@@ -185,12 +185,13 @@ friendLBar.addEventListener("load", () => {
 
     setTimeout(() => {
         document.querySelectorAll(".fr-chan-list-l > .frcl-b-container > .frcl-btn").forEach(btn => {
-            btn.addEventListener("click", (ev) => {
+            btn.addEventListener("click", () => {
                 const xhr = new XMLHttpRequest();
                 xhr.open("GET", "/app/chat/dm/" + btn.getAttribute("data-cid"));
                 xhr.send();
 
                 xhr.addEventListener("load", () => {
+                    vt.navigate("@" + btn.innerText.replace("#" + btn.innerText.split("#").pop(), "").trim(), btn.getAttribute("data-cid"));
                     document.querySelector(".scroller.main-container").innerHTML = xhr.responseText;
 
                     setTimeout(() => {
