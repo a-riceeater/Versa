@@ -336,13 +336,35 @@
 .main-container > .cm-mainbox > .cm-editor > .cm-e-textbox {
     width: 90%;
     height: 70%;
-    font-family: var(--dm);
     background-color: var(--c6);
     border-radius: 3px / 3px;
-    color: var(--c2);
     display: flex;
     align-items: center;
-    padding-left: 8px;
-    outline: 0;
+    padding-left: 10px;
     box-sizing: border-box;
+}
+
+.main-container > .cm-mainbox > .cm-editor > .cm-e-placeholder {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    left: 25px;
+    color: var(--c3);
+    font-size: 15.5px;
+    font-family: var(--dm);
+    margin-top: 0;
+    display: block;
+    z-index: 1;
+}
+
+.main-container > .cm-mainbox > .cm-editor > .cm-e-textbox > .cm-e-edit {
+    display: flex;
+    align-self: center;
+    outline: 0;
+    font-size: 15.5px;
+    font-family: var(--dm);
+    color: var(--c2);
+    width: 100%;
+    z-index: 2;
+    max-height: 70%;
 }

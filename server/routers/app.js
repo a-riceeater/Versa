@@ -228,7 +228,8 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
 
         <div class="cm-ed-reply"></div>
         <div class="cm-editor">
-            <div class="cm-e-textbox" contenteditable spellcheck="false" autocomplete="off">
+            <div class="cm-e-textbox">
+                <div class="cm-e-edit" contenteditable spellcheck="false" autocomplete="off"> </div>
             </div>
             <p class="cm-e-placeholder">Message @${otherUser.replace("#" + otherUser.split("#").pop(), "")}</p>
         </div>

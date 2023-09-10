@@ -194,6 +194,12 @@ friendLBar.addEventListener("load", () => {
                     document.querySelector(".scroller.main-container").innerHTML = xhr.responseText;
 
                     setTimeout(() => {
+                        document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-textbox > .cm-e-edit").addEventListener("keydown", (e) => {
+                            setTimeout(() => {
+                                document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-placeholder").style.display = e.target.innerText.trim() == "" ? "block" : "none";
+                            })
+                        })
+
                         document.querySelector(".main-container > .cm-mainbox > .cmfrb-dft.remove-fr").addEventListener("click", () => {
                             fetch("/app-api/remove-friend", {
                                 method: "POST",
