@@ -313,3 +313,10 @@
 .main-container > .cm-mainbox > .cmfrb-dft.remove-fr {
     color: var(--c2);
 }
+
+.main-container > .cm-mainbox > .cm-divider {
+    width: 90%;
+    background-color: var(--c5);
+    margin-top: 20px;
+    height: 1px;
+}
