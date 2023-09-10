@@ -289,3 +289,27 @@
     color: var(--c2);
     margin-top: 5px;
 }
+
+.main-container > .cm-mainbox > .cmfrb-dft {
+    height: 35px;
+    width: 120px;
+    background-color: var(--c6);
+    font-family: var(--dm);
+    border: var(--c6);
+    cursor: pointer;
+    border-radius: 5px / 5px;
+    margin-right: 10px;
+    transition: .2s;
+}
+
+.main-container > .cm-mainbox > .cmfrb-dft:hover {
+    background-color: var(--c1);
+}
+
+.main-container > .cm-mainbox > .cmfrb-dft.block-fr {
+    color: red;
+}
+
+.main-container > .cm-mainbox > .cmfrb-dft.remove-fr {
+    color: var(--c2);
+}
