@@ -3,26 +3,26 @@
 		{
 			"user": "a#1288",
 			"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
-			"friends": [
+			"friends": [],
+			"pendingTo": [
 				{
-					"user": "a#6419",
-					"chatId": "kytsZ01-Q7Re9wU-Tso0fYD-zvJXTCp-xHiNOJn"
+					"username": "a#6419",
+					"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr"
 				}
 			],
-			"pendingTo": [],
 			"pendingFrom": []
 		},
 		{
 			"user": "a#6419",
 			"userId": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr",
-			"friends": [
-				{
-					"user": "a#1288",
-					"chatId": "kytsZ01-Q7Re9wU-Tso0fYD-zvJXTCp-xHiNOJn"
-				}
-			],
+			"friends": [],
 			"pendingTo": [],
-			"pendingFrom": []
+			"pendingFrom": [
+				{
+					"username": "a#1288",
+					"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
+				}
+			]
 		},
 		{
 			"user": "test#7891",
