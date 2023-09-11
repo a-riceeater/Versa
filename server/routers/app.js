@@ -22,6 +22,10 @@ app.get("/self", middle.authenticateToken, (req, res) => {
     res.send(data);
 })
 
+app.get("/:p", middle.authenticateToken, (req, res) => {
+    res.redirect("/app/self")
+})
+
 const serverDb = dbInstances.serverDb;
 // user left scroller
 app.get("/widget/k1tBte9Ob", middle.authenticateToken, (req, res) => {
@@ -228,7 +232,7 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
 
         <div class="cm-ed-reply"></div>
         <div class="cm-editor">
-            <div class="cm-e-textbox">
+            <div class="cm-e-textbox" style="height: 42px">
                 <div class="cm-e-edit" contenteditable spellcheck="false" autocomplete="off"> </div>
             </div>
             <p class="cm-e-placeholder">Message @${otherUser.replace("#" + otherUser.split("#").pop(), "")}</p>

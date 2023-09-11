@@ -199,6 +199,43 @@ friendLBar.addEventListener("load", () => {
                             setTimeout(() => {
                                 document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-placeholder").style.display = e.target.innerText.trim() == "" ? "block" : "none";
                             })
+
+                            if (e.key == "Enter"/* && !e.shiftKey*/) {
+                                e.preventDefault();
+
+                                if (e.target.innerText.trim() == "") return
+
+                                fetch("/message-api/send", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify({
+                                        message: e.target.innerText.trim(),
+                                        chatId: btn.getAttribute("data-cid")
+                                    })
+                                })
+                                .then((d) => d.json())
+                                .then((d) => {
+                                    if (d.sent) {
+                                        // bla bla bla yk make the message not opacity
+                                    }
+                                })
+                                .catch((err) => {
+                                    console.error(err);
+                                    const em = new ErrorModal();
+                                    em.title = "Failed to send"
+                                    em.body = "The message failed to send."
+                                    em.spawn();
+                                })
+                            }
+
+                            /*
+                            if (e.key == "Enter" && e.shiftKey) {
+                                const brs = e.target.innerHTML.match(new RegExp("<br>", "g")) || ["a"]
+                                e.target.parentNode.style.height = (brs.length * 15.5) + "px"
+                                console.log(brs.length, brs.length * 15.5, e.target.innerHTML)
+                            }*/
                         })
 
                         document.querySelector(".main-container > .cm-mainbox > .cmfrb-dft.remove-fr").addEventListener("click", () => {
