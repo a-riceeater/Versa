@@ -2,7 +2,8 @@ const express = require("express");
 const path = require("path");
 const dbInstances = require("../dbInstances");
 const middleware = require("../middleware");
-const { rateLimit } = require('express-rate-limit')
+const { rateLimit } = require('express-rate-limit');
+const tokenHandler = require("../tokens");
 
 const app = express.Router();
 
@@ -25,6 +26,8 @@ const messageLimit = rateLimit({
     }
 })
 
+const charAlpha = "abcdefghijklmnopqrstuvwxyz"
+
 app.post("/send-message", (middleware.authenticateToken, messageLimit), (req, res) => {
     const message = req.body.message;
     const chatId = req.body.chatId;
@@ -32,14 +35,17 @@ app.post("/send-message", (middleware.authenticateToken, messageLimit), (req, re
     if (!rooms[res.id]) return res.send({ sent: false, error: "You are not connected to a channel!" })
     if (rooms[res.id] != chatId) return res.send({ sent: false, error: "You are not connected to this channel!" })
     // determine if user has access to channel
+
+    const messageId = charAlpha.charAt(Math.floor(Math.random() * charAlpha.length)) + tokenHandler.createRandomId();
     
     io.to(chatId).emit("recieve-message", {
         from: res.user,
         fromId: res.id,
-        message: message
+        message: message,
+        messageId: messageId
     })
 
-    res.send({ sent: true })
+    res.send({ sent: true, messageId: messageId })
 })
 
 module.exports = app;
