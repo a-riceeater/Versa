@@ -211,7 +211,7 @@ friendLBar.addEventListener("load", () => {
 
                                 if (e.target.innerText.trim() == "") return
 
-                                fetch("/message-api/send", {
+                                fetch("/message-api/send-message", {
                                     method: "POST",
                                     headers: {
                                         "Content-Type": "application/json"
