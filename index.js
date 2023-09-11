@@ -14,6 +14,9 @@ const io = require("socket.io")(server, { 'force new connection': true });
 
 const version = JSON.parse(require("fs").readFileSync(path.join(__dirname, "current_version.json"), "utf8")).version;
 
+const socketIds = {};
+const rooms = [];
+
 app.use(express.static(path.join(__dirname, "static")));
 app.use(express.json())
 app.use("/cdn/", express.static(path.join(__dirname, "cdn")));
@@ -50,22 +53,36 @@ app.get("/legal/privacy", (req, res) => {
     res.sendFile(path.join(__dirname, "html", "legal", "privacy.html"))
 })
 
-app.get("/invite/:inviteId", (req, res) => {})
+app.get("/invite/:inviteId", (req, res) => { })
 
 app.get("/api/verify-version/:version", (req, res) => {
     res.send(req.params.version == version);
+})
+
+app.post("/socket-api/connect", middle.authenticateToken, (req, res) => {
+    
 })
 
 app.get("*", (req, res) => {
     res.sendStatus(404);
 })
 
-const socketIds = {};
 
 io.on("connection", (socket) => {
+    app.set("socket", socket);
+
+    socket.on("disconnect", () => {
+        Object.values(socketIds).forEach(function (key) {
+            if (key == socket.id) {
+                console.log("Removing " + key + " from socket array.")
+                delete socketIds[key]
+            }
+        });
+        delete rooms[socket.id];
+        socket.leaveAll();
+    })
 });
 
 server.listen(6969, () => {
     console.log("Listening at http://localhost:6969")
 })
-
