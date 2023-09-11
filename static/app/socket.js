@@ -20,3 +20,17 @@ const scI = setInterval(() => {
         vt.log("WS", "Connected to WS")
     })
 }, 200)
+
+socket.on("recieve-message", (d) => {
+    const messageId = d.messageId;
+    const from = d.from;
+    const content = d.message;
+
+    const message = document.createElement("div");
+    message.classList.add("cm-mb-mse");
+    message.id = messageId;
+
+    message.innerHTML = `${content}`
+    
+    // document.querySelector(".cm-mainbox > hitory thing box").appendChild(message);
+})
