@@ -89,4 +89,5 @@ server.listen(6969, () => {
     console.log("Listening at http://localhost:6969")
 })
 
-module.exports = { socketIds: socketIds, rooms: rooms }
+module.exports.socketIds = socketIds;
+module.exports.rooms = rooms;

@@ -338,6 +338,7 @@ app.post("/leave-server", middle.authenticateToken, (req, res) => {
     res.send({ left: true })
 })
 
+console.log(require(path.join(__dirname, "../", "../", "index.js")))
 const socketIds = require(path.join(__dirname, "../", "../", "index.js")).socketIds;
 const rooms = require(path.join(__dirname, "../", "../", "index.js")).rooms;
 
