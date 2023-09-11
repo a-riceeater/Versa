@@ -367,7 +367,13 @@
     font-size: 15.5px;
     font-family: var(--dm);
     color: var(--c2);
-    width: 100%;
     z-index: 2;
     max-height: 70%;
+    overflow-x: scroll;
+    max-width: 100%;
+    width: 100%;
+}
+
+.main-container > .cm-mainbox > .cm-editor > .cm-e-textbox > .cm-e-edit::-webkit-scrollbar {
+    display: none;
 }
