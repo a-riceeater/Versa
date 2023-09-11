@@ -7,5 +7,7 @@ module.exports = {
     serverDb: databaseHandler.database(path.join(__dirname, "../", "database", "servers.json")),
     friendDb: databaseHandler.database(path.join(__dirname, "../", "database", "friends.json")),
     messageDb: databaseHandler.database(path.join(__dirname, "../", "database", "messages.json")),
-    statusDb: databaseHandler.database(path.join(__dirname, "../", "database", "statuses.json"))
+    statusDb: databaseHandler.database(path.join(__dirname, "../", "database", "statuses.json")),
+    socketIds: {},
+    rooms: {}
 }

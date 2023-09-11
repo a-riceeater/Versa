@@ -6,6 +6,7 @@ const databaseHandler = require("jdb");
 const favicon = require('serve-favicon');
 const cors = require("cors");
 const middle = require("./server/middleware");
+const dbInstances = require("./server/dbInstances")
 
 const app = express();
 const server = http.createServer(app);
@@ -14,8 +15,8 @@ const io = require("socket.io")(server, { 'force new connection': true });
 
 const version = JSON.parse(require("fs").readFileSync(path.join(__dirname, "current_version.json"), "utf8")).version;
 
-const socketIds = {};
-const rooms = {};
+const socketIds = dbInstances.socketIds;
+const rooms = dbInstances.rooms;
 
 app.use(express.static(path.join(__dirname, "static")));
 app.use(express.json())
@@ -88,6 +89,3 @@ io.on("connection", (socket) => {
 server.listen(6969, () => {
     console.log("Listening at http://localhost:6969")
 })
-
-module.exports.socketIds = socketIds;
-module.exports.rooms = rooms;
