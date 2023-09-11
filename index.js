@@ -15,7 +15,7 @@ const io = require("socket.io")(server, { 'force new connection': true });
 const version = JSON.parse(require("fs").readFileSync(path.join(__dirname, "current_version.json"), "utf8")).version;
 
 const socketIds = {};
-const rooms = [];
+const rooms = {};
 
 app.use(express.static(path.join(__dirname, "static")));
 app.use(express.json())
@@ -75,9 +75,8 @@ io.on("connection", (socket) => {
     app.set("socket", socket);
 
     socket.on("disconnect", () => {
-        Object.values(socketIds).forEach(function (key) {
+        Object.values(socketIds).forEach((key) => {
             if (key == socket.id) {
-                console.log("Removing " + key + " from socket array.")
                 delete socketIds[key]
             }
         });
@@ -89,3 +88,5 @@ io.on("connection", (socket) => {
 server.listen(6969, () => {
     console.log("Listening at http://localhost:6969")
 })
+
+module.exports = { socketIds: socketIds, rooms: rooms }

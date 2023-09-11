@@ -338,4 +338,11 @@ app.post("/leave-server", middle.authenticateToken, (req, res) => {
     res.send({ left: true })
 })
 
+const socketIds = require(path.join(__dirname, "../", "../", "index.js")).socketIds;
+const rooms = require(path.join(__dirname, "../", "../", "index.js")).rooms;
+
+app.get("/join-room/:chatId", middle.authenticateToken, (req, res) => {
+    const socketId = socketIds[res.id];
+})
+
 module.exports = app;
