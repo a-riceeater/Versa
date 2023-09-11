@@ -11,6 +11,6 @@ module.exports = {
     socketIds: {},
     rooms: {},
     mainApp: require("express")(),
-    server: http.createServer(app),
+    server: require("http").createServer(app),
     io: require("socket.io")(this.server, { 'force new connection': true })
 }
