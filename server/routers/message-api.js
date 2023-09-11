@@ -31,9 +31,14 @@ app.post("/send-message", (middleware.authenticateToken, messageLimit), (req, re
 
     if (!rooms[res.id]) return res.send({ sent: false, error: "You are not connected to a channel!" })
     if (rooms[res.id] != chatId) return res.send({ sent: false, error: "You are not connected to this channel!" })
-
     // determine if user has access to channel
     
+    io.to(chatId).emit("recieve-message", {
+        from: res.user,
+        fromId: res.id,
+        message: message
+    })
+
     res.send({ sent: true })
 })
 
