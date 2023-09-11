@@ -1,6 +1,10 @@
 const databaseHandler = require("jdb");
 const path = require("path");
 
+const app = require("express")();
+const server = require("http").createServer(app);
+const io = require("socket.io")(server, { 'force new connection': true });
+
 module.exports = {
     tokens: databaseHandler.database(path.join(__dirname, "../", "database", "tokens.json")),
     accountDb: databaseHandler.database(path.join(__dirname, "../", "database", "accounts.json")),
@@ -10,7 +14,7 @@ module.exports = {
     statusDb: databaseHandler.database(path.join(__dirname, "../", "database", "statuses.json")),
     socketIds: {},
     rooms: {},
-    mainApp: require("express")(),
-    server: require("http").createServer(this.app),
-    io: require("socket.io")(this.server, { 'force new connection': true })
+    mainApp: app,
+    server: server,
+    io: io
 }
