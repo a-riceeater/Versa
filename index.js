@@ -26,6 +26,7 @@ app.use("/app/", require(path.join(__dirname, "server", "routers", "app.js")));
 app.use("/auth/", require(path.join(__dirname, "server", "routers", "authentication.js")));
 app.use("/app-api/", require(path.join(__dirname, "server", "routers", "app-api.js")));
 app.use("/cdn-api/", require(path.join(__dirname, "server", "cdn.js")));
+app.use("/message-api/", require(path.join(__dirname, "server", "routers", "message-api.js")))
 app.use("/download/", require(path.join(__dirname, "server", "routers", "downloads.js")));
 
 app.use(favicon(path.join(__dirname, 'static', 'versa.png')));
