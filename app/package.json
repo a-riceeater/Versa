@@ -13,5 +13,8 @@
     "description": "The application for the chatting app, Versa",
     "devDependencies": {
         "electron": "^26.2.0"
+    },
+    "dependencies": {
+        "express-rate-limit": "^6.11.1"
     }
 }

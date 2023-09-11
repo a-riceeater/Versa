@@ -1,7 +1,8 @@
 const express = require("express");
 const path = require("path");
 const dbInstances = require("../dbInstances");
-const middleware = require("../middleware")
+const middleware = require("../middleware");
+const rateLimit = require("express-rate-limit")
 
 const app = express.Router();
 
