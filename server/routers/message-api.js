@@ -28,7 +28,10 @@ const messageLimit = rateLimit({
 app.post("/send-message", (middleware.authenticateToken, messageLimit), (req, res) => {
     const message = req.body.message;
     const chatId = req.body.chatId;
-    
+
+    if (!rooms[res.id]) return res.send({ sent: false, error: "You are not connected to a channel!" })
+    if (rooms[res.id] != chatId) return res.send({ sent: false, error: "You are not connected to this channel!" })
+
     // determine if user has access to channel
     
     res.send({ sent: true })
