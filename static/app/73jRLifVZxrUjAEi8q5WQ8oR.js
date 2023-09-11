@@ -187,8 +187,12 @@ friendLBar.addEventListener("load", () => {
         document.querySelectorAll(".fr-chan-list-l > .frcl-b-container > .frcl-btn").forEach(btn => {
             btn.addEventListener("click", () => {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "/app/chat/dm/" + btn.getAttribute("data-cid"));
-                xhr.send();
+
+                fetch("/app-api/join-room/" + btn.getAttribute("data-cid"))
+                .then(() => {
+                    xhr.open("GET", "/app/chat/dm/" + btn.getAttribute("data-cid"));
+                    xhr.send();
+                })
 
                 xhr.addEventListener("load", () => {
                     vt.navigate("@" + btn.innerText.replace("#" + btn.innerText.split("#").pop(), "").trim(), btn.getAttribute("data-cid"));
