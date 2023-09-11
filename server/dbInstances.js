@@ -9,5 +9,8 @@ module.exports = {
     messageDb: databaseHandler.database(path.join(__dirname, "../", "database", "messages.json")),
     statusDb: databaseHandler.database(path.join(__dirname, "../", "database", "statuses.json")),
     socketIds: {},
-    rooms: {}
+    rooms: {},
+    mainApp: require("express")(),
+    server: http.createServer(app),
+    io: require("socket.io")(this.server, { 'force new connection': true })
 }

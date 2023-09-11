@@ -7,10 +7,9 @@ const cors = require("cors");
 const middle = require("./server/middleware");
 const dbInstances = require("./server/dbInstances")
 
-const app = express();
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = require("socket.io")(server, { 'force new connection': true });
+const app = dbInstances.mainApp;
+const server = dbInstances.server;
+const io = dbInstances.io;
 
 const version = JSON.parse(require("fs").readFileSync(path.join(__dirname, "current_version.json"), "utf8")).version;
 
