@@ -195,6 +195,8 @@ friendLBar.addEventListener("load", () => {
                     document.querySelector(".scroller.main-container").innerHTML = xhr.responseText;
 
                     setTimeout(() => {
+                        document.querySelector(".main-container > .cm-mainbox .cm-editor").addEventListener("click", () => document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-textbox > .cm-e-edit").focus())
+
                         document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-textbox > .cm-e-edit").addEventListener("keydown", (e) => {
                             setTimeout(() => {
                                 document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-placeholder").style.display = e.target.innerText.trim() == "" ? "block" : "none";
