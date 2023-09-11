@@ -9,6 +9,9 @@ const app = express.Router();
 const socketIds = dbInstances.socketIds;
 const rooms = dbInstances.rooms;
 
+const messageDb = dbInstances.messageDb;
+const friendDb = dbInstances.friendDb;
+
 const messageLimit = rateLimit({
 	windowMs: 5 * 1000, // 5 seconds
 	max: 10,
