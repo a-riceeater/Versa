@@ -60,7 +60,10 @@ app.get("/api/verify-version/:version", (req, res) => {
 })
 
 app.post("/socket-api/connect", middle.authenticateToken, (req, res) => {
-    
+    const socketId = req.body.id;
+    socketIds[res.id] = socketId;
+
+    res.status(200).send({ connected: true });
 })
 
 app.get("*", (req, res) => {
