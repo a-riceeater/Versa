@@ -343,6 +343,9 @@ const rooms = require(path.join(__dirname, "../", "../", "index.js")).rooms;
 
 app.get("/join-room/:chatId", middle.authenticateToken, (req, res) => {
     const socketId = socketIds[res.id];
+    rooms[socketId] = req.params.chatId;
+
+    res.sendStatus(200);
 })
 
 module.exports = app;
