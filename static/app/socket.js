@@ -15,10 +15,17 @@ const scI = setInterval(() => {
             id: socket.id
         })
     })
-    .then((d) => d.json())
-    .then((d) => {
-        vt.log("WS", "Connected to WS")
-    })
+        .then((d) => d.json())
+        .then((d) => {
+            vt.log("WS", "Connected to WS")
+        })
+        .catch((err) => {
+            console.error(err);
+            const em = new ErrorModal();
+            em.title = "Failed to connect"
+            em.body = err;
+            em.spawn()
+        })
 }, 200)
 
 socket.on("recieve-message", (d) => {
@@ -26,13 +33,20 @@ socket.on("recieve-message", (d) => {
     const from = d.from;
     const content = d.message;
 
-    const message = document.createElement("div");
-    message.classList.add("cm-mb-mse");
-    message.id = messageId;
+    if (document.querySelector(".cm-mainbox > .cm-msg-history").contains(document.querySelector(".cm-mainbox > .cm-msg-history > #" + d.tempId))) {
+        setTimeout(() => {
+            const message = document.querySelector(".cm-mainbox > .cm-msg-history > #" + d.tempId);
+            message.id = messageId;
+            message.classList.remove("sending")
+        }, Math.floor(Math.random() * 200))
 
-    message.innerHTML = `${content}`
+    } else {
+        const message = document.createElement("div");
+        message.classList.add("cm-mb-mse");
+        message.id = messageId;
 
-    console.log(messageId, from, content);
-    
-    // document.querySelector(".cm-mainbox > hitory thing box").appendChild(message);
+        message.innerHTML = `${content}`
+
+        document.querySelector(".cm-mainbox > .cm-msg-history").appendChild(message);
+    }
 })

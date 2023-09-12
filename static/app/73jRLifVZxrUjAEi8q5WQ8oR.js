@@ -6,6 +6,7 @@
 */
 
 let completed = 0;
+const userMessagesSent = [];
 
 const sl_scroller = new XMLHttpRequest();
 
@@ -189,10 +190,10 @@ friendLBar.addEventListener("load", () => {
                 const xhr = new XMLHttpRequest();
 
                 fetch("/app-api/join-room/" + btn.getAttribute("data-cid"))
-                .then(() => {
-                    xhr.open("GET", "/app/chat/dm/" + btn.getAttribute("data-cid"));
-                    xhr.send();
-                })
+                    .then(() => {
+                        xhr.open("GET", "/app/chat/dm/" + btn.getAttribute("data-cid"));
+                        xhr.send();
+                    })
 
                 xhr.addEventListener("load", () => {
                     vt.navigate("@" + btn.innerText.replace("#" + btn.innerText.split("#").pop(), "").trim(), btn.getAttribute("data-cid"));
@@ -211,6 +212,15 @@ friendLBar.addEventListener("load", () => {
 
                                 if (e.target.innerText.trim() == "") return
 
+                                const tempId = vt.createRandomId();
+                                const message = document.createElement("div");
+                                message.classList.add("cm-mb-mse");
+                                message.classList.add("sending");
+                                message.innerHTML = `${e.target.innerText.trim()}`
+                                message.id = "t" + tempId;
+
+                                document.querySelector(".cm-mainbox > .cm-msg-history").appendChild(message);
+
                                 fetch("/message-api/send-message", {
                                     method: "POST",
                                     headers: {
@@ -218,22 +228,26 @@ friendLBar.addEventListener("load", () => {
                                     },
                                     body: JSON.stringify({
                                         message: e.target.innerText.trim(),
-                                        chatId: btn.getAttribute("data-cid")
+                                        chatId: btn.getAttribute("data-cid"),
+                                        tempId: "t" + tempId
                                     })
                                 })
-                                .then((d) => d.json())
-                                .then((d) => {
-                                    if (d.sent) {
-                                        // bla bla bla yk make the message not opacity
-                                    }
-                                })
-                                .catch((err) => {
-                                    console.error(err);
-                                    const em = new ErrorModal();
-                                    em.title = "Failed to send"
-                                    em.body = "The message failed to send."
-                                    em.spawn();
-                                })
+                                    .then((d) => d.json())
+                                    .then((d) => {
+                                        if (!d.sent) {
+                                            const em = new ErrorModal();
+                                            em.title = "Failed to send"
+                                            em.body = d.error;
+                                            em.spawn();
+                                        }
+                                    })
+                                    .catch((err) => {
+                                        console.error(err);
+                                        const em = new ErrorModal();
+                                        em.title = "Failed to send"
+                                        em.body = err;
+                                        em.spawn();
+                                    })
                             }
 
                             /*

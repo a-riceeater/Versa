@@ -377,3 +377,11 @@
 .main-container > .cm-mainbox > .cm-editor > .cm-e-textbox > .cm-e-edit::-webkit-scrollbar {
     display: none;
 }
+
+.main-container > .cm-mainbox > .cm-msg-history > .cm-mb-mse.sending {
+    opacity: 0.5;
+}
+
+.main-container > .cm-mainbox > .cm-msg-history > .cm-mb-mse.failed {
+    color: red !important;
+}

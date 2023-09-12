@@ -42,7 +42,8 @@ app.post("/send-message", middleware.authenticateToken, messageLimit, (req, res)
         from: res.user,
         fromId: res.id,
         message: message,
-        messageId: messageId
+        messageId: messageId,
+        tempId: req.body.tempId
     })
 
     res.send({ sent: true, messageId: messageId })
