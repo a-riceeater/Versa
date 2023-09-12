@@ -340,10 +340,17 @@ app.post("/leave-server", middle.authenticateToken, (req, res) => {
 
 const socketIds = dbInstances.socketIds;
 const rooms = dbInstances.rooms;
+const io = dbInstances.io;
 
 app.get("/join-room/:chatId", middle.authenticateToken, (req, res) => {
     const socketId = socketIds[res.id];
     rooms[socketId] = req.params.chatId;
+
+    const socket = io.sockets.sockets.get(socketIds[res.id]);
+    if (!socket) return res.send({ error: true });
+    socket.leaveAll();
+    rooms[res.id] = req.params.chatId;
+    socket.join(req.params.chatId);
 
     // add socket.join later
     res.sendStatus(200);

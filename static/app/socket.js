@@ -31,6 +31,8 @@ socket.on("recieve-message", (d) => {
     message.id = messageId;
 
     message.innerHTML = `${content}`
+
+    console.log(messageId, from, content);
     
     // document.querySelector(".cm-mainbox > hitory thing box").appendChild(message);
 })

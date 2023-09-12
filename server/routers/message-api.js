@@ -9,6 +9,7 @@ const app = express.Router();
 
 const socketIds = dbInstances.socketIds;
 const rooms = dbInstances.rooms;
+const io = dbInstances.io;
 
 const messageDb = dbInstances.messageDb;
 const friendDb = dbInstances.friendDb;
