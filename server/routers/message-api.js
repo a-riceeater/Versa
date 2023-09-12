@@ -29,7 +29,7 @@ const messageLimit = rateLimit({
 
 const charAlpha = "abcdefghijklmnopqrstuvwxyz"
 
-app.post("/send-message", (middleware.authenticateToken, messageLimit), (req, res) => {
+app.post("/send-message", middleware.authenticateToken, messageLimit, (req, res) => {
     const message = req.body.message;
     const chatId = req.body.chatId;
 

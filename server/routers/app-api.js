@@ -344,9 +344,8 @@ const io = dbInstances.io;
 
 app.get("/join-room/:chatId", middle.authenticateToken, (req, res) => {
     const socketId = socketIds[res.id];
-    rooms[socketId] = req.params.chatId;
 
-    const socket = io.sockets.sockets.get(socketIds[res.id]);
+    const socket = io.sockets.sockets.get(socketId);
     if (!socket) return res.send({ error: true });
     socket.leaveAll();
     rooms[res.id] = req.params.chatId;
