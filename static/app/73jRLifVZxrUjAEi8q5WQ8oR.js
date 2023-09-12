@@ -203,7 +203,7 @@ friendLBar.addEventListener("load", () => {
 
                         document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-textbox > .cm-e-edit").addEventListener("keydown", (e) => {
                             setTimeout(() => {
-                                document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-placeholder").style.display = e.target.innerText.trim() == "" ? "block" : "none";
+                                document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-placeholder").style.display = e.target.innerText == "" ? "block" : "none";
                             })
 
                             if (e.key == "Enter"/* && !e.shiftKey*/) {
