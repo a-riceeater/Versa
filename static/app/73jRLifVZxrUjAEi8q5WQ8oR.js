@@ -224,7 +224,7 @@ friendLBar.addEventListener("load", () => {
                                 </div>
                                 <img src="/cdn/pfps/default.png" class="profile-picture">
                                 <div class="cm-mb-muser">
-                                    a
+                                    a <!-- Replace with user later, figure out how to do so, and also don't show user if same user message -->
                                 </div>
                                 <div class="cm-mb-mcontent">
                                     ${e.target.innerText.trim()}
