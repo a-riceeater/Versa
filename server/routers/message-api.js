@@ -21,7 +21,7 @@ const messageLimit = rateLimit({
 	legacyHeaders: false, 
     statusCode: 429,
     message: {
-        error: "Too many messages",
+        error: "Too many messages!",
         sent: false,
     }
 })
