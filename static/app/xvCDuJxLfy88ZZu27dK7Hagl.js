@@ -6,7 +6,6 @@ const w = setInterval(() => {
                     vt.log('Connection', 'Connection status stable; Code', e.status)
                     document.querySelector('.versa-dftm-loads').style.opacity = '0'
                     setTimeout(() => {
-                        document.querySelector('.versa-dftm-loads').style.display = 'none'
                         const a = setInterval(() => {
                             if (!socket.id) return
 
@@ -24,6 +23,7 @@ const w = setInterval(() => {
                                 .then((d) => d.json())
                                 .then((d) => {
                                     vt.log("WS", "Connected to WS")
+                                    document.querySelector('.versa-dftm-loads').style.display = 'none'
                                 })
                                 .catch((err) => {
                                     console.error(err);
