@@ -79,7 +79,6 @@ io.on("connection", (socket) => {
                 delete socketIds[key]
             }
         });
-        delete rooms[socket.id];
         socket.leaveAll();
     })
 });
