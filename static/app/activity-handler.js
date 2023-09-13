@@ -10,32 +10,6 @@ window.addEventListener("beforeunload", () => {
 
 window.addEventListener("online", (e) => {
     vt.log("WS", "Reconnecting...")
-    const a = setInterval(() => {
-        if (!socket.id) return
-
-        vt.log("WS", "Socket ID: " + socket.id)
-        clearInterval(a);
-        fetch("/socket-api/connect", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                id: socket.id
-            })
-        })
-            .then((d) => d.json())
-            .then((d) => {
-                vt.log("WS", "Connected to WS")
-            })
-            .catch((err) => {
-                console.error(err);
-                const em = new ErrorModal();
-                em.title = "Failed to connect"
-                em.body = err;
-                em.spawn()
-            })
-    }, 200)
 })
 
 window.addEventListener("offline", (e) => {
