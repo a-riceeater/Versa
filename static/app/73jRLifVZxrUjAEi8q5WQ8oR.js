@@ -221,12 +221,6 @@ friendLBar.addEventListener("load", () => {
                                         chatId: btn.getAttribute("data-cid")
                                     })
                                 })
-                                .then((d) => d.json())
-                                .then((d) => {
-                                    if (d.sent) {
-                                        // bla bla bla yk make the message not opacity
-                                    }
-                                })
                                 .catch((err) => {
                                     console.error(err);
                                     const em = new ErrorModal();
