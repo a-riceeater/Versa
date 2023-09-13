@@ -261,14 +261,14 @@ friendLBar.addEventListener("load", () => {
                             }*/
                         })
 
-                        document.querySelector(".main-container > .cm-mainbox > .cmfrb-dft.remove-fr").addEventListener("click", () => {
+                        document.querySelector(".main-container > .cm-mainbox > .cm-uinfo > .cmfrb-dft.remove-fr").addEventListener("click", () => {
                             fetch("/app-api/remove-friend", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json"
                                 },
                                 body: JSON.stringify({
-                                    friend: document.querySelector(".main-container > .cm-mainbox > .cmb-utitle").innerText.trim()
+                                    friend: document.querySelector(".main-container > .cm-mainbox > .cm-uinfo > .cmb-utitle").innerText.trim()
                                 })
                             })
                                 .then((d) => d.json())

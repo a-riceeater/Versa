@@ -275,24 +275,24 @@
     padding-top: 20px;
 }
 
-.main-container > .cm-mainbox > #pfp-cmut {
+.main-container > .cm-mainbox > .cm-uinfo >  #pfp-cmut {
     height: 80px;
     width: 80px;
 }
 
-.main-container > .cm-mainbox > .cmb-utitle {
+.main-container > .cm-mainbox >  .cm-uinfo >.cmb-utitle {
     font-family: var(--dm);
     color: var(--c5);
     margin-bottom: 0;
 }
 
-.main-container > .cm-mainbox > .cmb-startdesc {
+.main-container > .cm-mainbox >  .cm-uinfo > .cmb-startdesc {
     font-family: var(--dm);
     color: var(--c2);
     margin-top: 5px;
 }
 
-.main-container > .cm-mainbox > .cmfrb-dft {
+.main-container > .cm-mainbox > .cm-uinfo > .cmfrb-dft {
     height: 35px;
     width: 120px;
     background-color: var(--c6);
@@ -304,15 +304,15 @@
     transition: .2s;
 }
 
-.main-container > .cm-mainbox > .cmfrb-dft:hover {
+.main-container > .cm-mainbox > .cm-uinfo > .cmfrb-dft:hover {
     background-color: var(--c1);
 }
 
-.main-container > .cm-mainbox > .cmfrb-dft.block-fr {
+.main-container > .cm-mainbox > .cm-uinfo > .cmfrb-dft.block-fr {
     color: red;
 }
 
-.main-container > .cm-mainbox > .cmfrb-dft.remove-fr {
+.main-container > .cm-mainbox > .cm-uinfo > .cmfrb-dft.remove-fr {
     color: var(--c2);
 }
 
@@ -376,6 +376,14 @@
 
 .main-container > .cm-mainbox > .cm-editor > .cm-e-textbox > .cm-e-edit::-webkit-scrollbar {
     display: none;
+}
+
+.main-container > .cm-mainbox > .cm-msg-history {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow-y: scroll;
+
 }
 
 .main-container > .cm-mainbox > .cm-msg-history > .cm-mb-mse.sending {
