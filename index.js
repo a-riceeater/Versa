@@ -69,17 +69,30 @@ app.get("*", (req, res) => {
     res.sendStatus(404);
 })
 
+const statusDb = dbInstances.statusDb;
 
 io.on("connection", (socket) => {
     app.set("socket", socket);
 
     socket.on("disconnect", () => {
-        Object.values(socketIds).forEach((key) => {
-            if (key == socket.id) {
-                delete socketIds[key]
+        var keys = Object.keys(socketIds);
+        var values = Object.values(socketIds);
+
+        for (var i = 0; i < values.length; i++) {
+            if (values[i] === socket.id) {
+                const statusRow = statusDb.getRowSync("statuses", "id", keys[i]);
+                statusRow.active = "offline"
+                statusDb.updateRowSync("statuses", "id", keys[i], statusRow);
+            }
+        }
+        
+        Object.values(socketIds).forEach((value) => {
+            if (value == socket.id) {
+                delete socketIds[value]
             }
         });
         socket.leaveAll();
+
     })
 });
 
