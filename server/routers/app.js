@@ -227,9 +227,9 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
             <p class="cmb-startdesc">This is the start of your message history.</p>
             <button class="cmfrb-dft remove-fr">Remove Friend</button>
             <button class="cmfrb-dft block-fr">Block</button>
+            <div class="cm-divider"></div>
         </div>
 
-        <div class="cm-divider"></div>
         <div class="cm-msg-history">
             <div class="cm-mb-mse" data-mid="asdasd" data-fuser="a#6419" data-fid="asfhisdff">
                 <div class="cm-mb-mtt">
