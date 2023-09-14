@@ -275,24 +275,24 @@
     padding-top: 20px;
 }
 
-.main-container > .cm-mainbox >  #pfp-cmut {
+.main-container > .cm-mainbox > .cm-msgs >  #pfp-cmut {
     height: 80px;
     width: 80px;
 }
 
-.main-container > .cm-mainbox > .cmb-utitle {
+.main-container > .cm-mainbox > .cm-msgs > .cmb-utitle {
     font-family: var(--dm);
     color: var(--c5);
     margin-bottom: 0;
 }
 
-.main-container > .cm-mainbox >  .cmb-startdesc {
+.main-container > .cm-mainbox >  .cm-msgs > .cmb-startdesc {
     font-family: var(--dm);
     color: var(--c2);
     margin-top: 5px;
 }
 
-.main-container > .cm-mainbox > .cmfrb-dft {
+.main-container > .cm-mainbox > .cm-msgs > .cmfrb-dft {
     height: 35px;
     width: 120px;
     background-color: var(--c6);
@@ -304,19 +304,19 @@
     transition: .2s;
 }
 
-.main-container > .cm-mainbox > .cmfrb-dft:hover {
+.main-container > .cm-mainbox > .cm-msgs > .cmfrb-dft:hover {
     background-color: var(--c1);
 }
 
-.main-container > .cm-mainbox > .cmfrb-dft.block-fr {
+.main-container > .cm-mainbox > .cm-msgs > .cmfrb-dft.block-fr {
     color: red;
 }
 
-.main-container > .cm-mainbox > .cmfrb-dft.remove-fr {
+.main-container > .cm-mainbox > .cm-msgs > .cmfrb-dft.remove-fr {
     color: var(--c2);
 }
 
-.main-container > .cm-mainbox > .cm-divider {
+.main-container > .cm-mainbox > .cm-msgs > .cm-divider {
     width: 90%;
     background-color: var(--c5);
     margin-top: 20px;
@@ -403,4 +403,30 @@
 
 .main-container > .cm-mainbox > .cm-mb-mse.failed {
     color: red !important;
+}
+
+.main-container > .cm-mainbox > .cm-msgs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px - 55px);
+    overflow-y: scroll;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.main-container > .cm-mainbox > .cm-ed-reply {
+    position: absolute;
+    bottom: 53px;
+    background-color: var(--c1);
+    width: calc(90% - 1px);
+    display: flex;
+    align-self: center;
+    margin-left: -4px;
+    box-sizing: border-box;
+    padding: 5px;
+    font-family: var(--dm);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }

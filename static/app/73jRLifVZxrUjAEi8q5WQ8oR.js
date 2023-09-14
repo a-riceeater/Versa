@@ -231,7 +231,7 @@ friendLBar.addEventListener("load", () => {
                                 </div>`
                                 message.id = "t" + tempId;
 
-                                document.querySelector(".cm-mainbox").appendChild(message);
+                                document.querySelector(".cm-mainbox > .cm-msgs").appendChild(message);
 
                                 fetch("/message-api/send-message", {
                                     method: "POST",
@@ -261,7 +261,7 @@ friendLBar.addEventListener("load", () => {
                             }*/
                         })
 
-                        document.querySelector(".main-container > .cm-mainbox > .cmfrb-dft.remove-fr").addEventListener("click", () => {
+                        document.querySelector(".main-container > .cm-mainbox > .cm-msgs > .cmfrb-dft.remove-fr").addEventListener("click", () => {
                             fetch("/app-api/remove-friend", {
                                 method: "POST",
                                 headers: {
