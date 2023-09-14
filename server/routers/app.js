@@ -229,9 +229,7 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
             <button class="cmfrb-dft block-fr">Block</button>
             <div class="cm-divider"></div>
         </div>
-        <div class="cm-ed-reply">
-        Replying to <span class="cm-eb-rply">otheruser</span>
-        </div>
+        <div class="cm-ed-reply">Replying to<span class="cm-eb-rply">otheruser</span></div>
         <div class="cm-editor">
             <div class="cm-e-textbox" style="height: 42px">
                 <div class="cm-e-edit" contenteditable spellcheck="false" autocomplete="off"> </div>

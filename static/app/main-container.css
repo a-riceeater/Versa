@@ -429,4 +429,13 @@
     font-family: var(--dm);
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    cursor: default;
+    user-select: none;
+    color: var(--c2);
+}
+
+.main-container > .cm-mainbox > .cm-ed-reply > .cm-eb-rply {
+    color: var(--c5) !important;
+    font-weight: 600;
+    margin-left: 5px;
 }
