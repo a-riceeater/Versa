@@ -321,6 +321,7 @@
     background-color: var(--c5);
     margin-top: 20px;
     height: 1px;
+    margin-bottom: 20px;
 }
 
 .main-container > .cm-mainbox > .cm-editor {
