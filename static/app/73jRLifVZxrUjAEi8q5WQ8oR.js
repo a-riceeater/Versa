@@ -231,7 +231,7 @@ friendLBar.addEventListener("load", () => {
                                 </div>`
                                 message.id = "t" + tempId;
 
-                                document.querySelector(".cm-mainbox > .cm-msg-history").appendChild(message);
+                                document.querySelector(".cm-mainbox").appendChild(message);
 
                                 fetch("/message-api/send-message", {
                                     method: "POST",

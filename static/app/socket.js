@@ -33,9 +33,9 @@ socket.on("recieve-message", (d) => {
     const from = d.from;
     const content = d.message;
 
-    if (document.querySelector(".cm-mainbox > .cm-msg-history").contains(document.querySelector(".cm-mainbox > .cm-msg-history > #" + d.tempId))) {
+    if (document.querySelector(".cm-mainbox").contains(document.querySelector(".cm-mainbox > #" + d.tempId))) {
         setTimeout(() => {
-            const message = document.querySelector(".cm-mainbox > .cm-msg-history > #" + d.tempId);
+            const message = document.querySelector(".cm-mainbox > #" + d.tempId);
             message.id = messageId;
             message.classList.remove("sending")
         }, Math.floor(Math.random() * 200))
@@ -47,6 +47,6 @@ socket.on("recieve-message", (d) => {
 
         message.innerHTML = `${content}`
 
-        document.querySelector(".cm-mainbox > .cm-msg-history").appendChild(message);
+        document.querySelector(".cm-mainbox").appendChild(message);
     }
 })
