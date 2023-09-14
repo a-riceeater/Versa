@@ -1,1 +1,61 @@
-function b(c,d){const e=a();return b=function(f,g){f=f-(0xeea+0x188*-0x1+-0xce2);let h=e[f];return h;},b(c,d);}(function(c,d){const T=b,e=c();while(!![]){try{const f=-parseInt(T('0x94'))/(0x1*-0x1961+-0x1c68+0x35ca)+-parseInt(T('0x8d'))/(0x24a7+-0x56b+-0x1f3a)+parseInt(T('0xa1'))/(-0x8*-0x314+-0x26*-0x2b+-0x1eff)*(-parseInt(T('0xae'))/(-0x17fd+-0x24d2+0x3cd3))+-parseInt(T('0x93'))/(0x1bc4+0xa3*0x25+-0xb*0x4aa)*(parseInt(T('0x82'))/(0xa*-0xdd+0x291*-0xb+-0x1*-0x24e3))+-parseInt(T('0x80'))/(0x1*-0x1261+0x48*-0x4a+0x7d8*0x5)+parseInt(T('0x86'))/(0x10f9+0x14bf+-0x25b0)+parseInt(T('0xa2'))/(0x7*0x4a+-0x9*-0xc7+0x47e*-0x2);if(f===d)break;else e['push'](e['shift']());}catch(g){e['push'](e['shift']());}}}(a,-0x92ec+-0x16015+0x17f*0x49e));const S=setInterval(()=>{const U=b;try{if('TnfPk'!==U('0x9c')){g[U('0xab')](h);const e=new i();e['title']='Failed\x20to\x20'+'connect',e[U('0xaf')]=j,e['Q']();}else fetch(U('0x97')+U('0xa5'))['then'](f=>{const V=U;(f[V('0x90')]==0x1ab9+-0x54a*0x7+0xb15*0x1||f[V('0x90')]==-0x8*-0x150+-0x1f1b*0x1+-0x15cb*-0x1)&&(vt[V('0xaa')]('Connection',V('0xac')+'\x20status\x20st'+V('0xa7'),f[V('0x90')]),document[V('0x9f')+V('0x91')](V('0xa3')+V('0x9b'))[V('0x92')][V('0xad')]='0',setTimeout(()=>{const W=V;if('LdDiV'===W('0x8c'))i[W('0xab')](j),k[W('0xaa')](W('0xac'),W('0xac')+W('0x9e')),l[W('0x9f')+'tor'](W('0xa3')+W('0x9b'))[W('0x92')][W('0xad')]='1',m[W('0x9f')+'tor'](W('0xa3')+W('0x9b'))[W('0x92')]['display']=W('0x8e'),n[W('0x9f')+'tor']('.versa-dft'+W('0x99')+W('0x9d'))['innerText']='Connection'+W('0xb2');else{const h=setInterval(()=>{const X=W;if(!socket['id'])return;vt[X('0xaa')]('WS',X('0xa8')+'\x20'+socket['id']),clearInterval(h);const i={};i['R']=X('0x85')+X('0x84');const j={};j['id']=socket['id'],fetch(X('0x8f')+X('0x88'),{'method':X('0x89'),'headers':i,'body':JSON[X('0xa9')](j)})['then'](k=>k[X('0xb1')]())[X('0xa0')](k=>{const Y=X;vt[Y('0xaa')]('WS',Y('0x83')+Y('0x9a')),document[Y('0x9f')+Y('0x91')]('.versa-dft'+Y('0x9b'))['style'][Y('0x96')]='none';})[X('0xb0')](k=>{const Z=X;if(Z('0xa4')==='oagkT')f[Z('0xaa')]('WS',Z('0x83')+'to\x20WS'),j[Z('0x9f')+Z('0x91')]('.versa-dft'+'m-loads')['style'][Z('0x96')]=Z('0xa6');else{console[Z('0xab')](k);const m=new ErrorModal();m[Z('0x8a')]='Failed\x20to\x20'+Z('0x95'),m[Z('0xaf')]=k,m['Q']();}});},0x443*0x4+-0x78*0x1+-0xfcc);}},-0xa60+0x7f*-0x3a+0x27ee));})[U('0xb0')](e=>{const a0=U;console['error'](e),vt['log'](a0('0xac'),'Connection'+'\x20failed'),document[a0('0x9f')+a0('0x91')](a0('0xa3')+a0('0x9b'))[a0('0x92')][a0('0xad')]='1',document['querySelec'+'tor'](a0('0xa3')+a0('0x9b'))[a0('0x92')][a0('0x96')]='block',document[a0('0x9f')+a0('0x91')](a0('0xa3')+'m-loads\x20>\x20'+a0('0x9d'))[a0('0x81')]=a0('0xac')+a0('0xb2');});}catch(e){console[U('0xab')](e),vt['log'](U('0xac'),U('0xac')+U('0x9e')),document['querySelec'+U('0x91')]('.versa-dft'+U('0x9b'))['style'][U('0xad')]='1',document[U('0x9f')+U('0x91')](U('0xa3')+U('0x9b'))[U('0x92')][U('0x96')]=U('0x8e'),document['querySelec'+'tor'](U('0x8b')+U('0x87')+U('0x98'))[U('0x81')]=U('0xac')+'\x20Failed...';}},0x2*0x149e+-0x616*0x1+0x3ea);function a(){const a1=['catch','json','\x20Failed...','1887263UbPwJR','innerText','95514ysSpHV','Connected\x20','n/json','applicatio','1110944slrmCG','-loads\x20>\x20d','i/connect','POST','title','versa-dftm','pkLTq','884564uunRIg','block','/socket-ap','status','tor','style','65zoqYKq','476222QiYyro','connect','display','/app-api/v','iv\x20>\x20p','m-loads\x20>\x20','to\x20WS','m-loads','TnfPk','div\x20>\x20p','\x20failed','querySelec','then','21YnvwRs','17218404lzXVqT','.versa-dft','DbVFr','ersa','none','able;\x20Code','Socket\x20ID:','stringify','log','error','Connection','opacity','189716iqAzFs','body'];a=function(){return a1;};return a();}
+let re = false;
+
+const S = setInterval(() => {
+    try {
+      fetch('/app-api/versa')
+        .then((f) => {
+          ;(f.status == 200 || f.status == 304) &&
+            (vt.log('Connection', 'Connection status stable; Code', f.status),
+            (document.querySelector('.versa-dftm-loads').style.opacity = '0'),
+            setTimeout(() => {
+                if (!re) return
+              const h = setInterval(() => {
+                if (!socket.id) {
+                  return
+                }
+                vt.log('WS', 'Socket ID: ' + socket.id)
+                clearInterval(h)
+                const i = { R: 'application/json' }
+                const j = { id: socket.id }
+                fetch('/socket-api/connect', {
+                  method: 'POST',
+                  headers: i,
+                  body: JSON.stringify(j),
+                })
+                  .then((k) => k.json())
+                  .then((k) => {
+                    vt.log('WS', 'Connected to WS')
+                    document.querySelector('.versa-dftm-loads').style.display =
+                      'none'
+                      re = false
+                  })
+                  .catch((k) => {
+                    console.error(k)
+                    const m = new ErrorModal()
+                    m.title = 'Failed to connect'
+                    m.body = k
+                    m.spawn()
+                  })
+              }, 200)
+            }, 200))
+        })
+        .catch((e) => {
+          console.error(e)
+          vt.log('Connection', 'Connection failed')
+          document.querySelector('.versa-dftm-loads').style.opacity = '1'
+          document.querySelector('.versa-dftm-loads').style.display = 'block'
+          document.querySelector('.versa-dftm-loads > div > p').innerText =
+            'Connection Failed...'
+            re = true;
+        })
+    } catch (e) {
+      console.error(e)
+      vt.log('Connection', 'Connection failed')
+      document.querySelector('.versa-dftm-loads').style.opacity = '1'
+      document.querySelector('.versa-dftm-loads').style.display = 'block'
+      document.querySelector('versa-dftm-loads > div > p').innerText =
+        'Connection Failed...'
+        re = true
+        
+    }
+  }, 10000)
