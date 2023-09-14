@@ -439,3 +439,12 @@
     font-weight: 600;
     margin-left: 5px;
 }
+
+.main-container > .cm-mainbox > .cm-ed-reply > .cd-rp-cl {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0%, -50%);
+    fill: var(--c2);
+    cursor: pointer;
+}
