@@ -482,6 +482,10 @@
     cursor: pointer;
 }
 
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-muser:hover {
+    text-decoration: underline;
+}
+
 .main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-mcontent {
     display: inline-block;
     vertical-align: bottom;
