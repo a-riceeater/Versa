@@ -48,5 +48,6 @@ socket.on("recieve-message", (d) => {
         message.innerHTML = `${content}`
 
         document.querySelector(".cm-mainbox > .cm-msgs").appendChild(message);
+        document.querySelector(".cm-mainbox > .cm-msgs").scrollBottom();
     }
 })
