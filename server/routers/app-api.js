@@ -108,6 +108,7 @@ app.post("/join-server", middle.authenticateToken, (req, res) => {
     const userServers = uRow.in;
 
     const server = serverDb.getRowSync("servers", "inviteId", inviteId);
+    if (!server) return res.send({ error: "This server does not exist!" })
 
     function write() {
         uRow.in.push({
