@@ -55,6 +55,7 @@ class ErrorModal {
 
         this.__modal.style.display = "block"
 
+        document.querySelectorAll(".dft-err-mod").forEach(m => m.remove())
         document.querySelector(".shade").style.display = "block"
         document.body.appendChild(this.__modal);
 

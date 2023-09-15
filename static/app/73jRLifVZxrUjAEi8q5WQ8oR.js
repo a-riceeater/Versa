@@ -233,7 +233,7 @@ friendLBar.addEventListener("load", () => {
 
                                 document.querySelector(".cm-mainbox > .cm-msgs").appendChild(message);
                                 document.querySelector(".cm-mainbox > .cm-msgs").scrollBottom();
-                                
+
                                 fetch("/message-api/send-message", {
                                     method: "POST",
                                     headers: {
@@ -244,6 +244,18 @@ friendLBar.addEventListener("load", () => {
                                         chatId: btn.getAttribute("data-cid"),
                                         tempId: "t" + tempId
                                     })
+                                })
+                                .then((d) => d.json())
+                                .then((d) => {
+                                    if (d.limiter) {
+                                        const em = new ErrorModal();
+                                        em.title = "Slow down!"
+                                        em.body = "You are sending messages too fast!"
+                                        em.spawn();
+
+                                        message.classList.remove("sending");
+                                        message.classList.add("failed");
+                                    }
                                 })
                                 .catch((err) => {
                                     console.error(err);
