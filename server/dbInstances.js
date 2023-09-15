@@ -1,4 +1,4 @@
-const databaseHandler = require("jdb");
+const databaseHandler = require("./jdb/index");
 const path = require("path");
 
 const app = require("express")();

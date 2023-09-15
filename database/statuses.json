@@ -3,12 +3,18 @@
 		{
 			"user": "a#1288",
 			"text": "wsg",
-			"active": "online"
+			"active": "online",
+			"id": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
 		},
 		{
 			"user": "a#6419",
 			"text": "",
+<<<<<<< HEAD
 			"active": "offline"
+=======
+			"active": "online",
+			"id": "Uyovrer-LtjLURU-8LVmaQm-l7ZszKd-MaY4tGr"
+>>>>>>> 84f6b3da9c2b3ed605fc9dadaa6e1e6b14d614ea
 		},
 		{
 			"user": "test#7891",

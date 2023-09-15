@@ -81,6 +81,7 @@ app.post("/create-account", middle.authAlready, (req, res) => {
 
             statusDb.addRowSync("statuses", {
                 user: info.username,
+                id: userId,
                 text: "",
                 active: "offline"
             });

@@ -231,7 +231,7 @@ friendLBar.addEventListener("load", () => {
                                 </div>`
                                 message.id = "t" + tempId;
 
-                                document.querySelector(".cm-mainbox > .cm-msg-history").appendChild(message);
+                                document.querySelector(".cm-mainbox > .cm-msgs").appendChild(message);
 
                                 fetch("/message-api/send-message", {
                                     method: "POST",
@@ -244,22 +244,13 @@ friendLBar.addEventListener("load", () => {
                                         tempId: "t" + tempId
                                     })
                                 })
-                                    .then((d) => d.json())
-                                    .then((d) => {
-                                        if (!d.sent) {
-                                            const em = new ErrorModal();
-                                            em.title = "Failed to send"
-                                            em.body = d.error;
-                                            em.spawn();
-                                        }
-                                    })
-                                    .catch((err) => {
-                                        console.error(err);
-                                        const em = new ErrorModal();
-                                        em.title = "Failed to send"
-                                        em.body = err;
-                                        em.spawn();
-                                    })
+                                .catch((err) => {
+                                    console.error(err);
+                                    const em = new ErrorModal();
+                                    em.title = "Failed to send"
+                                    em.body = "The message failed to send."
+                                    em.spawn();
+                                })
                             }
 
                             /*
@@ -270,7 +261,7 @@ friendLBar.addEventListener("load", () => {
                             }*/
                         })
 
-                        document.querySelector(".main-container > .cm-mainbox > .cmfrb-dft.remove-fr").addEventListener("click", () => {
+                        document.querySelector(".main-container > .cm-mainbox > .cm-msgs > .cmfrb-dft.remove-fr").addEventListener("click", () => {
                             fetch("/app-api/remove-friend", {
                                 method: "POST",
                                 headers: {
