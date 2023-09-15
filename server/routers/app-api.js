@@ -352,8 +352,7 @@ app.get("/join-room/:chatId", middle.authenticateToken, (req, res) => {
     rooms[res.id] = req.params.chatId;
     socket.join(req.params.chatId);
 
-    // add socket.join later
-    res.sendStatus(200);
+    res.send({ joined: true })
 })
 
 module.exports = app;

@@ -208,7 +208,15 @@ function joinDM(btn) {
     btn.classList.add("selected")
 
     fetch("/app-api/join-room/" + btn.getAttribute("data-cid"))
-        .then(() => {
+        .then((d) => d.json())
+        .then((d) => {
+            if (d.error) {
+                const em = new ErrorModal();
+                em.title = "Failed to connect..."
+                em.body = "Try rejoining the channel."
+                em.spawn();
+                return
+            }
             xhr.open("GET", "/app/chat/dm/" + btn.getAttribute("data-cid"));
             xhr.send();
         })
@@ -254,7 +262,7 @@ function joinDM(btn) {
 
                     const content = e.target.innerText.trim();
                     e.target.innerText = "";
-                    
+
                     fetch("/message-api/send-message", {
                         method: "POST",
                         headers: {
@@ -276,6 +284,12 @@ function joinDM(btn) {
 
                             message.classList.remove("sending");
                             message.classList.add("failed");
+                        }
+                        if (d.error) {
+                            const em = new ErrorModal();
+                            em.title = "An error occured..."
+                            em.body = d.error;
+                            em.spawn();
                         }
                     })
                     .catch((err) => {
