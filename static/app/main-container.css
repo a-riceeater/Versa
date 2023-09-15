@@ -452,6 +452,7 @@
 .main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse {
     width: 100%;
     overflow-wrap: break-word;
+    margin-bottom: 5px;
 }
 
 .main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-mtt {

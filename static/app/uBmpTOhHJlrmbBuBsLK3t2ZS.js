@@ -77,3 +77,7 @@ class ErrorModal {
         document.querySelector(".shade").style.display = "none";
     }
 }
+
+HTMLElement.prototype.scrollBottom = function () {
+    this.scrollTop = this.scrollHeight;
+}
