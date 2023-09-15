@@ -421,7 +421,7 @@
     bottom: 53px;
     background-color: var(--c1);
     width: calc(90% - 1px);
-    display: flex;
+    display: none; /* flex */
     align-self: center;
     margin-left: -4px;
     box-sizing: border-box;
@@ -447,4 +447,40 @@
     transform: translate(0%, -50%);
     fill: var(--c2);
     cursor: pointer;
+}
+
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse {
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-mtt {
+    display: none;
+}
+
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > img.profile-picture {
+    display: inline-block;
+    vertical-align: middle;
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-muser {
+    display: inline-block;
+    vertical-align: top;
+    font-family: var(--dm);
+    font-weight: bold;
+    color: var(--c5);
+    margin-left: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-mcontent {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-top: 5px;
+    margin-left: -13px;
+    font-family: var(--dm);
+    color: var(--c3);
 }
