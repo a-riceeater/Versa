@@ -69,6 +69,9 @@ friendsMSQ.addEventListener("load", () => {
     document.querySelector(".scroller.main-container").innerHTML = friendsMSQ.responseText;
 
     setTimeout(() => {
+        document.querySelector(".fr-chan-list-l > .friend-to-ms-fl.btn").classList.add("selected");
+        document.querySelectorAll(".frcl-b-container > .frcl-btn.selected").forEach(b => b.classList.remove("selected"));
+
         document.querySelectorAll(".main-container > .scbar-fri-m-o > .scb-frmo-btn").forEach(e => {
 
             e.addEventListener("click", (evt) => {
@@ -179,24 +182,14 @@ friendLBar.addEventListener("load", () => {
     document.querySelector('.fr-chan-list-l').innerHTML = friendLBar.responseText;
     completed++;
 
-    /*const dmUreadPendingAmt = new XMLHttpRequest();
-    dmUreadPendingAmt.open("GET", "/app-api/user-ureaddm-pending-amt");
-    dmUreadPendingAmt.send();
-
-    dmUreadPendingAmt.addEventListener("load", () => {
-        const amount = parseInt(dmUreadPendingAmt.responseText);
-        const notiElement = document.querySelector(".scroller.server-list-l > .wrapper-sl-i > .wsli-noti-icon");
-
-        if (amount <= 0) notiElement.style.display = "none"
-        else {
-            notiElement.style.display = "flex"
-            notiElement.innerText = amount
-        }
-    })*/
-
     setTimeout(() => {
         document.querySelectorAll(".fr-chan-list-l > .frcl-b-container > .frcl-btn").forEach(btn => {
             btn.addEventListener("click", () => joinDM(btn));
+        })
+
+        document.querySelector(".fr-chan-list-l > .friend-to-ms-fl.btn").addEventListener("click", () => {
+            friendsMSQ.open("GET", "/app/widget/KjitLwgKq6AjPyLi28BSy7SXQ");
+            friendsMSQ.send();
         })
     });
 })
