@@ -154,11 +154,12 @@
     font-size: 18.5px;
     color: var(--c5);
     vertical-align: middle;
+    margin-left: 10px;
 }
 
 .main-container > .scbar-fri-sect > .scb-frmo-frbtn > .desc {
     font-weight: lighter;
-    margin-left: 10px;
+    margin-left: 5px;
     vertical-align: middle;
     color: lightgray;
     font-size: 13px;
