@@ -7,14 +7,6 @@
 			"users": [],
 			"members": 1,
 			"owner": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
-		},
-		{
-			"name": "my mom wont read about fidelity",
-			"serverId": "64u6kiS-xHkUJsp-Kxe4jlz-U2GtEpu-4PR2yKe",
-			"inviteId": "xT2vbDH",
-			"users": [],
-			"members": 0,
-			"owner": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
 		}
 	],
 	"userServers": [
@@ -26,11 +18,6 @@
 					"name": "hi",
 					"serverId": "JXnKrob-7xn99FK-naUTJqV-m0igIpL-3xDunlk",
 					"inviteId": "jEEAmLF"
-				},
-				{
-					"name": "my mom wont read about fidelity",
-					"serverId": "64u6kiS-xHkUJsp-Kxe4jlz-U2GtEpu-4PR2yKe",
-					"inviteId": "xT2vbDH"
 				}
 			],
 			"in": [
