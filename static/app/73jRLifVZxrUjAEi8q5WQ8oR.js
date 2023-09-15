@@ -252,13 +252,16 @@ function joinDM(btn) {
                     document.querySelector(".cm-mainbox > .cm-msgs").appendChild(message);
                     document.querySelector(".cm-mainbox > .cm-msgs").scrollBottom();
 
+                    const content = e.target.innerText.trim();
+                    e.target.innerText = "";
+                    
                     fetch("/message-api/send-message", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
-                            message: e.target.innerText.trim(),
+                            message: content,
                             chatId: btn.getAttribute("data-cid"),
                             tempId: "t" + tempId
                         })
