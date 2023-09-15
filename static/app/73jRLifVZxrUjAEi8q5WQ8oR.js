@@ -271,6 +271,7 @@ function joinDM(btn) {
                         .then((d) => d.json())
                         .then((d) => {
                             if (d.limiter) {
+                                e.target.blur();
                                 const em = new ErrorModal();
                                 em.title = "Slow down!"
                                 em.body = "You are sending messages too fast!"
