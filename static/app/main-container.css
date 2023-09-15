@@ -165,6 +165,10 @@
     line-height: 40px;
 }
 
+.main-container > .scbar-fri-sect > .scb-frmo-frbtn > .profile-picture {
+    vertical-align: middle;
+}
+
 .main-container > .scbar-fri-sect > .scb-frmo-frbtn > button.cancel-fr, button.accept-fr {
     float: right;
     background-color: var(--c6);
