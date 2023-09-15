@@ -397,11 +397,11 @@
     box-sizing: border-box;
 }
 
-.main-container > .cm-mainbox > .cm-mb-mse.sending {
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse.sending {
     opacity: 0.5;
 }
 
-.main-container > .cm-mainbox > .cm-mb-mse.failed {
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse.failed {
     color: red !important;
 }
 
