@@ -204,6 +204,8 @@ friendLBar.addEventListener("load", () => {
 function joinDM(btn) {
     const xhr = new XMLHttpRequest();
     document.querySelector(".scroller.fr-chan-list-l > .btn.friend-to-ms-fl").classList.remove("selected");
+    document.querySelectorAll(".frcl-b-container > .frcl-btn.selected").forEach(b => b.classList.remove("selected"))
+    btn.classList.add("selected")
 
     fetch("/app-api/join-room/" + btn.getAttribute("data-cid"))
         .then(() => {
