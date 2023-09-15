@@ -279,7 +279,7 @@ function joinDM(btn) {
                                 message.classList.remove("sending");
                                 message.classList.add("failed");
                             }
-                            if (d.error) {
+                            else if (d.error) {
                                 const em = new ErrorModal();
                                 em.title = "An error occured..."
                                 em.body = d.error;
