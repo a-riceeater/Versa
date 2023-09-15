@@ -203,9 +203,6 @@ friendLBar.addEventListener("load", () => {
 
 function joinDM(btn) {
     const xhr = new XMLHttpRequest();
-    document.querySelector(".scroller.fr-chan-list-l > .btn.friend-to-ms-fl").classList.remove("selected");
-    document.querySelectorAll(".frcl-b-container > .frcl-btn.selected").forEach(b => b.classList.remove("selected"))
-    btn.classList.add("selected")
 
     fetch("/app-api/join-room/" + btn.getAttribute("data-cid"))
         .then((d) => d.json())
@@ -217,6 +214,10 @@ function joinDM(btn) {
                 em.spawn();
                 return
             }
+            document.querySelector(".scroller.fr-chan-list-l > .btn.friend-to-ms-fl").classList.remove("selected");
+            document.querySelectorAll(".frcl-b-container > .frcl-btn.selected").forEach(b => b.classList.remove("selected"))
+            btn.classList.add("selected")
+
             xhr.open("GET", "/app/chat/dm/" + btn.getAttribute("data-cid"));
             xhr.send();
         })
@@ -274,31 +275,31 @@ function joinDM(btn) {
                             tempId: "t" + tempId
                         })
                     })
-                    .then((d) => d.json())
-                    .then((d) => {
-                        if (d.limiter) {
-                            const em = new ErrorModal();
-                            em.title = "Slow down!"
-                            em.body = "You are sending messages too fast!"
-                            em.spawn();
+                        .then((d) => d.json())
+                        .then((d) => {
+                            if (d.limiter) {
+                                const em = new ErrorModal();
+                                em.title = "Slow down!"
+                                em.body = "You are sending messages too fast!"
+                                em.spawn();
 
-                            message.classList.remove("sending");
-                            message.classList.add("failed");
-                        }
-                        if (d.error) {
+                                message.classList.remove("sending");
+                                message.classList.add("failed");
+                            }
+                            if (d.error) {
+                                const em = new ErrorModal();
+                                em.title = "An error occured..."
+                                em.body = d.error;
+                                em.spawn();
+                            }
+                        })
+                        .catch((err) => {
+                            console.error(err);
                             const em = new ErrorModal();
-                            em.title = "An error occured..."
-                            em.body = d.error;
+                            em.title = "Failed to send"
+                            em.body = "The message failed to send."
                             em.spawn();
-                        }
-                    })
-                    .catch((err) => {
-                        console.error(err);
-                        const em = new ErrorModal();
-                        em.title = "Failed to send"
-                        em.body = "The message failed to send."
-                        em.spawn();
-                    })
+                        })
                 }
 
                 /*
