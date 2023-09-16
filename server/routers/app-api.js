@@ -308,7 +308,7 @@ app.get("/activity/get-user-status/:user", middle.authenticateToken, (req, res) 
 
 const vrlimit = rateLimit({
     windowMs: 10 * 1000, // 10 seconds
-    max: 1,
+    max: 2,
     standardHeaders: true,
     legacyHeaders: false,
     stautsCode: 429
