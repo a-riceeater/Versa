@@ -18,12 +18,17 @@ app.get("/self", middle.authenticateToken, (req, res) => {
         .replaceAll("{{ username }}", res.user)
         .replaceAll("{{ email }}", res.email)
         .replaceAll("{{ clientVersion }}", clientVersion);
-    
+
     res.send(data);
 })
 
 app.get("/:p", middle.authenticateToken, (req, res) => {
-    res.redirect("/app/self")
+    const data = fs.readFileSync(path.join(__dirname, "../../", "html", "app", "self.html"), "utf8")
+        .replaceAll("{{ username }}", res.user)
+        .replaceAll("{{ email }}", res.email)
+        .replaceAll("{{ clientVersion }}", clientVersion);
+
+    res.send(data);
 })
 
 const serverDb = dbInstances.serverDb;
@@ -200,7 +205,7 @@ app.get("/widiget/wKB6K5GPlgnlKmYI0TsVFgOPO", middle.authenticateToken, (req, re
 
 const messageDb = dbInstances.messageDb;
 
-app.get("/chat/dm/:chatId", middle.authenticateToken, (req ,res) => {
+app.get("/chat/dm/:chatId", middle.authenticateToken, (req, res) => {
     const chatHistory = messageDb.getRowSync("messages", "chatId", req.params.chatId);
     const selfFriends = friendDb.getRowSync("friends", "userId", res.id).friends;
     if (!chatHistory || !selfFriends) return res.send("This chat does not exist.");
