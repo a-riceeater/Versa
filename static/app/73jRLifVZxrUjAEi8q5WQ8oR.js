@@ -244,8 +244,8 @@ function joinDM(btn) {
                     </div>
                     <img src="/cdn/pfps/default.png" class="profile-picture">
                     <div class="cm-mb-muser">
-                        a <!-- Replace with user later, figure out how to do so, and also don't show user if same user message -->
-                        ${new Timestamp("short").text}
+                        <span class="cm-mb-muu">a</span> <!-- Replace with user later, figure out how to do so, and also don't show user if same user message -->
+                        <span class="cm-mb-timestamp">${new Timestamp("short").text}</span>
                     </div>
                     <div class="cm-mb-mcontent">
                         ${e.target.innerText.trim()}

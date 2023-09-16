@@ -475,6 +475,9 @@
     display: inline-block;
     vertical-align: top;
     font-family: var(--dm);
+}
+
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-muser > .cm-mb-muu {
     font-weight: bold;
     color: var(--c5);
     margin-left: 5px;
@@ -482,7 +485,7 @@
     cursor: pointer;
 }
 
-.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-muser:hover {
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-muser > .cm-mb-muu:hover {
     text-decoration: underline;
 }
 
@@ -490,7 +493,14 @@
     display: inline-block;
     vertical-align: bottom;
     margin-top: 5px;
-    margin-left: -108px;
+    margin-left: -97px;
     font-family: var(--dm);
     color: var(--c3);
+}
+
+.main-container > .cm-mainbox > .cm-msgs > .cm-mb-mse > .cm-mb-muser > .cm-mb-timestamp {
+    color: lightgray !important;
+    font-size: 13.5px;
+    margin-left: 5.5px;
+    text-decoration: none !important;
 }
