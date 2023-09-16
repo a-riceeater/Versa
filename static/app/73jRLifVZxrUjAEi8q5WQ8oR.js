@@ -87,8 +87,9 @@ friendsMSQ.addEventListener("load", () => {
         document.addEventListener("keydown", (evt) => {
             const tb = document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-textbox > .cm-e-edit");
             if (document.body.contains(tb) && tb != document.activeElement) {
-                console.log(evt.key.toString().length)
                 if (evt.key.toString().length > 1 && evt.key != "Space") return
+                if (document.body.contains(document.querySelector(".dft-err-mod"))) return
+
                 document.querySelector(".main-container > .cm-mainbox > .cm-editor > .cm-e-placeholder").style.display = "none"
                 tb.focus();
             }

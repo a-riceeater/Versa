@@ -162,6 +162,7 @@
     color: black;
     font-size: 16px;
     font-family: var(--noto);
+    outline: 0;
 }
 
 .dft-err-mod > .err-mod-title {
