@@ -15,6 +15,8 @@ const version = JSON.parse(require("fs").readFileSync(path.join(__dirname, "curr
 const socketIds = dbInstances.socketIds;
 const rooms = dbInstances.rooms;
 
+app.disable('x-powered-by');
+
 app.use(express.static(path.join(__dirname, "static")));
 app.use(express.json())
 app.use("/cdn/", express.static(path.join(__dirname, "cdn")));
