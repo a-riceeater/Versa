@@ -306,7 +306,15 @@ app.get("/activity/get-user-status/:user", middle.authenticateToken, (req, res) 
     res.send(statusDb.getRowSync("statuses", "user", req.params.user));
 })
 
-app.get("/versa", middle.authenticateToken, (req, res) => {
+const vrlimit = rateLimit({
+    windowMs: 10 * 1000, // 10 seconds
+    max: 1,
+    standardHeaders: true,
+    legacyHeaders: false,
+    stautsCode: 429
+})
+
+app.get("/versa", middle.authenticateToken, vrlimit, (req, res) => {
     res.sendStatus(200);
 })
 
