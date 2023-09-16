@@ -65,6 +65,8 @@ class ErrorModal {
                 document.querySelector(".shade").style.display = "none";
                 if (cb) cb();
             })
+
+            document.querySelector("#" + this.__modal.id + " > .dft-err-footer > .err-mod-close").focus();
         })
     }
 
