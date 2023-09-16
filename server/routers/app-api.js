@@ -355,7 +355,7 @@ app.get("/join-room/:chatId", middle.authenticateToken, (req, res) => {
     const socketId = socketIds[res.id];
 
     const socket = io.sockets.sockets.get(socketId);
-    if (!socket) return res.send({ error: true });
+    if (!socket) return res.send({ error: "Socket not connected" });
     socket.leaveAll();
     rooms[res.id] = req.params.chatId;
     socket.join(req.params.chatId);
