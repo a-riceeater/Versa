@@ -45,7 +45,7 @@ socket.on("recieve-message", (d) => {
         message.classList.add("cm-mb-mse");
 
         let ml = -105;
-        ml = ml + (-9.5 * from.replace("#" + from.split("#").pop(), "").toString().length);
+        ml = ml + (-7.5 * from.replace("#" + from.split("#").pop(), "").toString().length);
 
         message.innerHTML = `
         <div class="cm-mb-mtt">
