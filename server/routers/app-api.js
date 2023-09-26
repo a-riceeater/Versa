@@ -80,7 +80,8 @@ app.post("/create-server", middle.authenticateToken, smallRequests, (req, res) =
                 id: res.id
             }],
             members: 1,
-            owner: res.id
+            owner: res.id,
+            channels: []
         })
 
         serverDb.updateRowSync("userServers", "userId", res.id, uRow);

@@ -1,32 +1,11 @@
 {
-	"servers": [
-		{
-			"name": "hi",
-			"serverId": "JXnKrob-7xn99FK-naUTJqV-m0igIpL-3xDunlk",
-			"inviteId": "jEEAmLF",
-			"users": [],
-			"members": 1,
-			"owner": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
-		}
-	],
+	"servers": [],
 	"userServers": [
 		{
 			"user": "a#1288",
 			"userId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
-			"owned": [
-				{
-					"name": "hi",
-					"serverId": "JXnKrob-7xn99FK-naUTJqV-m0igIpL-3xDunlk",
-					"inviteId": "jEEAmLF"
-				}
-			],
-			"in": [
-				{
-					"name": "hi",
-					"serverId": "JXnKrob-7xn99FK-naUTJqV-m0igIpL-3xDunlk",
-					"inviteId": "jEEAmLF"
-				}
-			]
+			"owned": [],
+			"in": []
 		},
 		{
 			"user": "a#6419",
