@@ -250,4 +250,8 @@ app.get("/chat/dm/:chatId", middle.authenticateToken, (req, res) => {
     res.send(data);
 })
 
+app.get("/chat/server/:chatId", middle.authenticateToken, (req, res) => {
+    
+})
+
 module.exports = app;
