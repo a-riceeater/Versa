@@ -38,6 +38,16 @@ app.post("/send-message", middleware.authenticateToken, messageLimit, (req, res)
     // determine if user has access to channel
 
     const messageId = charAlpha.charAt(Math.floor(Math.random() * charAlpha.length)) + tokenHandler.createRandomId();
+
+    const messageRow = messageDb.getRowSync("messages", "chatId", chatId);
+    messageRow.messages.push({
+        from: res.user,
+        fromId: res.id,
+        content: message,
+        messageId: messageId
+    })
+
+    messageDb.updateRowSync("messages", "chatId", chatId, messageRow);
     
     io.to(chatId).emit("recieve-message", {
         from: res.user,
