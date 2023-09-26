@@ -71,6 +71,8 @@ app.post("/create-server", middle.authenticateToken, smallRequests, (req, res) =
             inviteId: inviteId
         })
 
+        const chatId = tokenHandler.createRandomId();
+
         serverDb.addRowSync("servers", {
             name: name,
             serverId: serverId,
@@ -84,12 +86,16 @@ app.post("/create-server", middle.authenticateToken, smallRequests, (req, res) =
             channels: [
                 {
                     name: "general",
-                    chatId: tokenHandler.createRandomId()
+                    chatId: chatId
                 }
             ]
         })
 
         serverDb.updateRowSync("userServers", "userId", res.id, uRow);
+        messageDb.addRowSync("messages", {
+            chatId: chatId,
+            messages: []
+        })
 
         res.send({ created: true })
     }
