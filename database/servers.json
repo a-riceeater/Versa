@@ -2,11 +2,22 @@
 	"servers": [
 		{
 			"name": "hi",
-			"serverId": "JXnKrob-7xn99FK-naUTJqV-m0igIpL-3xDunlk",
-			"inviteId": "jEEAmLF",
-			"users": [],
+			"serverId": "69VkI2c-ACntnZd-EKS8BJY-lN4DX2P-95Df1pa",
+			"inviteId": "ElS69px",
+			"users": [
+				{
+					"name": "a#1288",
+					"id": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
+				}
+			],
 			"members": 1,
-			"owner": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh"
+			"owner": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
+			"channels": [
+				{
+					"name": "general",
+					"chatId": "2Baan2A-u7a4wEj-Lqmzvhr-r2yRxVU-fi9r2VE"
+				}
+			]
 		}
 	],
 	"userServers": [
@@ -16,15 +27,15 @@
 			"owned": [
 				{
 					"name": "hi",
-					"serverId": "JXnKrob-7xn99FK-naUTJqV-m0igIpL-3xDunlk",
-					"inviteId": "jEEAmLF"
+					"serverId": "69VkI2c-ACntnZd-EKS8BJY-lN4DX2P-95Df1pa",
+					"inviteId": "ElS69px"
 				}
 			],
 			"in": [
 				{
 					"name": "hi",
-					"serverId": "JXnKrob-7xn99FK-naUTJqV-m0igIpL-3xDunlk",
-					"inviteId": "jEEAmLF"
+					"serverId": "69VkI2c-ACntnZd-EKS8BJY-lN4DX2P-95Df1pa",
+					"inviteId": "ElS69px"
 				}
 			]
 		},
@@ -37,6 +48,12 @@
 		{
 			"user": "test#7891",
 			"userId": "dkhlq6J-XgNZpv7-BqjhYF8-rKb9yKA-E41XPZs",
+			"owned": [],
+			"in": []
+		},
+		{
+			"user": "wewewe#7138",
+			"userId": "D18LC4W-iVDgchS-WHyOwQ5-TZSRQ1A-kbfF9Fi",
 			"owned": [],
 			"in": []
 		}
