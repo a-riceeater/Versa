@@ -19,6 +19,10 @@
 				{
 					"user": "a#1288",
 					"chatId": "mxStYZJ-fIvVGvU-uKxkmN1-TncqRAx-8Xj5S0x"
+				},
+				{
+					"user": "wewewe#7138",
+					"chatId": "3YRuNX0-1HkvUVS-DOIPWLw-BvpnZG9-MpghQbj"
 				}
 			],
 			"pendingTo": [],
@@ -28,6 +32,18 @@
 			"user": "test#7891",
 			"userId": "dkhlq6J-XgNZpv7-BqjhYF8-rKb9yKA-E41XPZs",
 			"friends": [],
+			"pendingTo": [],
+			"pendingFrom": []
+		},
+		{
+			"user": "wewewe#7138",
+			"userId": "D18LC4W-iVDgchS-WHyOwQ5-TZSRQ1A-kbfF9Fi",
+			"friends": [
+				{
+					"user": "a#6419",
+					"chatId": "3YRuNX0-1HkvUVS-DOIPWLw-BvpnZG9-MpghQbj"
+				}
+			],
 			"pendingTo": [],
 			"pendingFrom": []
 		}

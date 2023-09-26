@@ -243,6 +243,10 @@ function joinDM(btn) {
 
                     if (e.target.innerText.trim() == "") return
 
+                    const from = "wewewe#7138" // REPLACE WITH REAL USERNAME
+                    let ml = -105;
+                    ml = ml + (-7.5 * from.replace("#" + from.split("#").pop(), "").toString().length);
+
                     const tempId = vt.createRandomId();
                     const message = document.createElement("div");
                     message.classList.add("cm-mb-mse");
@@ -255,10 +259,10 @@ function joinDM(btn) {
                     </div>
                     <img src="/cdn/pfps/default.png" class="profile-picture">
                     <div class="cm-mb-muser">
-                        <span class="cm-mb-muu">a</span> <!-- Replace with user later, figure out how to do so, and also don't show user if same user message -->
+                        <span class="cm-mb-muu">${from.replace("#" + from.split("#").pop(), "")}</span> <!-- Replace with user later, figure out how to do so, and also don't show user if same user message -->
                         <span class="cm-mb-timestamp">${new Timestamp("short").text}</span>
                     </div>
-                    <div class="cm-mb-mcontent">
+                    <div class="cm-mb-mcontent" style="margin-left: ${ml}px">
                         ${e.target.innerText.trim()}
                     </div>`
                     message.id = "t" + tempId;
