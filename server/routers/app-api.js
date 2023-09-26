@@ -81,7 +81,12 @@ app.post("/create-server", middle.authenticateToken, smallRequests, (req, res) =
             }],
             members: 1,
             owner: res.id,
-            channels: []
+            channels: [
+                {
+                    name: "general",
+                    chatId: tokenHandler.createRandomId()
+                }
+            ]
         })
 
         serverDb.updateRowSync("userServers", "userId", res.id, uRow);
