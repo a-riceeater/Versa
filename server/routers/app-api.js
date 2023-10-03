@@ -359,6 +359,10 @@ app.post("/leave-server", middle.authenticateToken, (req, res) => {
     res.send({ left: true })
 })
 
+app.get("/username", middle.authenticateToken, (req, res) => {
+    res.send(res.user.toString())
+})
+
 const socketIds = dbInstances.socketIds;
 const rooms = dbInstances.rooms;
 const io = dbInstances.io;

@@ -23,7 +23,14 @@
 		},
 		{
 			"chatId": "mxStYZJ-fIvVGvU-uKxkmN1-TncqRAx-8Xj5S0x",
-			"messages": []
+			"messages": [
+				{
+					"from": "a#1288",
+					"fromId": "oU7b7lW-JB2qvJj-OZKIwZD-xTfB63i-GOnFILh",
+					"content": "hello",
+					"messageId": "suvvv324-eK4Khw6-Ae5DtAf-BmgqGkb-z2mSlph"
+				}
+			]
 		},
 		{
 			"chatId": "3YRuNX0-1HkvUVS-DOIPWLw-BvpnZG9-MpghQbj",

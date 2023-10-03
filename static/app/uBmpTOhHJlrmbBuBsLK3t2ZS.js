@@ -5,6 +5,8 @@
     vtools.js
 */
 
+let username = "";
+
 const vt = {
     log: function (a, ...l) {
         let b = "";
@@ -29,11 +31,15 @@ const vt = {
         window.history.pushState("", `Versa | ${title}`, url);
         document.title = `Versa | ${title}`
         vt.log("Navigator", `State pushed; URL: ${url}, title: ${title}`)
-    }
+    },
+    username: () => {}
 }
 
+alert(vt.username)
+
 class ErrorModal {
-    title = "An error occured."
+    title = 
+    "An error occured."
     body = "Error details will appear here."
     callback = null
 
