@@ -98,6 +98,6 @@ io.on("connection", (socket) => {
     })
 });
 
-server.listen(6969, () => {
+server.listen(3000, () => {
     console.log("Listening at http://localhost:6969")
 })
